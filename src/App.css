@@ -6,11 +6,15 @@
   padding: 0;
   font-family: roboto slab;
   text-decoration: none;
+  color: #365486;
+}
+body{
+  background: #DCF2F1;
 }
 .header {
   width: 100vw;
   height: 50px;
-  background: #ff8000;
+  background: #365486;
   border-radius: 2px;
   display: flex;
   justify-content: space-between;
@@ -23,18 +27,18 @@ h1 {
   font-style: normal;
   font-weight: 400;
   font-size: 40px;
-  color: #ffffff;
+  color: #DCF2F1;
   margin-left: 20px;
 }
 
 .signin {
   padding: 5px 10px;
   font-size: 20px;
-  background: rgba(20, 174, 92, 0.9);
-  border: 3px solid #14ae5c;
+  background: #7FC7D9;
+  border: 3px solid #365486;
   border-radius: 10px;
-  color: #ffffff;
   margin-right: 20px;
+  color: #365486;
 }
 .signUp {
   padding: 5px;
@@ -49,8 +53,10 @@ h1 {
   align-items: center;
   font-family: "Kavoon";
   font-size: 30px;
-  background: #ff8000;
-  color: whitesmoke;
+  background: #365486;
+  color: #DCF2F1;
+  position: absolute;
+  width: 100vw;
 }
 .Homepage {
   height: 65.6vh;
@@ -78,7 +84,7 @@ h1 {
   top: 10%;
   height: auto;
   padding: 25px;
-  background: rgba(255, 128, 0, 0.1);
+  background: rgba(127, 199, 217, 0.1);
   border-radius: 9px;
 }
 
@@ -87,7 +93,7 @@ h1 {
   width: 48%;
   height: 100%;
   margin: auto 0;
-  background: rgba(255, 128, 0, 0.23);
+  background: rgba(127, 199, 217, 0.3);
   border-radius: 9px;
 }
 
@@ -100,7 +106,7 @@ h1 {
   border: none;
 }
 .form-input:focus {
-  outline: 2px solid rgba(20, 174, 92, 0.9);
+  outline: 2px solid #365486;
 }
 ErrorMessage {
   color: red;
