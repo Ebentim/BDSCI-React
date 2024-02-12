@@ -8,8 +8,8 @@
   text-decoration: none;
   color: #365486;
 }
-body{
-  background: #DCF2F1;
+body {
+  /* background: #DCF2F1; */
 }
 .header {
   width: 100vw;
@@ -27,24 +27,17 @@ h1 {
   font-style: normal;
   font-weight: 400;
   font-size: 40px;
-  color: #DCF2F1;
+  color: #dcf2f1;
   margin-left: 20px;
 }
 
 .signin {
-  padding: 5px 10px;
-  font-size: 20px;
-  background: #7FC7D9;
-  border: 3px solid #365486;
-  border-radius: 10px;
-  margin-right: 20px;
+  font-size: 16px;
+  background: #7fc7d9;
+  border-radius: 7px;
   color: #365486;
-}
-.signUp {
-  padding: 5px;
-  font-size: 20px;
-  width: 90%;
-  margin: 4px auto;
+  border: none;
+  padding: 10px;
 }
 .footer {
   bottom: 0%;
@@ -54,7 +47,7 @@ h1 {
   font-family: "Kavoon";
   font-size: 30px;
   background: #365486;
-  color: #DCF2F1;
+  color: #dcf2f1;
   position: absolute;
   width: 100vw;
 }
@@ -108,9 +101,7 @@ h1 {
 .form-input:focus {
   outline: 2px solid #365486;
 }
-ErrorMessage {
-  color: red;
-}
+
 .course-name {
   font-family: "Kavoon";
   font-style: normal;
@@ -125,4 +116,35 @@ ErrorMessage {
   font-weight: 400;
   font-size: 25px;
   line-height: 42px;
+}
+@keyframes skeletonMotion {
+  from {
+    background-position: -300px 0;
+  }
+  to {
+    background-position: 300px 0;
+  }
+}
+.Signin-page{
+  position: relative;
+}
+.signin-form {
+  background: rgba(127, 199, 217, 0.3);
+  border-radius: 9px;
+  height: auto;
+  padding: 20px;
+  width: 300px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  display: flex;
+  flex-direction: column;
+}
+.signin-form input{
+  padding: 5px;
+  margin: 10px 0;
+}
+#signin-form button{
+  padding: 5px;
 }
