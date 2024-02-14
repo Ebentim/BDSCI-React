@@ -1,8 +1,12 @@
 import React from "react";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
-import SignUp from "../Assets/SignUp";
+import { NavButtons } from "../Assets/next";
+import "../App.css"
 function SignupForm() {
+  const SignupButton = () => {
+    return <NavButtons classname="signin">Sign Up</NavButtons>;
+  };
   return (
     <Formik
       initialValues={{
@@ -33,6 +37,7 @@ function SignupForm() {
         setTimeout(() => {
           alert(JSON.stringify(values, null, 2));
           setSubmitting(false);
+          window.location.replace("/dashboard")
         }, 1000);
       }}
     >
@@ -72,7 +77,7 @@ function SignupForm() {
           placeHolder="Password"
         />
         <ErrorMessage name="password" />
-        <button className="signin signUp">Sign Up</button>
+        <SignupButton />
       </Form>
     </Formik>
   );

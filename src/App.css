@@ -1,15 +1,22 @@
 @import url("https://fonts.googleapis.com/css2?family=Kavoon&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Protest+Strike&display=swap');
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
   font-family: roboto slab;
   text-decoration: none;
-  color: #365486;
 }
 body {
   /* background: #DCF2F1; */
+}
+.timer{
+  font-family: "Protest Strike", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 2vmin;
 }
 .header {
   width: 100vw;
@@ -20,7 +27,9 @@ body {
   justify-content: space-between;
   align-items: center;
 }
-
+.headerSignIn{
+    margin-right: 30px;
+}
 /* BDS */
 h1 {
   font-family: "Kavoon";
@@ -29,15 +38,6 @@ h1 {
   font-size: 40px;
   color: #dcf2f1;
   margin-left: 20px;
-}
-
-.signin {
-  font-size: 16px;
-  background: #7fc7d9;
-  border-radius: 7px;
-  color: #365486;
-  border: none;
-  padding: 10px;
 }
 .footer {
   bottom: 0%;
@@ -48,7 +48,6 @@ h1 {
   font-size: 30px;
   background: #365486;
   color: #dcf2f1;
-  position: absolute;
   width: 100vw;
 }
 .Homepage {

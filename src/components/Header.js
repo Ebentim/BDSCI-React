@@ -1,12 +1,21 @@
 import { Link } from "react-router-dom";
-import Button from "../Assets/Button";
+import { NavButtons } from "../Assets/next";
+import "../App.css"
 function Header() {
+  
+  const SignInButton = () => {
+    return (
+      <Link to="/Signin" className="headerSignIn">
+        <NavButtons classname="signin">Signin</NavButtons>
+      </Link>
+    );
+  }
   return (
     <div className="header">
       <Link to="/">
         <h1>BDS</h1>
       </Link>
-      <Button />
+      <SignInButton/>
     </div>
   );
 }
