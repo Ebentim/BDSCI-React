@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Kavoon&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Protest+Strike&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Protest+Strike&display=swap");
 
 * {
   box-sizing: border-box;
@@ -12,7 +12,7 @@
 body {
   /* background: #DCF2F1; */
 }
-.timer{
+.timer {
   font-family: "Protest Strike", sans-serif;
   font-weight: 500;
   font-style: normal;
@@ -27,8 +27,8 @@ body {
   justify-content: space-between;
   align-items: center;
 }
-.headerSignIn{
-    margin-right: 30px;
+.headerSignIn {
+  margin-right: 30px;
 }
 /* BDS */
 h1 {
@@ -51,7 +51,7 @@ h1 {
   width: 100vw;
 }
 .Homepage {
-  height: 65.6vh;
+  height: 80vh;
   width: 92vw;
   border: 1px solid #ff50001a;
   border-radius: 7px;
@@ -71,27 +71,27 @@ h1 {
 }
 .form-container {
   position: absolute;
-  width: 45%;
+  width: 40%;
   right: 5%;
   top: 10%;
   height: auto;
   padding: 25px;
-  background: rgba(127, 199, 217, 0.1);
+  background: rgb(127, 199, 217);
   border-radius: 9px;
 }
 
-.form-background {
+/* .form-background {
   box-sizing: border-box;
   width: 48%;
   height: 100%;
   margin: auto 0;
-  background: rgba(127, 199, 217, 0.3);
+  background: rgb(127, 199, 217);
   border-radius: 9px;
-}
+} */
 
 .form-input {
   width: 90%;
-  margin: 4px auto;
+  margin: 7px auto;
   background: #ffffff;
   border-radius: 9px;
   padding: 10px;
@@ -107,6 +107,7 @@ h1 {
   font-weight: 400;
   font-size: 30px;
   overflow: hidden;
+  color: #365486;
 }
 
 .course-description {
@@ -115,6 +116,7 @@ h1 {
   font-weight: 400;
   font-size: 25px;
   line-height: 42px;
+  color: #365486;
 }
 @keyframes skeletonMotion {
   from {
@@ -124,11 +126,11 @@ h1 {
     background-position: 300px 0;
   }
 }
-.Signin-page{
+.Signin-page {
   position: relative;
 }
 .signin-form {
-  background: rgba(127, 199, 217, 0.3);
+  background: rgb(127, 199, 217);
   border-radius: 9px;
   height: auto;
   padding: 20px;
@@ -140,10 +142,18 @@ h1 {
   display: flex;
   flex-direction: column;
 }
-.signin-form input{
+.signin-form input {
   padding: 5px;
   margin: 10px 0;
 }
-#signin-form button{
+#signin-form button {
   padding: 5px;
+}
+.signup-form {
+  display: flex;
+  flex-direction: column;
+}
+.Signup {
+  width: 90%;
+  margin: 5px auto 5px auto;
 }

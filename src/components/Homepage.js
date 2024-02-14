@@ -9,11 +9,11 @@ function Homepage() {
                     <hr />
                     <h5 className="course-description">California DMV approved Online Driver's Ed Course</h5>
                 </div>
-                <div className="form-background">
+                {/* <div className="form-background"> */}
                     <div className="form-container">
                     <SignupForm />
                     </div>
-                </div>
+                {/* </div> */}
             </div>
         </main>
     )

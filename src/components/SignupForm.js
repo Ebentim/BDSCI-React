@@ -2,10 +2,12 @@ import React from "react";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { NavButtons } from "../Assets/next";
-import "../App.css"
+import "../App.css";
+import "../styles/general.css";
+
 function SignupForm() {
   const SignupButton = () => {
-    return <NavButtons classname="signin">Sign Up</NavButtons>;
+    return <NavButtons classname="Signup">Sign Up</NavButtons>;
   };
   return (
     <Formik
@@ -37,11 +39,11 @@ function SignupForm() {
         setTimeout(() => {
           alert(JSON.stringify(values, null, 2));
           setSubmitting(false);
-          window.location.replace("/dashboard")
+          window.location.replace("/dashboard");
         }, 1000);
       }}
     >
-      <Form>
+      <Form className = "signup-form">
         <Field
           className="form-input"
           name="firstName"

@@ -8,7 +8,7 @@
   color: #365486;
 }
 .nextButton,
-.prevButton {
+.prevButton, .Signup, .Signin {
   text-transform: capitalize;
   font-size: 16px;
   background: #dcf2f1;
@@ -16,6 +16,10 @@
   color: #365486;
   border: none;
   padding: 10px;
+}
+.Signup, .Signup{
+  background: #365486;
+  color: #dcf2f1
 }
 .courseBody {
   width: 90%;

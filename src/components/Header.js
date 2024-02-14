@@ -1,12 +1,14 @@
 import { Link } from "react-router-dom";
 import { NavButtons } from "../Assets/next";
+import "../styles/general.css";
 import "../App.css"
 function Header() {
-  
+
+
   const SignInButton = () => {
     return (
       <Link to="/Signin" className="headerSignIn">
-        <NavButtons classname="signin">Signin</NavButtons>
+        <NavButtons classname="nextButton">Sign In</NavButtons>
       </Link>
     );
   }
