@@ -15,7 +15,7 @@ function Header() {
   return (
     <div className="header">
       <Link to="/">
-        <h1>BDS</h1>
+        <h1>Bakkers Driving School</h1>
       </Link>
       <SignInButton/>
     </div>
