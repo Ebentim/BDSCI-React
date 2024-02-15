@@ -40,16 +40,18 @@ function Profile() {
   );
   const minutes = Math.floor((spentTime % (1000 * 60 * 60)) / (1000 * 60));
   const seconds = Math.floor((spentTime % (1000 * 60)) / 1000);
-
+    console.log(spentTime)
   return (
     <div className="Profile-details">
       <div className="timeLeft-Container">
         <h3 className="timer">
           {" "}
           <span>Final Quiz in : </span>
-          {hours < 10 ? "0" + hours : hours}:{" "}
-          {minutes < 10 ? "0" + minutes : minutes}:{" "}
-          {seconds < 10 ? "0" + seconds : seconds}
+          {spentTime === initialTime ? initialTime : (<span>
+            {hours < 10 ? "0" + hours : hours}:{" "}
+            {minutes < 10 ? "0" + minutes : minutes}:{" "}
+            {seconds < 10 ? "0" + seconds : seconds}
+          </span>)}
         </h3>
       </div>
       {Object.keys(userProfile).length > 0 ? (

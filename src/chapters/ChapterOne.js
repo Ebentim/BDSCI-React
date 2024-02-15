@@ -1,7 +1,6 @@
 import ReactPlayer from "react-player/lazy";
 import { NavButtons } from "../Assets/next";
 import { useState } from "react";
-import {Link} from "react-router-dom"
 import "../styles/general.css";
 import image66 from "../Assets/images/image66.png";
 import image56 from "../Assets/images/image56.png";
@@ -29,14 +28,7 @@ export default function ChapterOne() {
   const NextButton = () => {
     return (
       <NavButtons onclick={handleClick} classname="nextButton">
-        next
-      </NavButtons>
-    );
-  };
-  const PrevButton = () => {
-    return (
-      <NavButtons onclick={handleClick} className="previousButton">
-        Previous
+        {!viewedPurpose ? "Proceed to Course" : "Understand the Purpose"}
       </NavButtons>
     );
   };
@@ -52,7 +44,7 @@ export default function ChapterOne() {
               {Object.entries(sections).map(([key, value]) => {
                 return (
                   <li key={key}>
-                    <Link to={`#${key}`}>{value}</Link>
+                    <a href={`#${key}`}>{value}</a>
                   </li>
                 );
               })}
@@ -626,7 +618,7 @@ export default function ChapterOne() {
                   considerate behavior, you are more inclined to reciprocate it,
                   leading to safer roads and reduced conflicts.
                 </p>
-                <h4 className="sectionHeading">
+                <h4 className="sectionHeading" id="sectionFive">
                   Section 1.5. The importance of Driver Education
                 </h4>
                 <p className="sectionQuote">
@@ -722,7 +714,7 @@ export default function ChapterOne() {
                   that ensures safety and benefits individuals and society as a
                   whole.
                 </p>
-                <h4 className="sectionHeading">
+                <h4 className="sectionHeading" id="sectionSix">
                   Section 1.6. History of the Automobile
                 </h4>
                 <p className="sectionQuote">
@@ -840,7 +832,7 @@ export default function ChapterOne() {
                 </p>
               </div>
             )}
-            {viewedPurpose ? <PrevButton /> : <NextButton />}
+            <NextButton />
           </div>
         </div>
         <ReactPlayer />
