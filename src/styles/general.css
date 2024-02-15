@@ -96,3 +96,26 @@
   margin:auto;
   margin-bottom: 20px;
 }
+.option{
+  display: flex;
+  justify-items: start;
+  align-items: center;
+  border: 1px solid #365486;
+  border-radius: 5px;
+  width: auto;
+  max-width: 450px;
+  margin: 10px 0;
+}
+input[type ="radio"]{
+  height: 30px;
+  width: 30px;
+  margin: 10px;
+
+}
+input[type ="radio"] :active{
+  background-color: #365486;
+  color: #dcf2f1;
+}
+.option p{
+  font-size: 1.3rem;
+}
