@@ -16,7 +16,7 @@ import ChapterFifteen from "../chapters/ChapterFifteen";
 import "../styles/general.css"
 import Timer from "../components/Timer";
 import { NavButtons } from "../Assets/next";
-import { useReducer } from "react";
+import { useReducer, useState } from "react";
 const reducer = (value, action) =>{
     switch (action.type){
       case "plus":
@@ -28,7 +28,10 @@ const reducer = (value, action) =>{
 }
 export default function CourseBod() {
   const startChapter = 1
-  const [chapter, setChapter] = useReducer(reducer, startChapter)
+  const [chapter, setChapter] = useReducer(reducer, startChapter);
+  const [disableNextButton, setDisableNextButton] = useState(true) // This is meant to disable the next chapter, if the student doesn't scale the current chapter's quiz by at least 80%
+
+
 
 const handleNext = ()=>{
   if (chapter < 15 || (chapter === 15 && localStorage.getItem("lastTime") === 0 && chapter < 17)){
@@ -42,8 +45,10 @@ const handPrev = ()=>{
     setChapter({type: "minus"})} // Activated Chapter only
   console.log(chapter)
 }
+
+
   const NextChapter =()=>{
-    return <NavButtons onclick={handleNext} classname="nextButton" disable={true}>To  {chapter ===1? "Unit Two" : chapter === 2? "Unit Three" : chapter ===3? "Unit Four" : chapter === 4? "Unit Five" : chapter === 5 ? "Unit Six" : chapter === 6? "Unit Seven" : chapter === 7? "Unit Eight" : chapter === 8? "Unit Nine" : chapter === 9 ? "Unit Ten" : chapter === 10? "Unit Eleven" : chapter === 11 ? "Unit Twelve" : chapter === 12 ? "Unit Thirteen" : chapter ===13? "Unit Fourteen" : chapter ===14 ? "Unit Fifteen" : "Final Quiz" }</NavButtons>
+    return <NavButtons onclick={handleNext} classname="nextButton" disable={disableNextButton}>To  {chapter ===1? "Unit Two" : chapter === 2? "Unit Three" : chapter ===3? "Unit Four" : chapter === 4? "Unit Five" : chapter === 5 ? "Unit Six" : chapter === 6? "Unit Seven" : chapter === 7? "Unit Eight" : chapter === 8? "Unit Nine" : chapter === 9 ? "Unit Ten" : chapter === 10? "Unit Eleven" : chapter === 11 ? "Unit Twelve" : chapter === 12 ? "Unit Thirteen" : chapter ===13? "Unit Fourteen" : chapter ===14 ? "Unit Fifteen" : "Final Quiz" }</NavButtons>
   }
 
   const PreviousChapter = ()=>{
