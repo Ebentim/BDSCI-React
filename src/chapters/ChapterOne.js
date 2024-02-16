@@ -32,6 +32,15 @@ export default function ChapterOne() {
       </NavButtons>
     );
   };
+
+  const handleQuiz = ()=>{
+    
+  }
+  const ToQuiz = () =>{
+    return (
+      <NavButtons classname={"nextButton"}>Take Unit Quiz</NavButtons>
+    )
+  }
   return (
     <>
       <div className="courseBody" id="one">
