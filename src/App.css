@@ -80,15 +80,6 @@ h1 {
   border-radius: 9px;
 }
 
-/* .form-background {
-  box-sizing: border-box;
-  width: 48%;
-  height: 100%;
-  margin: auto 0;
-  background: rgb(127, 199, 217);
-  border-radius: 9px;
-} */
-
 .form-input {
   width: 90%;
   margin: 7px auto;
@@ -100,7 +91,12 @@ h1 {
 .form-input:focus {
   outline: 2px solid #365486;
 }
-
+.errorMessage {
+  width: 90%;
+  color: red;
+  margin: 0 auto;
+  font-size: x-small;
+}
 .course-name {
   font-family: "Kavoon";
   font-style: normal;
@@ -156,4 +152,23 @@ h1 {
 .Signup {
   width: 90%;
   margin: 5px auto 5px auto;
+}
+
+.submitting {
+  height: 40px;
+  width: 40px;
+  background: #365486;
+  border-radius: 50%;
+  border: 1px solid #1d9af2;
+  opacity: 1;
+  animation: spinner4 800ms linear infinite;
+  transform: scale(0);
+  margin: auto;
+}
+
+@keyframes spinner4 {
+  to {
+    transform: scale(1.5);
+    opacity: 0;
+  }
 }

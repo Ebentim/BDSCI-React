@@ -1,7 +1,11 @@
-import "../App.css";
 import { Formik, Form, Field, ErrorMessage } from "formik";
+import { useState } from "react";
 import * as Yup from "yup";
+import "../App.css";
+import "../styles/general.css";
+
 export default function Signin() {
+  const [submissionStatus, setSubmissionStatus] = useState(false);
   return (
     <div className="Signin-page">
       <Formik
@@ -12,12 +16,36 @@ export default function Signin() {
             .required("Email is Required"),
           password: Yup.string().required("Please Input your password"),
         })}
-        onSubmit={(values, { setSubmitting }) => {
-          setTimeout(() => {
-            alert(JSON.stringify(values, null, 2));
-            setSubmitting(false);
-            window.location.replace("/profile");
-          }, 5000);
+        onSubmit={(values, { resetForm }) => {
+          setSubmissionStatus(true);
+          fetch("/api/signin", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(values),
+          })
+            .then((response) => {
+              response.json();
+              console.log(response);
+              if (response.status === 200) {
+                setSubmissionStatus(true);
+                window.location.replace("/dashboard");
+              }
+              if (!response.ok) {
+                alert("Invalid Email or Password");
+                resetForm();
+                setSubmissionStatus(false);
+              }
+            })
+            .then((data) => {
+              console.log(data.messaage);
+
+              // Check for success status or handle errors
+            })
+            .catch((error) => {
+              console.error("Error submitting form:", error);
+            });
         }}
       >
         <Form className="signin-form">
@@ -28,9 +56,13 @@ export default function Signin() {
           <label htmlFor="password">Password</label>
           <Field name="password" type="password" placeholder="Password" />
           <ErrorMessage name="password" />
-          <button type="submit" className="signin">
-            Submit
-          </button>
+          {submissionStatus ? (
+            <button className="Signup submitting"></button>
+          ) : (
+            <button type="submit" className="Signup">
+              Sign in
+            </button>
+          )}
         </Form>
       </Formik>
     </div>

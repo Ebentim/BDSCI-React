@@ -4,6 +4,7 @@ import * as Yup from "yup";
 import { NavButtons } from "../Assets/next";
 import "../App.css";
 import "../styles/general.css";
+import { Navigate } from "react-router-dom";
 
 function SignupForm() {
   const SignupButton = () => {
@@ -12,73 +13,128 @@ function SignupForm() {
   return (
     <Formik
       initialValues={{
-        firstName: "",
-        lastName: "",
+        firstname: "",
+        lastname: "",
         address: "",
         email: "",
         password: "",
+        birthdate: "",
       }}
       validationSchema={Yup.object({
-        firstName: Yup.string()
+        firstname: Yup.string()
           .min(2, "Must be at least 2 characters")
-          .required("required"),
-        lastName: Yup.string()
+          .required("first name is required"),
+        lastname: Yup.string()
           .min(2, "Must be at least 2 characters")
-          .required("required"),
-        address: Yup.string().required(
-          "Home address is required to mail your certificate"
-        ),
+          .required("last name is required"),
+        address: Yup.string().required("Home address is required"),
         email: Yup.string()
           .email("Enter a valid email address")
-          .required("required"),
+          .required("email is required required"),
         password: Yup.string()
           .min(8, "Password must be at least 8 characters")
-          .required("required"),
+          .required("password is required"),
+        birthdate: Yup.date()
+          .max(
+            new Date(Date.now() - 473385600000),
+            "You must be at least 13 years old"
+          )
+          .required("Your date of birth is equired"),
       })}
-      onSubmit={(values, { setSubmitting }) => {
-        setTimeout(() => {
-          alert(JSON.stringify(values, null, 2));
-          setSubmitting(false);
-          window.location.replace("/dashboard");
-        }, 1000);
+      onSubmit={(values, { setSubmitting, resetForm }) => {
+        fetch("/api/signup", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(values),
+        })
+          .then((response) => {
+            if (!response.ok) {
+              alert(
+                "Registration Failed, Your email may already exist",
+                response
+              );
+              throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            return response.json();
+          })
+          .then((data) => {
+            console.log(data); // Log the response data to the console
+
+            // Check if registration is successful
+            if (
+              data.message &&
+              data.message.includes("registered successfully")
+            ) {
+              // Clear the form fields
+              resetForm();
+              window.location.replace("/signin");
+            }
+          })
+          .catch((error) => {
+            console.error("Error submitting form:", error);
+          })
+          .finally(() => {
+            setSubmitting(false);
+          });
       }}
     >
-      <Form className = "signup-form">
+      <Form className="signup-form">
         <Field
           className="form-input"
-          name="firstName"
+          name="firstname"
           type="text"
-          placeHolder="First Name"
+          placeholder="First Name"
         />
-        <ErrorMessage name="firstName" />
+        <div className="errorMessage">
+          <ErrorMessage name="firstname" />
+        </div>
         <Field
           className="form-input"
-          name="lastName"
+          name="lastname"
           type="text"
-          placeHolder="Last Name"
+          placeholder="Last Name"
         />
-        <ErrorMessage name="lastName" />
+        <div className="errorMessage">
+          <ErrorMessage name="lastname" />
+        </div>
         <Field
           className="form-input"
           name="address"
           type="text"
-          placeHolder="Address"
+          placeholder="Address"
         />
-        <ErrorMessage name="address" />
+        <div className="errorMessage">
+          <ErrorMessage name="address" />
+        </div>
+        <Field
+          className="form-input"
+          name="birthdate"
+          type="date"
+          placeholder="Date of Birth"
+        />
+        <div className="errorMessage">
+          <ErrorMessage name="birthdate" />
+        </div>
         <Field
           className="form-input"
           name="email"
           type="email"
-          placeHolder="Email Address"
+          placeholder="Email Address"
         />
-        <ErrorMessage name="email" />
+        <div className="errorMessage">
+          <ErrorMessage name="email" />
+        </div>
         <Field
           className="form-input"
           name="password"
           type="Password"
-          placeHolder="Password"
+          placeholder="Password"
         />
-        <ErrorMessage name="password" />
+        <div className="errorMessage">
+          <ErrorMessage name="password" />
+        </div>
         <SignupButton />
       </Form>
     </Formik>
