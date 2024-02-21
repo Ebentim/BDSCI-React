@@ -5,13 +5,18 @@ export const useTimer = (
   nextPhase = () => null,
   interval = 1000
 ) => {
-    const presentDuration = parseInt(localStorage.getItem("lastTime"), 10) || initialTime
-    const activity = localStorage.getItem("isActive") ?? false
-    const [duration, setDuration] = useState(presentDuration);
-    const [isActive, setIsActive] = useState(activity);
-    
+  const presentDuration =
+    parseInt(localStorage.getItem("lastTime"), 10) || initialTime;
+  const activity = localStorage.getItem("isActive") ?? false;
+  const [duration, setDuration] = useState(presentDuration);
+  const [isActive, setIsActive] = useState(activity);
+
   const handleVisibilityChange = () => {
-    if (document.visibilityState === "visible" && navigator.onLine && duration > 0) {
+    if (
+      document.visibilityState === "visible" &&
+      navigator.onLine &&
+      duration > 0
+    ) {
       setIsActive(true);
     } else {
       setIsActive(false);

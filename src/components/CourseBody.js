@@ -18,7 +18,6 @@ import "../styles/general.css";
 import Timer from "../components/Timer";
 import { NavButtons } from "../Assets/next";
 import { useReducer, useState } from "react";
-import { redirect, Route } from "react-router-dom";
 const reducer = (value, action) => {
   switch (action.type) {
     case "plus":
@@ -144,56 +143,36 @@ export default function CourseBod() {
           <PreviousChapter /> <NextChapter />
         </div>
       )}
-
-      {/* Private Route protecting chapters */}
-
-      <PrivateRoute path="/chapterone" component={ChapterOne} />
-      <PrivateRoute path="/chaptertwo" component={ChapterTwo} />
-      <PrivateRoute path="/chapterthree" component={ChapterThree} />
-      <PrivateRoute path="/chapterfour" component={ChapterFour} />
-      <PrivateRoute path="/chapterfive" component={ChapterFive} />
-      <PrivateRoute path="/chaptersix" component={ChapterSix} />
-      <PrivateRoute path="/chapterthree" component={ChapterThree} />
-      <PrivateRoute path="/chapterseven" component={ChapterSeven} />
-      <PrivateRoute path="/chaptereight" component={ChapterEight} />
-      <PrivateRoute path="/chapternine" component={ChapterNine} />
-      <PrivateRoute path="/chapterten" component={ChapterTen} />
-      <PrivateRoute path="/chaptereleven" component={ChapterEleven} />
-      <PrivateRoute path="/chapterthirteen" component={ChapterThirteen} />
-      <PrivateRoute path="/chapterfourteen" component={ChapterFourteen} />
-      <PrivateRoute path="/chapterfifteen" component={ChapterFifteen} />
-      {/* <PrivateRoute path="/finalquiz" component={FinalQuiz} /> */}
-
       {chapter === 1 ? (
-        <redirect to="/chapterone" />
+        <ChapterOne />
       ) : chapter === 2 ? (
-        <redirect to="/chaptertwo" />
+        <ChapterTwo />
       ) : chapter === 3 ? (
-        <redirect to="/chapterthree" />
+        <ChapterThree />
       ) : chapter === 4 ? (
-        <redirect to="/chapterfour" />
+        <ChapterFour />
       ) : chapter === 5 ? (
-        <redirect to="/chapterfive" />
+        <ChapterFive />
       ) : chapter === 6 ? (
-        <redirect to="/chaptersix" />
+        <ChapterSix />
       ) : chapter === 7 ? (
-        <redirect to="/chapterseven" />
+        <ChapterSeven />
       ) : chapter === 8 ? (
-        <redirect to="/chaptereight" />
+        <ChapterEight />
       ) : chapter === 9 ? (
-        <redirect to="/chapternine" />
+        <ChapterNine />
       ) : chapter === 10 ? (
-        <redirect to="/chapterten" />
+        <ChapterTen />
       ) : chapter === 11 ? (
-        <redirect to="/chaptereleven" />
+        <ChapterEleven />
       ) : chapter === 12 ? (
-        <redirect to="/chaptertwelve" />
+        <ChapterTwelve />
       ) : chapter === 13 ? (
-        <redirect to="/chapterthirteen" />
+        <ChapterThirteen />
       ) : chapter === 14 ? (
-        <redirect to="/chapterfourteen" />
+        <ChapterFourteen />
       ) : chapter === 15 ? (
-        <redirect to="/chapterfifteen" />
+        <ChapterFifteen />
       ) : null}
     </div>
   );

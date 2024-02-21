@@ -7,7 +7,7 @@
 .timeLeft-Container {
   padding: 10px;
   text-align: center;
-    color: #365486;
+  color: #365486;
 }
 .timer {
   font-size: 2rem;
@@ -38,16 +38,16 @@
   font-size: 2rem;
   color: #365486;
 }
-.contact{
-      color: #365486;
+.contact {
+  color: #365486;
 
-    padding: 15px 4px;
-    border: 1px solid #365486;
-    margin: 5px 5px;
-    border-radius:5px;
+  padding: 15px 4px;
+  border: 1px solid #365486;
+  margin: 5px 5px;
+  border-radius: 5px;
 }
-.proceed{
-    text-transform: capitalize;
+.proceed {
+  text-transform: capitalize;
   font-size: 16px;
   background: #365486;
   border-radius: 7px;

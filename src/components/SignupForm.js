@@ -4,8 +4,6 @@ import * as Yup from "yup";
 import { NavButtons } from "../Assets/next";
 import "../App.css";
 import "../styles/general.css";
-import { Navigate } from "react-router-dom";
-
 function SignupForm() {
   const SignupButton = () => {
     return <NavButtons classname="Signup">Sign Up</NavButtons>;

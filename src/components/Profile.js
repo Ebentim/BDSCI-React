@@ -1,57 +1,73 @@
 import { useEffect, useState } from "react";
 import ProfileSkeleton from "../Assets/Skeleton";
 import { NavButtons } from "../Assets/next";
+import { useAuth } from "../contexts/AuthContext";
 import "../styles/dashboard.css";
 
 function Profile() {
-  const initialTime = "30 : 00 : 00";
-  // const [userProfile, setUserProfile] = useState([]); // where the user data is stored on the database
-  const userProfile = {
-    firstname: "Timilehin",
-    lastname: "Olayuwa",
-    email: "timilehin@gmail.com",
-    address: "2, temidara Street new Ilula Quaters Akure",
-    state: "Ondo",
-    city: "Akure",
-    zip: "123234",
-    birthDay: "18/01/1999",
-  };
-  const spentTime =
-    parseInt(localStorage.getItem("lastTime"), 10) || initialTime;
-  /*  useEffect(() => {
-    fetch("https:www.examples.com")
-      .then((response) => response.json())
-      .then((data) => setUserProfile(data))
-      .catch((errors) => console.log(errors));
-  }, []);
-*/ // effect to fetch user data from the database
+  const { accessToken } = useAuth();
+  const [userProfile, setUserProfile] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch("/api/dashboard", {
+          method: "GET",
+          headers: {
+            Authorization: accessToken,
+          },
+        });
+
+        if (response.ok) {
+          const data = await response.json();
+          setUserProfile(data.user);
+        } else {
+          console.error("Failed to fetch user details");
+          // Handle specific error cases if needed
+        }
+      } catch (error) {
+        console.error("Error fetching user details:", error);
+        console.error(accessToken, error);
+        // Handle other types of errors if needed
+      }
+    };
+
+    if (accessToken) {
+      fetchData();
+    }
+  }, [accessToken]); // Only run the effect when accessToken changes
+
   const handleProceed = () => {
-    window.location.replace("/instruction");
+    window.location.replace("/dashboard/instruction");
   };
-  const Proceed = () => {
+
+  const ProceedButton = () => {
     return (
-      <NavButtons onclick={handleProceed} classname="proceed">
+      <NavButtons onClick={handleProceed} classname="proceed">
         Proceed to Course
       </NavButtons>
     );
   };
+
   const hours = Math.floor(
-    (spentTime % (1000 * 60 * 60 * 60)) / (1000 * 60 * 60)
+    (userProfile.startingtime % (1000 * 60 * 60 * 60)) / (1000 * 60 * 60)
   );
-  const minutes = Math.floor((spentTime % (1000 * 60 * 60)) / (1000 * 60));
-  const seconds = Math.floor((spentTime % (1000 * 60)) / 1000);
-    console.log(spentTime)
+  const minutes = Math.floor(
+    (userProfile.startingtime % (1000 * 60 * 60)) / (1000 * 60)
+  );
+  const seconds = Math.floor((userProfile.startingtime % (1000 * 60)) / 1000);
+
   return (
     <div className="Profile-details">
       <div className="timeLeft-Container">
         <h3 className="timer">
           {" "}
           <span>Final Quiz in : </span>
-          {spentTime === initialTime ? initialTime : (<span>
+          <span>
             {hours < 10 ? "0" + hours : hours}:{" "}
             {minutes < 10 ? "0" + minutes : minutes}:{" "}
             {seconds < 10 ? "0" + seconds : seconds}
-          </span>)}
+          </span>
         </h3>
       </div>
       {Object.keys(userProfile).length > 0 ? (
@@ -63,22 +79,16 @@ function Profile() {
             </div>
             <div className="userName">
               <p>
-                {userProfile.firstname}
-                {userProfile.middlename ? (
-                  <span>{userProfile.middlename}</span>
-                ) : null}
-                <span> {userProfile.lastname}</span>
+                {userProfile.firstname} {userProfile.lastname}
               </p>
             </div>{" "}
-            <Proceed />
+            <ProceedButton />
           </div>
           <div className="contact-details">
             <p className="contact">Address: {userProfile.address}</p>
             <p className="contact">Email: {userProfile.email}</p>
-            <p className="contact">Birthday: {userProfile.birthDay}</p>
-            <p className="contact">City: {userProfile.city}</p>
-            <p className="contact">State: {userProfile.state}</p>
-            <p className="contact">Zip: {userProfile.zip}</p>
+            <p className="contact">Birthday: {userProfile.birthdate}</p>
+            <p className="contact">State: California</p>
           </div>
         </div>
       ) : (
