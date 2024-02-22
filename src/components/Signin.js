@@ -12,7 +12,8 @@ export default function Signin() {
   const navigate = useNavigate();
 
   return (
-    <div className="Signin-page">
+    <div className="signin-page-container">
+      <div className="Signin-page">
       <Formik
         initialValues={{ email: "", password: "" }}
         validationSchema={Yup.object({
@@ -80,6 +81,7 @@ export default function Signin() {
           )}
         </Form>
       </Formik>
+    </div>
     </div>
   );
 }

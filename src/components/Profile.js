@@ -59,6 +59,8 @@ function Profile() {
 
   return (
     <div className="Profile-details">
+      {Object.keys(userProfile).length > 0 ? (
+      <>
       <div className="timeLeft-Container">
         <h3 className="timer">
           {" "}
@@ -70,7 +72,6 @@ function Profile() {
           </span>
         </h3>
       </div>
-      {Object.keys(userProfile).length > 0 ? (
         <div>
           <div className="names">
             <div className="profileImage">
@@ -91,6 +92,7 @@ function Profile() {
             <p className="contact">State: California</p>
           </div>
         </div>
+      </>
       ) : (
         <ProfileSkeleton />
       )}

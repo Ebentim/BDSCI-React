@@ -79,6 +79,7 @@ function SignupForm() {
       }}
     >
       <Form className="signup-form">
+      <p style={{textAlign:"center", fontSize: "1.5rem", color: "#365486"}}>Sign up</p>
         <Field
           className="form-input"
           name="firstname"
