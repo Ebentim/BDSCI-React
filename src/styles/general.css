@@ -127,3 +127,37 @@ input[type ="radio"] :active{
   width: 80%;
   margin: 10px auto;
 }
+.course-quiz-buttons{
+  display: flex;
+  justify-content: space-between;
+}
+.overLay{
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #dcf2f1e6;
+  z-index: 10000;
+}
+.modal{
+  border-radius: 9px;
+  height: auto;
+  width: auto;
+  max-width: 300px;
+  padding: 20px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #365486;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100000000;
+}
+.modal-text{
+  color: #dcf2f1;
+}

@@ -1,13 +1,16 @@
-// import { useQuiz } from "../contexts/QuizContext"
+import { useQuiz } from "../contexts/QuizContext"
 import { RadioButton } from "../Assets/radio"
 import {NavButtons} from "../Assets/next"
+import { Modal } from "../Assets/modal"
 import "../styles/general.css"
 import { useState } from "react"
 export default function One (){
-    // const [quizScores, updateScore] = useQuiz();
+    const {updateScore} = useQuiz();
     const [selectedOptions, setSelectedOptions] = useState({})
-    let score = (parseInt(localStorage.getItem("chapterOne"), 10) || 0);
-    const [totalScore, setTotalScore] = useState((score/10) * 100)
+    const [showDescription, setShowDescription] = useState(false)
+    const [showModal, setShowModal] = useState(false)
+    let score = 0;
+    const [totalScore, setTotalScore] = useState(score)
     const QuizAnswers = {
         one: "Slowing down to look at collision scene",
         two: "Vehicle is in line with other parked vehicles",
@@ -36,19 +39,32 @@ export default function One (){
         });
 
         score = currentScore;
-        setTotalScore(score)
-        localStorage.setItem("chapterOne", currentScore);
+        setTotalScore((score/10) * 100 )
+        setShowDescription(true)
+        setShowModal(true)
+        updateScore("ChapterOne", totalScore);
     }
 
 
-    const SubmitButton = () => <NavButtons classname={"nextButton"} onclick={submitQuiz} disable={false}>Submit</NavButtons>
-
+    const SubmitButton = () => <NavButtons classname={"nextButton"} onclick={submitQuiz} disable={false}>
+        <a href="#quizHead">Submit</a>
+    </NavButtons>
+    const CloseModal = ()=>{
+        return(
+            <div className="modal">
+                <p className="modal-text">you scored {totalScore}% {totalScore >= 80 ? "you have now completed this unit, process to the next unit" : "please review the course content and try again in 2 hours time"} </p>
+                <NavButtons classname="nextButton" onclick={()=> setShowModal(false)} disable={false}>Ok</NavButtons>
+            </div>
+        )
+    }
 
     return(
         <div className="quizBody">
-            <h4 className="sectionHeading">Unit One Quiz</h4>
+            <div className="course-quiz-buttons" id="quizHead">
+            <h4 className="sectionHeading">Unit One Quiz </h4>
+            <h4 className="sectionHeading">Total Score: {totalScore}%</h4>
+            </div>
             <p className="sectionQuote"><span className="bold">Instructions: </span>Choose the Correct options from the questions below <span className="bold">Current Score is {totalScore === 0? "0" : totalScore + "%"}</span>. This will be updated after taking the test</p>
-            {/* Option 1 */}
             <RadioButton classname="bold"
             question="1. Which of the following blocks the smooth flow of traffic?"
             option1="Slowing down to look at collision scene"
@@ -60,9 +76,8 @@ export default function One (){
             idc="oneC"
             check={selectedOptions.one}
             onchange={handleOptionChange}
-            description={"Slowing down to look at accidents or unusual things causes traffic jams and should be avoided."}/>
+            description= {showDescription? "Slowing down to look at accidents or unusual things causes traffic jams and should be avoided." : null}/>
 
-            {/* Answer is Option 2 */}
             <RadioButton 
             classname="bold" 
             question="2. Parallel parking is when the:" 
@@ -76,9 +91,8 @@ export default function One (){
             idc="twoC"
             check={selectedOptions.two}
             onchange={handleOptionChange}
-            description={"Parallel parking is a crucial skill for drivers, especially in urban areas with limited parking spaces. This maneuver requires aligning the vehicle parallel to the curb between two parked vehicles. "}/>
+            description={showDescription? "Parallel parking is a crucial skill for drivers, especially in urban areas with limited parking spaces. This maneuver requires aligning the vehicle parallel to the curb between two parked vehicles. ": null}/>
 
-            {/* Option 1 */}
             <RadioButton 
             classname="bold" 
             question="3. It is illegal to park your vehicle:" 
@@ -94,7 +108,6 @@ export default function One (){
             onchange={handleOptionChange}
             />
 
-            {/* option 2 */}
             <RadioButton 
             classname="bold" 
             question="4. When parking uphill on a two-way street with no curbs, your front wheels should be:" 
@@ -108,9 +121,8 @@ export default function One (){
             idc="fourC" 
             check={selectedOptions.four}
             onchange={handleOptionChange}
-            description={"When parking uphill on a two-way street with no curbs, it is recommended to turn your front wheels to the right. This is a safety measure to prevent the vehicle from rolling into traffic if the brakes fail."}/>
+            description={showDescription?"When parking uphill on a two-way street with no curbs, it is recommended to turn your front wheels to the right. This is a safety measure to prevent the vehicle from rolling into traffic if the brakes fail.":null}/>
 
-            {/* option 1 */}
             <RadioButton 
             classname="bold" 
             question="5. If you have a green light, but traffic is blocking the intersection, you should:" 
@@ -124,9 +136,8 @@ export default function One (){
             idc="fiveC" 
             check={selectedOptions.five}
             onchange={handleOptionChange}
-            description={"When you have a green light but the intersection is blocked, it's important to wait until you can safely clear the intersection before proceeding. Blocking an intersection can impede the flow of traffic and create safety hazards."}/>
+            description={showDescription? "When you have a green light but the intersection is blocked, it's important to wait until you can safely clear the intersection before proceeding. Blocking an intersection can impede the flow of traffic and create safety hazards." : null}/>
 
-            {/* option 2 */}
             <RadioButton 
             classname="bold" 
             question="6. At intersections, crosswalks, and railroad crossings, you should always:" 
@@ -138,9 +149,8 @@ export default function One (){
             idc="sixC"
             check={selectedOptions.six}
             onchange={handleOptionChange} 
-            description={"It is important to check the sides of your vehicle at intersections, crosswalks, and railroad crossings to be aware of any potential hazards."}/>
+            description={showDescription? "It is important to check the sides of your vehicle at intersections, crosswalks, and railroad crossings to be aware of any potential hazards.": null}/>
 
-            {/* option 1 */}
             <RadioButton 
             classname="bold" 
             question="7. If you get sleepy while driving, you should:" 
@@ -152,9 +162,8 @@ export default function One (){
             idc="sevenC"
             check={selectedOptions.seven}
             onchange={handleOptionChange} 
-            description="If you get sleepy while driving, it's essential to pull over to a safe location and take a break to rest. This is a crucial safety measure to prevent accidents caused by drowsy driving."/>
+            description={showDescription?"If you get sleepy while driving, it's essential to pull over to a safe location and take a break to rest. This is a crucial safety measure to prevent accidents caused by drowsy driving.": null}/>
 
-            {/* choice 2 */}
             <RadioButton 
             classname="bold" 
             question="8. Which of the following is true about double parking?" 
@@ -166,9 +175,8 @@ export default function One (){
             idc="eightC"
             check={selectedOptions.eight}
             onchange={handleOptionChange} 
-            description="Double parking refers to parking a vehicle next to or near another parked vehicle on the roadway side of the parked vehicle. This practice is prohibited as it can impede traffic flow and create unsafe conditions."/>
+            description={showDescription? "Double parking refers to parking a vehicle next to or near another parked vehicle on the roadway side of the parked vehicle. This practice is prohibited as it can impede traffic flow and create unsafe conditions.": null}/>
 
-            {/* option 3 */}
             <RadioButton 
             classname="bold" 
             question="9. What societal changes were brought about by the advent of the automobile?" 
@@ -180,9 +188,8 @@ export default function One (){
             idc="nineC"
             check={selectedOptions.nine}
             onchange={handleOptionChange} 
-            description="The advent of the automobile indeed brought about significant societal changes. The ability to travel by car transformed social interactions by providing greater mobility and flexibility. Additionally, it allowed people to live farther from city centers, leading to suburbanization and changes in housing patterns."/>
+            description={showDescription? "The advent of the automobile indeed brought about significant societal changes. The ability to travel by car transformed social interactions by providing greater mobility and flexibility. Additionally, it allowed people to live farther from city centers, leading to suburbanization and changes in housing patterns." : null}/>
 
-            {/* option 1 */}
             <RadioButton 
             classname="bold" 
             question="10. How has the automotive industry contributed to global economies?" 
@@ -194,8 +201,11 @@ export default function One (){
             idc="TenC"
             check={selectedOptions.ten}
             onchange={handleOptionChange} 
-            description="The automotive industry plays a crucial role in job creation, economic growth, and fostering interconnectedness with other sectors, such as manufacturing, technology, and transportation."/>
+            description={showDescription? "The automotive industry plays a crucial role in job creation, economic growth, and fostering interconnectedness with other sectors, such as manufacturing, technology, and transportation.": null}/>
             <SubmitButton />
+            {showModal? <Modal>
+                <CloseModal/>
+            </Modal> : null}
         </div>
     )
 }

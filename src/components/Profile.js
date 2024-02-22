@@ -3,6 +3,7 @@ import ProfileSkeleton from "../Assets/Skeleton";
 import { NavButtons } from "../Assets/next";
 import { useAuth } from "../contexts/AuthContext";
 import "../styles/dashboard.css";
+import { Link } from "react-router-dom";
 
 function Profile() {
   const { accessToken } = useAuth();
@@ -37,15 +38,13 @@ function Profile() {
     }
   }, [accessToken]); // Only run the effect when accessToken changes
 
-  const handleProceed = () => {
-    window.location.replace("/dashboard/instruction");
-  };
-
   const ProceedButton = () => {
     return (
-      <NavButtons onClick={handleProceed} classname="proceed">
+      <Link to ="/instruction">
+        <NavButtons classname="proceed">
         Proceed to Course
       </NavButtons>
+      </Link>
     );
   };
 

@@ -1,6 +1,7 @@
 import ReactPlayer from "react-player/lazy";
 import { NavButtons } from "../Assets/next";
 import { useState } from "react";
+import One from "../quizes/One"
 import "../styles/general.css";
 import image66 from "../Assets/images/image66.png";
 import image56 from "../Assets/images/image56.png";
@@ -20,6 +21,7 @@ const sections = {
 
 export default function ChapterOne() {
   const [viewedPurpose, setViewedPurpose] = useState(false);
+  const [showQuiz, setShowQuiz] = useState(false)
 
   const handleClick = () => {
     !viewedPurpose ? setViewedPurpose(true) : setViewedPurpose(false);
@@ -34,11 +36,11 @@ export default function ChapterOne() {
   };
 
   const handleQuiz = ()=>{
-    
+    !showQuiz? setShowQuiz(true) : setShowQuiz(false)
   }
   const ToQuiz = () =>{
     return (
-      <NavButtons classname={"nextButton"}>Take Unit Quiz</NavButtons>
+      <NavButtons classname={"nextButton"} onclick={handleQuiz}>Take Unit Quiz</NavButtons>
     )
   }
   return (
@@ -47,7 +49,7 @@ export default function ChapterOne() {
         <h3 className=" bold unitHeading">
           Unit One: Driving is Your Responsibility
         </h3>
-        <div className="courseContentContainer">
+        {!showQuiz? <div className="courseContentContainer">
           <div className="courseOutline">
             <ul className="sectionList">
               {Object.entries(sections).map(([key, value]) => {
@@ -841,9 +843,13 @@ export default function ChapterOne() {
                 </p>
               </div>
             )}
-            <NextButton />
+           <div className="course-quiz-buttons">
+           <NextButton/>
+           {viewedPurpose ? <ToQuiz/> : ""}
+           </div>
           </div>
-        </div>
+        </div> : <One/>}
+        
         <ReactPlayer />
       </div>
     </>

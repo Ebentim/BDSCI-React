@@ -54,7 +54,7 @@ export default function CourseBod() {
       <NavButtons
         onclick={handleNext}
         classname="nextButton"
-        disable={disableNextButton}
+        // disable={disableNextButton}
       >
         To{" "}
         {chapter === 1
