@@ -3,7 +3,7 @@ import { RadioButton } from "../Assets/radio"
 import {NavButtons} from "../Assets/next"
 import { Modal } from "../Assets/modal"
 import "../styles/general.css"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 export default function One (){
     const {updateScore} = useQuiz();
     const [selectedOptions, setSelectedOptions] = useState({})
@@ -30,22 +30,34 @@ export default function One (){
         ))
     };
 
-    const submitQuiz = () =>{
+    const submitQuiz = async () => {
         let currentScore = 0;
-        Object.keys(selectedOptions).forEach(question =>{
-            if(selectedOptions[question] === QuizAnswers[question]){
-                currentScore ++;
-            }
+        Object.keys(selectedOptions).forEach((question) => {
+          if (selectedOptions[question] === QuizAnswers[question]) {
+            currentScore++;
+          }
         });
-
+      
         score = currentScore;
-        setTotalScore((score/10) * 100 )
-        setShowDescription(true)
-        setShowModal(true)
-        updateScore("ChapterOne", totalScore);
+        setTotalScore((score / 10) * 100);
+        
+        // Use the score variable directly in the updateScore function
+        await updateScore("chapterone", score);
+      
+        setShowDescription(true);
+        setShowModal(true);
+      };
+      
+
+    useEffect(() => {
+        setShowDescription(true);
+        setShowModal(true);
+      }, [totalScore]);
+
+    const handleModal = ()=>{
+        setSelectedOptions({})
+        setShowModal(false)
     }
-
-
     const SubmitButton = () => <NavButtons classname={"nextButton"} onclick={submitQuiz} disable={false}>
         <a href="#quizHead">Submit</a>
     </NavButtons>
@@ -53,7 +65,7 @@ export default function One (){
         return(
             <div className="modal">
                 <p className="modal-text">you scored {totalScore}% {totalScore >= 80 ? "you have now completed this unit, process to the next unit" : "please review the course content and try again in 2 hours time"} </p>
-                <NavButtons classname="nextButton" onclick={()=> setShowModal(false)} disable={false}>Ok</NavButtons>
+                <NavButtons classname="nextButton" onclick={handleModal} disable={false}>Ok</NavButtons>
             </div>
         )
     }
