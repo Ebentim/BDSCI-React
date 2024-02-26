@@ -129,9 +129,9 @@ export default function ChapterThree() {
                 smoothly to correct the vehicle’s position, and avoiding panic
                 reactions.
               </p>
-              <h5 className="sectionSubheading" id="sectionTwo">
+              <h4 className="sectionHeading" id="sectionTwo">
                 Section 3.2. The force of gravity
-              </h5>
+              </h4>
               <iframe
                 title="Gravity"
                 src="https://drive.google.com/file/d/16Z7Cb7FXgQhRpeRjTOr3t9R8Veg77RAM/preview"
@@ -197,9 +197,9 @@ export default function ChapterThree() {
                 extra stability. Wheel blocks are wedges or blocks placed
                 against the tires to prevent the vehicle from rolling.{" "}
               </p>
-              <h5 className="sectionSubheading">
+              <h4 className="sectionHeading" id="sectionThree">
                 Section 3.3. Inertia and Energy
-              </h5>
+              </h4>
               <iframe
                 title="inertial"
                 src="https://drive.google.com/file/d/1mr2xf5l6ompDMARt7a_BmBV766lsL3bO/preview"
@@ -307,26 +307,206 @@ export default function ChapterThree() {
                   of collisions.
                 </li>
               </ol>
-              <h5 className="sectionSubheading">
+              <h4 className="sectionHeading" id="sectionFour">
                 Section 3.4 The Force of Friction
+              </h4>
+              <iframe
+                src="https://drive.google.com/file/d/1hEDCl58bB5k6_EXXkK5KiqhsbwxL_7Hk/preview"
+                allow="autoplay"
+                className="courseVideo"
+                title="The force of friction"
+              ></iframe>
+              <p className="courseText">
+                Friction is the force that resists the movement or sliding of
+                one surface over another. It occurs when two objects come into
+                contact and rub against each other, creating resistance that
+                opposes their relative motion.
+              </p>
+              <h5 className="sectionSubheading">
+                Friction in starting, moving, and Turning
               </h5>
-              <p className="courseText"></p>
-              <p className="courseText"></p>
-              <p className="courseText"></p>
-              <p className="courseText"></p>
-              <p className="courseText"></p>
-              <p className="courseText"></p>
-              <p className="courseText"></p>
-              <p className="courseText"></p>
-              <p className="courseText"></p>
-              <p className="courseText"></p>
-              <p className="courseText"></p>
-              <p className="courseText"></p>
-              <p className="courseText"></p>
-              <p className="courseText"></p>
-              <p className="courseText"></p>
-              <p className="courseText"></p>
-              <p className="courseText"></p>
+              <p className="courseText">
+                <span className="bold">
+                  Friction between the tires and the road:{" "}
+                </span>
+                The friction between the tires and the road surface is crucial
+                for starting, moving, and turning a vehicle. Adequate tire grip
+                and traction enable the tires to propel the vehicle forward,
+                maintain control during maneuvers, and facilitate responsive
+                steering.
+              </p>
+              <p className="courseText">
+                <span className="bold">
+                  The friction of the engaged clutch:{" "}
+                </span>
+                In vehicles with manual transmissions, the clutch engages and
+                disengages the engine's power to the transmission. Friction
+                between the clutch plate and the flywheel allows for a smooth
+                transfer of power and control over the vehicle's acceleration
+                and speed.
+              </p>
+              <p className="bold">Friction in stopping</p>
+              <p className="courseText">
+                <span className="bold">Between the brake lining and drum:</span>{" "}
+                When the brakes are applied, friction is generated between the
+                brake lining (pads or shoes) and the brake drum or rotor. This
+                friction converts the kinetic energy of the moving vehicle into
+                heat energy, ultimately resulting in the vehicle's deceleration
+                or stopping.
+              </p>
+              <p className="courseText">
+                <span className="bold">Between the tires and the road:</span>{" "}
+                The friction between the tires and the road surface is crucial
+                for effective braking. It allows the tires to grip the road,
+                providing the necessary traction for the braking system to slow
+                down or stop the vehicle safely.
+              </p>
+              <h5 className="sectionSubheading">
+                Road, brake, and tire conditions affecting the amount of
+                friction:
+              </h5>
+              <p className="courseText">
+                Various factors can influence the amount of friction present:
+              </p>
+              <ul>
+                <li className="courseText">
+                  <span className="bold">Road surface conditions:</span> Wet,
+                  icy, or slippery surfaces reduce tire grip and increase the
+                  likelihood of skidding or sliding due to reduced friction.
+                </li>
+                <li className="courseText">
+                  <span className="bold">Brake condition:</span> Worn brake
+                  linings or insufficient brake fluid can diminish the friction
+                  between the braking components, resulting in longer stopping
+                  distances and reduced braking effectiveness.
+                </li>
+                <li className="courseText">
+                  <span className="bold">Tire condition:</span> Worn or
+                  improperly inflated tires can reduce the friction between the
+                  tires and the road, compromising traction and control.
+                </li>
+              </ul>
+              <h5 className="sectionSubheading">
+                Excessive wear due to friction
+              </h5>
+              <p className="courseText">
+                <span className="bold">
+                  Tires - traction secured by the tread of the tire and road
+                  surface:
+                </span>{" "}
+                Friction between the tire tread and the road surface provides
+                traction and stability. However, excessive friction can lead to
+                tire wear. Regular inspection and maintenance of tire tread
+                depth, proper inflation, and rotation help ensure optimal
+                friction for safe driving.
+              </p>
+              <p className="courseText">
+                <span className="bold">
+                  Moving parts of the automobile other than tires:
+                </span>{" "}
+                Friction between moving parts, such as engine components,
+                transmission gears, and suspension parts, can generate heat and
+                wear over time. Proper lubrication and maintenance help minimize
+                friction, reducing wear and improving overall vehicle
+                performance.
+              </p>
+              <h5 className="sectionSubheading">
+                Friction reduction through lubrication
+              </h5>
+              <p className="courseText">
+                Lubrication is used to reduce friction between moving parts. By
+                introducing a lubricating substance, such as oil or grease, to
+                the contacting surfaces, it forms a thin film that separates
+                them, minimizing direct surface-to-surface contact. This reduces
+                friction, heat generation, and wear, promoting smoother
+                operation and prolonging the lifespan of the components.
+              </p>
+              <h4 className="sectionHeading" id="sectionFive">
+                Section 3.5: Centrifugal and Centripetal Force
+              </h4>
+              <p className="courseText">
+                Centrifugal force (not a real force) is the reaction to the
+                centripetal force, which is the force that keeps an object
+                moving in a curved path and prevents it from moving in a
+                straight line. It is necessary to hold an object at a fixed
+                point in a rotating frame, such as a vehicle negotiating a
+                curve.
+              </p>
+              <h5 className="sectionSubheading">
+                Means of affecting centrifugal force
+              </h5>
+              <p className="courseText">
+                When cornering, a bicycle or motorcycle leans toward the inside.
+                This action helps to counterbalance the outward force and
+                maintain stability while turning.
+              </p>
+              <h5 className="sectionSubheading">
+                Means of affecting centripetal force:
+              </h5>
+              <ol>
+                <p className="courseText">
+                  <span className="bold">
+                    Reduce speed before entering a curve:
+                  </span>{" "}
+                  By reducing speed, the centripetal force required to negotiate
+                  the curve decreases, making it easier to maintain control and
+                  stability.
+                </p>
+                <p className="courseText">
+                  <span className="bold">Build banked curves:</span> Banked
+                  curves are sloped or angled surfaces that are designed to
+                  provide an additional upward force that assists in
+                  counteracting the centrifugal force, allowing vehicles to
+                  navigate the curve more safely.
+                </p>
+                <p className="courseText">
+                  <span className="bold">
+                    Brake gradually and gently, if braking is needed while
+                    cornering
+                  </span>{" "}
+                  Sudden or harsh braking while cornering can disrupt the
+                  balance between centripetal and centrifugal forces,
+                  potentially leading to loss of control. Gradual and gentle
+                  braking helps maintain stability and control while negotiating
+                  a curve.
+                </p>
+              </ol>
+              <h4 className="sectionHeading" id="sectionSix">
+                Section 3.6. Force of Impact
+              </h4>
+              <iframe
+                src="https://drive.google.com/file/d/1TKybHhHDjy5-vc862FrLDBAd1epSW1QU/preview"
+                title="Force of impact"
+                allow="autoplay"
+                className="courseVideo"
+              ></iframe>
+              <h5 className="sectionSubheading">
+                The force of impact in a collision is determined by several
+                factors:
+              </h5>
+              <ol className="orderedList" type="a">
+                <li className="courseText">
+                  <span className="bold">Kinetic energy: </span>The force of
+                  impact is directly influenced by the kinetic energy of the
+                  vehicles involved, which depends on their speed and mass.
+                  Greater speed or larger mass results in higher kinetic energy
+                  and, consequently, a stronger force of impact.
+                </li>
+                <li className="courseText">
+                  <span className="bold">Vehicle characteristics: </span>Vehicle
+                  characteristics such as body rigidity and the presence of
+                  "crush zones" affect the force of impact. A rigid vehicle
+                  structure and well-designed crumple zones can absorb and
+                  dissipate the energy of impact, reducing the force experienced
+                  by the vehicle occupants.
+                </li>
+                <li className="courseText">
+                  The force of impact also depends on the characteristics of the
+                  object with which the vehicle collides. The relative speed,
+                  mass, and rigidity of both objects influence the resulting
+                  force upon impact.
+                </li>
+              </ol>
             </div>
           )}
           <NextButton />
