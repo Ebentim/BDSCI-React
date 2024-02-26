@@ -5,6 +5,7 @@ import trafficsigns from "../Assets/images/image11.png";
 import directions from "../Assets/images/image19.png";
 import railroadSign from "../Assets/images/image51.jpg";
 import schoolBus from "../Assets/images/image41.jpg";
+import "../styles/general.css";
 export default function ChapterFour() {
   const [content, setContent] = useState(false);
   const sections = {
@@ -49,7 +50,11 @@ export default function ChapterFour() {
               <h4 className="sectionHeaading" id="sectionOne">
                 Section 4.1. Recognizing Traffic Control Signals
               </h4>
-              <img src={trafficsigns} alt="traffic signs" />
+              <img
+                src={trafficsigns}
+                alt="traffic signs"
+                className="courseImage"
+              />
               <p className="courseText">
                 Traffic control signals are the visual symphony of the streets,
                 guiding drivers through intersections and ensuring the smooth
@@ -124,6 +129,7 @@ export default function ChapterFour() {
               <img
                 src={directions}
                 alt="Road Sign indication direction to a community"
+                className="courseImage direction"
               />
               <p className="courseText">
                 Traffic control devices provide valuable information to drivers.
@@ -785,7 +791,7 @@ export default function ChapterFour() {
                 ample time for a safe crossing.
               </p>
               <h5 className="sectionSubheading">School Buses</h5>
-              <img src={schoolBus} alt="school bus" />
+              <img src={schoolBus} alt="school bus" className="courseImage" />
               <p className="courseText">
                 School buses are an integral part of ensuring the safe
                 transportation of students to and from school. When it comes to

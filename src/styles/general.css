@@ -1,16 +1,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
-*{
+* {
   text-decoration: none;
-  color: #000000
+  color: #000000;
 }
 .bold {
   font-weight: 700;
   color: #365486;
 }
-.nextButton{
+.nextButton {
   margin-top: 10px;
 }
-.nextButton, .Signup, .Signin {
+.nextButton,
+.Signup,
+.Signin {
   text-transform: capitalize;
   font-size: 16px;
   background: #dcf2f1;
@@ -19,9 +21,10 @@
   border: none;
   padding: 10px;
 }
-.Signup, .Signup{
+.Signup,
+.Signup {
   background: #365486;
-  color: #dcf2f1
+  color: #dcf2f1;
 }
 .courseBody {
   width: 90%;
@@ -77,13 +80,15 @@
   height: 300px;
   width: 500px;
 }
-.courseImageContainer{
-    height: 400px;
-    width: 100%;
-    display: flex;
+.courseImageContainer {
+  height: 400px;
+  width: 100%;
+  display: flex;
 }
 .courseImage {
   height: auto;
+  width: auto;
+  max-width: 800px;
   min-height: 300px;
   max-height: 400px;
   margin: 5px;
@@ -91,12 +96,12 @@
 .orderedList {
   margin-left: 10px;
 }
-.instruction-container{
+.instruction-container {
   width: 90vw;
-  margin:auto;
+  margin: auto;
   margin-bottom: 20px;
 }
-.option{
+.option {
   display: flex;
   justify-items: start;
   align-items: center;
@@ -106,32 +111,31 @@
   max-width: 450px;
   margin: 10px 0;
 }
-input[type ="radio"]{
+input[type="radio"] {
   height: 30px;
   width: 30px;
   margin: 10px;
-
 }
-input[type ="radio"] :active{
+input[type="radio"] :active {
   background-color: #365486;
   color: #dcf2f1;
 }
-.option p{
+.option p {
   font-size: 1.3rem;
 }
 .option label {
   width: 100%;
   height: 100%;
 }
-.quizBody{
+.quizBody {
   width: 80%;
   margin: 10px auto;
 }
-.course-quiz-buttons{
+.course-quiz-buttons {
   display: flex;
   justify-content: space-between;
 }
-.overLay{
+.overLay {
   position: fixed;
   top: 0;
   bottom: 0;
@@ -140,7 +144,7 @@ input[type ="radio"] :active{
   background-color: #dcf2f1e6;
   z-index: 10000;
 }
-.modal{
+.modal {
   border-radius: 9px;
   height: auto;
   width: auto;
@@ -158,6 +162,6 @@ input[type ="radio"] :active{
   transform: translate(-50%, -50%);
   z-index: 100000000;
 }
-.modal-text{
+.modal-text {
   color: #dcf2f1;
 }
