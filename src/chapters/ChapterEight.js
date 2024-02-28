@@ -1,22 +1,9 @@
-import { useState } from "react";
-import { NavButtons } from "../Assets/next";
 export default function ChapterEight() {
-  const [content, setContent] = useState(false);
   const sections = {
     sectionOne: "Construction of the Automobile",
     sectionTwo: "Safety Equipment",
     sectionThree: "Maintenance of the Automobile",
     sectionFour: "Economic and Safe Use of Automobile",
-  };
-
-  const handleClick = () => (content ? setContent(false) : setContent(true));
-
-  const NextButton = () => {
-    return (
-      <NavButtons onclick={handleClick} classname="nextButton">
-        {!content ? "continue to Lesson" : "Understand Purpose"}
-      </NavButtons>
-    );
   };
   return (
     <div className="courseBody" id="four">
@@ -34,15 +21,8 @@ export default function ChapterEight() {
           </ul>
         </div>
         <div>
-          {!content ? (
-            <p className="purpose">
-              <span className="bold">Purpose:</span> Replace with the purpose of
-              the section
-            </p>
-          ) : (
-            <div className="courseContents"></div>
-          )}
-          <NextButton />
+          <div className="courseContents"></div>
+          {/* course contents ends here */}
         </div>
       </div>
     </div>

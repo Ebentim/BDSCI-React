@@ -1,7 +1,7 @@
 import ReactPlayer from "react-player/lazy";
 import { NavButtons } from "../Assets/next";
 import { useState } from "react";
-import One from "../quizes/One"
+import One from "../quizes/One";
 import "../styles/general.css";
 import image66 from "../Assets/images/image66.png";
 import image56 from "../Assets/images/image56.png";
@@ -20,57 +20,38 @@ const sections = {
 };
 
 export default function ChapterOne() {
-  const [viewedPurpose, setViewedPurpose] = useState(false);
-  const [showQuiz, setShowQuiz] = useState(false)
+  const [showQuiz, setShowQuiz] = useState(false);
 
-  const handleClick = () => {
-    !viewedPurpose ? setViewedPurpose(true) : setViewedPurpose(false);
+  const handleQuiz = () => {
+    !showQuiz ? setShowQuiz(true) : setShowQuiz(false);
   };
-
-  const NextButton = () => {
+  const ToQuiz = () => {
     return (
-      <NavButtons onclick={handleClick} classname="nextButton">
-        {!viewedPurpose ? "Proceed to Course" : "Understand the Purpose"}
+      <NavButtons classname={"nextButton"} onclick={handleQuiz}>
+        Take Unit Quiz
       </NavButtons>
     );
   };
-
-  const handleQuiz = ()=>{
-    !showQuiz? setShowQuiz(true) : setShowQuiz(false)
-  }
-  const ToQuiz = () =>{
-    return (
-      <NavButtons classname={"nextButton"} onclick={handleQuiz}>Take Unit Quiz</NavButtons>
-    )
-  }
   return (
     <>
       <div className="courseBody" id="one">
         <h3 className=" bold unitHeading">
           Unit One: Driving is Your Responsibility
         </h3>
-        {!showQuiz? <div className="courseContentContainer">
-          <div className="courseOutline">
-            <ul className="sectionList">
-              {Object.entries(sections).map(([key, value]) => {
-                return (
-                  <li key={key}>
-                    <a href={`#${key}`}>{value}</a>
-                  </li>
-                );
-              })}
-            </ul>
-          </div>
-          <div>
-            {!viewedPurpose ? (
-              <p className="purpose">
-                <span className="bold">Purpose:</span> This chapter introduces
-                students to some of the diverse aspects of driving, explains why
-                having a driver's license matters, highlights the importance of
-                driver education, and explores how automobiles have impacted our
-                society.
-              </p>
-            ) : (
+        {!showQuiz ? (
+          <div className="courseContentContainer">
+            <div className="courseOutline">
+              <ul className="sectionList">
+                {Object.entries(sections).map(([key, value]) => {
+                  return (
+                    <li key={key}>
+                      <a href={`#${key}`}>{value}</a>
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+            <div>
               <div className="CourseContents">
                 <h4 className="sectionHeading" id="sectionOne">
                   Section 1.1: License to Drive A Privilege
@@ -842,14 +823,14 @@ export default function ChapterOne() {
                   we could have never imagined.
                 </p>
               </div>
-            )}
-           <div className="course-quiz-buttons">
-           <NextButton/>
-           {viewedPurpose ? <ToQuiz/> : ""}
-           </div>
+              {/* course contents ends here */}
+              <ToQuiz />
+            </div>
           </div>
-        </div> : <One/>}
-        
+        ) : (
+          <One />
+        )}
+
         <ReactPlayer />
       </div>
     </>
