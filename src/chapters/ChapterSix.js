@@ -1229,19 +1229,649 @@ export default function ChapterSix() {
                 vehicles to give yourself more time to react to sudden stops.
               </li>
             </ol>
-            <p className="courseText"></p>
-            <p className="courseText"></p>
-            <p className="courseText"></p>
-            <p className="courseText"></p>
-            <p className="courseText"></p>
-            <p className="courseText"></p>
-            <p className="courseText"></p>
-            <p className="courseText"></p>
-            <p className="courseText"></p>
-            <p className="courseText"></p>
-            <p className="courseText"></p>
+            <h5 className="sectionHeading" id="sectionTwo">
+              Section 6.2. Accident Avoidance and Prevention
+            </h5>
+            <p className="courseText">
+              Accident avoidance and prevention are crucial aspects of safe
+              driving, especially in California's busy and diverse road
+              conditions. Employing defensive driving techniques can
+              significantly reduce the risk of accidents and ensure road safety
+              for all. Let's explore each of these techniques in detail:
+            </p>
+            <h5 className="sectionSubheading">
+              A. Defensive Driving Techniques
+            </h5>
+            <ReactPlayer
+              url="https://youtu.be/RYaNtDwvngs"
+              config={{
+                youtube: {
+                  playerVars: {
+                    showinfo: 0,
+                  },
+                },
+              }}
+              controls={0}
+              className="courseVideo"
+            />
+
+            <p className="courseText">
+              <span className="bold">a. Be alert: </span>Stay attentive and
+              focused while driving. Avoid distractions, such as using mobile
+              phones or adjusting the radio. Scan the road ahead and check
+              mirrors frequently to be aware of the surrounding traffic and
+              potential hazards.
+            </p>
+            <p className="courseText">
+              {" "}
+              <span className="bold">
+                b. Don't make assumptions about other driver's intentions:{" "}
+              </span>
+              Never assume that other drivers will always follow traffic rules
+              or act predictably. Be prepared for unexpected maneuvers and
+              anticipate potential risks
+            </p>
+            <p className="courseText">
+              <span className="bold">
+                c. Skid techniques (keep front tires aligned with the intended
+                path):{" "}
+              </span>{" "}
+              If your vehicle skids, steer in the direction you want to go.
+              Avoid overcorrecting, as this can exacerbate the skid. Keep the
+              front tires pointed in the direction you want to travel to regain
+              control.
+            </p>
+            <p className="courseText">
+              <span className="bold">d. Three-second rule: </span>Maintain a
+              safe following distance from the vehicle in front of you. Use the
+              three-second rule: choose a fixed point on the road and start
+              counting when the vehicle in front passes it. You should reach
+              that same point at least three seconds later. Increase the
+              following distance during adverse weather or road conditions.
+            </p>
+            <p className="courseText">
+              <span className="bold">e. Escape techniques: </span>Always have an
+              escape route in mind in case of sudden emergencies or hazards.
+              Identify potential safe areas to steer your vehicle to avoid
+              collisions if needed.
+            </p>
+            <p className="courseText">
+              <span className="bold">f. Emergency braking: </span>Know the
+              appropriate braking technique for your vehicle's braking system.
+            </p>
+            <ol className="orderedList">
+              <li className="courseText">
+                <span className="bold">Pump drum brakes: </span>If your vehicle
+                has drum brakes, apply gentle and repetitive pressure on the
+                brake pedal to prevent them from locking up.
+              </li>
+              <li className="courseText">
+                <span className="bold">
+                  Threshold braking for disc brakes:{" "}
+                </span>
+                For vehicles with disc brakes, use threshold braking by firmly
+                applying pressure to the brake pedal just before the point of
+                lock-up.
+              </li>
+              <li className="courseText">
+                <span className="bold">Slam on anti-lock brakes (ABS): </span>If
+                your vehicle has an anti-lock braking system, apply firm and
+                continuous pressure on the brake pedal. The ABS will
+                automatically modulate the brake pressure to prevent wheel
+                lock-up.
+              </li>
+            </ol>
+            <p className="courseText">
+              <span className="bold">g. Effective use of horn: </span>Use the
+              horn to alert other drivers of potential dangers or when it is
+              necessary to get their attention. Avoid using the horn
+              aggressively or excessively, as it can escalate road rage
+              situations.
+            </p>
+            <p className="courseText">
+              <span className="bold">
+                h. Be flexible in selecting the appropriate speed for
+                conditions:{" "}
+              </span>
+              Adapt your driving speed to match the prevailing road and weather
+              conditions. Reduce speed during rain, fog, or other adverse
+              weather conditions to maintain better control and reaction time.
+            </p>
+            <h5 className="sectionSubheading">
+              Avoiding a Collision with the Car Ahead
+            </h5>
+            <h6 className="sectionSubheading">
+              Importance of Correct Vehicle Lane Placement
+            </h6>
+            <p className="courseText">
+              Maintaining proper vehicle lane placement is critical for avoiding
+              collisions with the car ahead. By positioning your vehicle
+              correctly within your lane, you create a buffer space that allows
+              for better reaction time and maneuverability.
+            </p>
+            <h6 className="sectionSubheading">
+              When to Increase the Following Distance to More than Three Seconds
+            </h6>
+            <p className="courseText">
+              Following the three-second rule is a good guideline, but there are
+              situations where you should increase the following distance beyond
+              three seconds:
+            </p>
+            <p className="courseText">
+              <span className="bold">1. When Being Tailgated: </span>If a driver
+              is tailgating you, increase the following distance to create more
+              space between your vehicle and the one ahead. This extra space
+              provides room to brake safely if needed.
+            </p>
+            <p className="courseText">
+              <span className="bold">
+                2. When Vision is Blocked or Visibility is Poor:{" "}
+              </span>
+              Increase your following distance when your vision of the road
+              ahead is obstructed, such as when following large vehicles or
+              driving in adverse weather conditions (e.g., heavy rain, fog, or
+              dust).
+            </p>
+            <p className="courseText">
+              <span className="bold">3. When Speed is Increased: </span>As your
+              speed increases, so should your following distance. High-speed
+              driving requires more stopping distance to safely avoid a
+              collision.
+            </p>
+            <p className="courseText">
+              <span className="bold">
+                4. When Adverse Roadway, Traffic, or Weather Conditions Exist:{" "}
+              </span>
+              In challenging road conditions, such as wet or icy surfaces, heavy
+              traffic, or construction zones, increase your following distance
+              to account for potential delays or sudden braking by the car
+              ahead.
+            </p>
+            <h5 className="sectionSubheading">
+              Momentary Distractions - Pick a Safe Time to Look Away
+            </h5>
+            <p className="courseText">
+              It's essential to minimize distractions while driving to maintain
+              focus on the road. However, if you need to glance away
+              momentarily:
+            </p>
+            <p className="courseText">
+              <span className="bold">1. Check the Situation Ahead: </span>Pick a
+              safe moment, such as when traffic is flowing steadily and road
+              conditions are clear, to glance ahead to check for any potential
+              hazards or upcoming changes in traffic patterns.
+            </p>
+            <p className="courseText">
+              <span className="bold">2. Take Short Looks: </span>Avoid extended
+              distractions and take short, quick glances to gather the necessary
+              information. Keep your eyes mainly on the road and scan your
+              surroundings frequently.
+            </p>
+            <p className="courseText">
+              <span className="bold">
+                3. Have a Passenger Help with Navigation and Other Non-Driving
+                Chores:{" "}
+              </span>
+              If possible, delegate non-driving tasks, such as navigation or
+              adjusting climate controls, to a passenger. This allows you to
+              keep your focus on the road and driving.
+            </p>
+            <h5 className="sectionSubheading">Look Ahead for Trouble</h5>
+            <p className="courseText">
+              <span className="bold">
+                1. Look Over and Around the Car Ahead:{" "}
+              </span>
+              Maintain a wide field of vision by occasionally glancing over or
+              around the vehicle in front of you. This helps you see potential
+              hazards or traffic slowdowns ahead.
+            </p>
+            <p className="courseText">
+              <span className="bold">
+                2. Check Ahead for Speed on Hilltops and Curves:{" "}
+              </span>
+              Before ascending a hill or approaching a curve, look ahead to
+              gauge the traffic's speed or any potential obstacles that may
+              affect your driving.
+            </p>
+            <p className="courseText">
+              <span className="bold">
+                3. Watch Brake Lights in Adjacent Lanes:{" "}
+              </span>
+              Pay attention to brake lights in adjacent lanes. If you see brake
+              lights ahead, be prepared to slow down or stop.
+            </p>
+            <p className="courseText">
+              <span className="bold">4. Start Braking Early: </span>Anticipate
+              the need to slow down or stop, especially in traffic or at
+              intersections. Start braking early to give yourself and the
+              drivers behind you sufficient time to react.
+            </p>
+            <h5 className="sectionSubheading">
+              Locations to Watch for Trouble
+            </h5>
+            <p className="courseText">
+              <span className="bold">
+                1. Traffic Controlled Intersections:{" "}
+              </span>
+              Intersections with traffic signals or stop signs can be high-risk
+              areas due to potential conflicts with other vehicles or
+              pedestrians.
+            </p>
+            <p className="courseText">
+              <span className="bold">2. Approaching Crosswalks: </span>Be extra
+              cautious when approaching crosswalks, as pedestrians may be
+              crossing the road. Always yield to pedestrians within or about to
+              enter the crosswalk.
+            </p>
+            <p className="courseText">
+              <span className="bold">3. Lanes Next to Parked Cars: </span>Be
+              watchful when driving next to parked cars, as pedestrians may
+              emerge suddenly from between them.
+            </p>
+            <p className="courseText">
+              <span className="bold">4. Parking Lot Entrances: </span>Be
+              cautious when approaching parking lot entrances or exits, as
+              vehicles may enter or leave unexpectedly.
+            </p>
+            <p className="courseText">
+              <span className="bold">
+                5. Interchanges Where Cars Enter and Leave:{" "}
+              </span>
+              Stay vigilant near highway interchanges or on-ramps, where merging
+              traffic may cause sudden lane changes or adjustments.
+            </p>
+            <p className="courseText">
+              <span className="bold">6. Slippery or Ice Covered Streets: </span>
+              Exercise extreme caution when driving on slippery or ice-covered
+              streets. Reduce speed and avoid sudden maneuvers.
+            </p>
+            <p className="courseText">
+              <span className="bold">7. Where Children Are at Play: </span>Be
+              especially attentive in residential areas, parks, or school zones
+              where children might be playing or crossing the road.
+            </p>
+            <h5 className="sectionSubheading">
+              Avoid Being Rear-Ended by Another Vehicle
+            </h5>
+            <p className="courseText">
+              <span className="bold">
+                a. Increase the Following Distances from Vehicles Ahead:{" "}
+              </span>
+              Maintain a safe following distance from the vehicle in front of
+              you. Increasing the gap allows you more time to react to sudden
+              stops or slowdowns, reducing the risk of being rear-ended.
+            </p>
+            <p className="courseText">
+              <span className="bold">
+                b. Signal Early for Turns, Stops, and Lane Changes:{" "}
+              </span>
+              Use your turn signals in advance to communicate your intentions to
+              other drivers. Signaling early gives drivers behind you ample
+              notice to adjust their speed accordingly.
+            </p>
+            <p className="courseText">
+              <span className="bold">c. Brake Smoothly and Gradually: </span>
+              Avoid sudden or hard braking, especially in heavy traffic. Brake
+              smoothly and gradually to prevent abrupt stops that can catch
+              other drivers off guard.
+            </p>
+            <p className="courseText">
+              <span className="bold">
+                d. Keep Pace with Traffic When Possible and Legal:{" "}
+              </span>
+              Try to maintain a consistent speed with the flow of traffic.
+              Sudden speed changes or driving significantly slower than
+              surrounding vehicles can lead to rear-end collisions.
+            </p>
+            <p className="courseText">
+              <span className="bold">
+                e. Check Mirrors for Following Distance of Other Vehicles:{" "}
+              </span>
+              Regularly check your rearview and side mirrors to be aware of the
+              following distance of vehicles behind you. If you notice a vehicle
+              approaching too closely, create more space by adjusting your speed
+              or changing lanes when safe to do so.
+            </p>
+            <p className="courseText">
+              <span className="bold">
+                f. Before Changing Lanes, Check Direction of Travel:{" "}
+              </span>
+              Always check your blind spots and the flow of traffic in the lane
+              you intend to merge into. Sudden lane changes without proper
+              observation can result in collisions from the rear or side.
+            </p>
+            <p className="courseText">
+              <span className="bold">
+                g. After Stopping, Keep Brake Pedal Depressed:{" "}
+              </span>
+              When stopped at traffic lights or in congested traffic, keep your
+              foot on the brake pedal and remain vigilant. This ensures that
+              your brake lights are active, indicating to drivers behind you
+              that you are stationary.
+            </p>
+            <p className="courseText">
+              <span className="bold">
+                h. Keep Rear Lights Clean and Functioning:{" "}
+              </span>
+              Regularly check and clean your rear lights to ensure they are
+              visible to other drivers, especially in low-light conditions or
+              bad weather. Properly functioning brake lights are crucial for
+              warning others that you are slowing down or stopping.
+            </p>
+            <h5 className="sectionSubheading">
+              How to Choose an Alternate Path of Travel as an Escape Route
+            </h5>
+            <p className="courseText">
+              <span className="bold">
+                a. Importance of Maintaining an Adequate Visual Lead:{" "}
+              </span>
+              Keep a sufficient visual lead, meaning focus your attention on the
+              road far ahead of your vehicle. This gives you more time to
+              identify potential hazards and choose alternate paths if needed.
+            </p>
+            <p className="courseText">
+              <span className="bold">
+                b. Select Speeds Which Position Vehicle Between Clusters of
+                Vehicles:{" "}
+              </span>
+              When driving in traffic, adjust your speed to position your
+              vehicle between clusters of vehicles rather than directly behind
+              them. This allows for more flexibility and options to change lanes
+              if necessary.
+            </p>
+            <p className="courseText">
+              <span className="bold">
+                c. Select a Safe Lane Position within Traffic Clusters:{" "}
+              </span>
+              Within traffic clusters, choose a lane position that maximizes
+              your visibility and minimizes potential blind spots. This ensures
+              you have a clear view of the road and other vehicles around you.
+            </p>
+            <p className="courseText">
+              <span className="bold">d. Avoiding Multiple Hazards</span>
+            </p>
+            <ol className="orderedList">
+              <li className="courseText">
+                <span className="bold">Identify Hazards Early: </span>Stay alert
+                and scan the road ahead for potential hazards. Be aware of
+                pedestrians, cyclists, other vehicles, road conditions, and any
+                obstacles that may require evasive action.
+              </li>
+              <li className="courseText">
+                <span className="bold">Predict Potential Hazards: </span>
+                Anticipate potential hazards based on your observation and
+                experience. For example, if you see a child playing near the
+                road, predict that they might suddenly run into the street.
+              </li>
+              <li className="courseText">
+                <span className="bold">
+                  Adjust Speed and Position to Avoid Potential Hazards:{" "}
+                </span>
+                As you identify potential hazards, be ready to adjust your speed
+                and position to create space and provide yourself with more
+                reaction time. Slow down or change lanes if necessary.
+              </li>
+              <li className="courseText">
+                <span className="bold">
+                  Anticipate and Plan Escape Routes:{" "}
+                </span>
+                Always be prepared with escape routes. Identify areas where you
+                can steer your vehicle to avoid collisions or hazards. Choose
+                escape routes that lead to open spaces or safer conditions.
+              </li>
+            </ol>
+            <h4 className="sectionHeading" id="sectionThree">
+              Section 6.3. Procedures when involved in an accident
+            </h4>
+            <h5 className="sectionSubheading">A. Stopping Requirements</h5>
+            <p className="courseText">
+              <span className="bold">a. Victims at the Scene: </span>If you are
+              involved in an accident and there are victims at the scene who
+              require medical attention, immediately stop and render aid. Call
+              for emergency medical help by dialing 911 or asking someone nearby
+              to do so. Administer first aid if you are trained and can safely
+              do so until professional help arrives.
+            </p>
+            <p className="courseText">
+              <span className="bold">
+                b. Property Damage - Unable to Locate Owner:{" "}
+              </span>
+              If the accident involves only property damage, such as hitting a
+              parked car or damaging someone's property, and you cannot locate
+              the owner, leave a note with your contact information (name,
+              address, and phone number) in a secure and visible location on the
+              damaged property. Additionally, report the incident to the local
+              police or the California Highway Patrol (CHP) as soon as possible.
+            </p>
+            <h6 className="sectionSubheading">B. Aid to the Injured</h6>
+            <p className="courseText">
+              <span className="bold">a. Sending for Help: </span>If you are
+              involved in an accident and people are injured, immediately call
+              911 to request emergency medical assistance. Provide the
+              dispatcher with accurate information about the location of the
+              accident and the number of injured individuals.
+            </p>
+            <p className="courseText">
+              <span className="bold">b. When to Move an Injured Person: </span>
+              Do not move an injured person unless they are in immediate danger,
+              such as from a fire or oncoming traffic. Moving an injured person
+              incorrectly can worsen their condition. Wait for medical
+              professionals to arrive and assess the situation before attempting
+              to move anyone who is injured.
+            </p>
+            <h6 className="sectionSubheading">C. Preventing Further Damage:</h6>
+            <p className="courseText">
+              <span className="bold">a. Reducing Chances of Fire: </span>If the
+              accident involves a risk of fire, turn off the ignition of the
+              involved vehicles and move away from the area if it is safe to do
+              so. Keep bystanders and yourself at a safe distance from the
+              vehicles.
+            </p>
+            <p className="courseText">
+              <span className="bold">b. Warning Oncoming Vehicles: </span>If the
+              accident occurs in a hazardous location or obstructs traffic, turn
+              on your hazard lights and use flares or reflective warning devices
+              to alert oncoming vehicles of the accident ahead.
+            </p>
+            <h6 className="sectionSubheading">D. Reporting Requirements</h6>
+            <p className="courseText">
+              <span className="bold">a. When a Report Must Be Filed: </span>In
+              California, you must file a Traffic Accident Report with the
+              California Department of Motor Vehicles (DMV) within ten days if
+              the accident results in injury, death, or property damage
+              exceeding $1,000. If a law enforcement officer responds to the
+              scene, they will typically complete an accident report, and you
+              may not need to file one separately.
+            </p>
+            <p className="courseText">
+              <span className="bold">b. Use of Reports: </span>Accident reports
+              are essential for insurance claims and legal purposes. They
+              provide an official record of the accident and help establish
+              fault and liability.
+            </p>
+            <h6 className="sectionSubheading">E. Exchanging Information</h6>
+            <p className="courseText">
+              <span className="bold">a. Identifying Information: </span>Exchange
+              the following information with the other party involved in the
+              accident:
+            </p>
+            <ol className="orderedList">
+              <li className="courseText">
+                Name, address, and contact information (phone number) of each
+                driver
+              </li>
+              <li className="courseText">
+                Vehicle license plate number and state
+              </li>
+              <li className="courseText">
+                Insurance information (name of the insurance company and policy
+                number) of each driver
+              </li>
+            </ol>
+            <p className="courseText">
+              <span className="bold">b. Noting Damage and Injury: </span>Take
+              photos of the accident scene, including vehicle damage and any
+              visible injuries to all parties involved. This documentation can
+              be helpful for insurance claims and potential legal disputes.
+            </p>
+            <h5 className="sectionSubheading">F. Additional Steps</h5>
+            <p className="courseText">
+              <span className="bold">
+                a. Obtain Names and Addresses of Other Witnesses:{" "}
+              </span>
+              If there were any witnesses to the accident, ask for their names
+              and contact information. Witnesses can provide valuable statements
+              and support your version of events if needed.
+            </p>
+            <p className="courseText">
+              <span className="bold">b. Give Accurate Facts to Police: </span>
+              When law enforcement arrives at the scene, provide them with
+              accurate and truthful information about the accident. Avoid
+              speculating or admitting fault, as this may affect insurance
+              claims and legal matters.
+            </p>
+            <p className="courseText">
+              <span className="bold">c. Seek Medical Attention: </span>Even if
+              you believe your injuries are minor, it is crucial to seek medical
+              attention after an accident. Some injuries may not be immediately
+              apparent, and a medical evaluation can help identify and treat any
+              injuries promptly.
+            </p>
+            <h4 className="sectionHeading" id="sectionFour">
+              Section 6.4. Financial Responsibility Requirements
+            </h4>
+            <h5 className="sectionSubheading">A. When a Report is Required</h5>
+            <p className="courseText">
+              <span className="bold">a. Property Damage Amounts: </span>In
+              California, a report is required to be filed with the California
+              Department of Motor Vehicles (DMV) within ten days of an accident
+              if it results in property damage exceeding $1,000. This report is
+              necessary to document the details of the accident and ensure that
+              all parties involved have the required information for insurance
+              claims and legal purposes.
+            </p>
+            <p className="courseText">
+              <span className="bold">b. Injury: </span>If an accident in
+              California involves injuries to any party, regardless of the
+              severity, a report must be filed with the DMV. Prompt reporting is
+              essential to provide accurate information to law enforcement and
+              insurance companies and to ensure that injured parties receive
+              proper medical attention and support.
+            </p>
+            <p className="courseText">
+              <span className="bold">c. Time Frames for Reporting: </span>
+              Accidents involving injury, death, or property damage exceeding
+              $1,000 must be reported immediately to law enforcement or the DMV.
+              Failing to report the accident within the required time frame may
+              result in penalties and complications when dealing with insurance
+              claims or legal proceedings.
+            </p>
+            <h5 className="sectionSubheading">B. Purpose of Insurance</h5>
+            <p className="courseText">
+              Auto insurance serves the primary purpose of providing financial
+              protection in case of accidents or incidents that result in
+              property damage, bodily injury, or other losses. Having insurance
+              coverage helps mitigate the financial burden that may arise from
+              unexpected events on the road. It ensures that you are financially
+              prepared to handle potential repair costs, medical expenses, and
+              legal liabilities resulting from accidents.
+            </p>
+            <h5 className="sectionSubheading">C. Dangers of Under Insuring:</h5>
+            <p className="courseText">
+              Underinsuring can be risky as it may leave you financially
+              vulnerable in the event of an accident. If your insurance coverage
+              does not adequately protect you, you may be personally liable for
+              the costs of property damage, medical bills, and legal expenses.
+              It is essential to carefully assess your insurance needs and
+              ensure that you have sufficient coverage to protect your assets
+              and financial well-being.
+            </p>
+            <h5 className="sectionSubheading">
+              D. Required Amounts of Coverage
+            </h5>
+            <p className="courseText">
+              <span className="bold">
+                a. Minimum Amounts of Insurance Coverage:{" "}
+              </span>
+              In California, drivers are required to carry the following minimum
+              insurance coverage:
+            </p>
+            <ol className="orderedList">
+              <li className="courseText">
+                $15,000 for injury or death of one person in an accident.
+              </li>
+              <li className="courseText">
+                $30,000 for injury or death of more than one person in an
+                accident.
+              </li>
+              <li className="courseText">
+                $5,000 for property damage per accident.
+              </li>
+            </ol>
+            <p className="courseText">
+              These minimum coverage amounts are set by the state to ensure that
+              drivers have a basic level of financial responsibility to cover
+              potential damages and injuries resulting from accidents.
+            </p>
+            <p className="courseText">
+              <span className="bold"></span>
+            </p>
+            <p className="courseText">
+              <span className="bold">b. Additional Forms of Coverage</span>
+            </p>
+            <p className="courseText">
+              <span className="bold">1. Collision: </span>Collision coverage
+              helps pay for repairs to your vehicle in case of an accident,
+              regardless of fault. It is particularly useful when you are
+              involved in a single-vehicle accident or when the other driver is
+              uninsured.
+            </p>
+            <p className="courseText">
+              <span className="bold">2. Comprehensive: </span>Comprehensive
+              coverage provides protection against non-collision-related
+              incidents, such as theft, vandalism, fire, or natural disasters.
+              It is valuable for safeguarding your vehicle against various risks
+              beyond typical accidents.
+            </p>
+            <p className="courseText">
+              <span className="bold">3. Bodily Injury: </span>Bodily injury
+              liability coverage pays for medical expenses, lost wages, and
+              legal expenses if you are at fault in an accident that injures
+              others. It is essential for protecting your financial interests in
+              case of liability claims.
+            </p>
+            <p className="courseText">
+              <span className="bold">4. Uninsured Driver (Required): </span>
+              Uninsured motorist coverage is required in California and provides
+              protection if you are involved in an accident with an uninsured or
+              underinsured driver. This coverage helps cover your medical
+              expenses and damages when the at-fault driver does not have
+              adequate insurance.
+            </p>
+            <h5 className="sectionSubheading">
+              E. Suspension for Failure to Provide Proof of Coverage
+            </h5>
+            <p className="courseText">
+              <span className="bold">a. Period of Suspension: </span>If you fail
+              to provide proof of insurance coverage or allow your insurance to
+              lapse, your vehicle's registration may be suspended. The
+              suspension period can vary, but it typically lasts until you can
+              provide valid proof of insurance. Driving with a suspended
+              registration is illegal and can result in severe penalties.
+            </p>
+            <h5 className="sectionSubheading">
+              F. Proof Required When Registering a Vehicle or Renewing
+            </h5>
+            <p className="courseText">
+              When registering a vehicle in California or renewing its
+              registration, you must provide proof of financial responsibility,
+              typically in the form of an insurance policy that meets the
+              state's minimum coverage requirements. This proof is necessary to
+              ensure that all drivers on California's roads are financially
+              responsible for potential accidents and can cover their liability
+              if they are at fault.
+            </p>
           </div>
-          <p className="courseText"></p>
           {/* course contents ends here */}
         </div>
       </div>
