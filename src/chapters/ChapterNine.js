@@ -339,14 +339,14 @@ export default function ChapterNine() {
               gives you enough time to react to any unexpected obstacles or
               pedestrians. Properly signaling intentions and using the horn when
               necessary help alert pedestrians and other drivers of the
-              vehicle's movement.{" "}
+              vehicle's movement.
             </p>
             <p className="courseText">
               Avoiding distractions and staying focused on the backing process
               is crucial. Continuously monitor the mirrors to track the movement
               of pedestrians or other vehicles while backing. Additionally, be
               mindful of tire position, especially during parallel parking, to
-              prevent damage to tires or wheels.{" "}
+              prevent damage to tires or wheels.
             </p>
             <h5 className="sectionSubheading">
               E. Don’t drive in bike lanes, except where permitted.
@@ -360,7 +360,7 @@ export default function ChapterNine() {
               cyclists at risk of accidents and injuries, and it may surprise
               cyclists and pedestrians, leading to unexpected maneuvers and
               potential collisions. Moreover, driving in bike lanes is often a
-              legal violation that can result in fines or penalties.{" "}
+              legal violation that can result in fines or penalties.
             </p>
             <p className="courseText">
               Driving in bike lanes can also disrupt the flow of bicycle
@@ -370,7 +370,7 @@ export default function ChapterNine() {
               However, there are exceptions when driving in bike lanes may be
               permitted, such as making turns at intersections or driveways.
               Nevertheless, this should be done with extreme caution and only
-              when no cyclists or pedestrians are present.{" "}
+              when no cyclists or pedestrians are present.
             </p>
             <p className="courseText">
               When sharing the road with cyclists, it is essential to give them
@@ -381,7 +381,7 @@ export default function ChapterNine() {
               the road. Exercise caution at intersections, and yield to cyclists
               and pedestrians when making turns. Remember that cyclists have the
               same rights and responsibilities as other vehicles on the road,
-              and it is essential to share the road responsibly.{" "}
+              and it is essential to share the road responsibly.
             </p>
             <h4 className="section-heading" id="sectionThree">
               Section 9.3. Avoiding Collisions with Animals
@@ -400,7 +400,7 @@ export default function ChapterNine() {
               or towing. Airbag deployment in severe collisions adds to the
               expenses, as it necessitates replacing the airbags and repairing
               the steering wheel and dashboard. Additionally, tire damage can
-              occur, leading to blowouts or punctures that require replacement.{" "}
+              occur, leading to blowouts or punctures that require replacement.
             </p>
             <p className="courseText">
               On the human front, occupants in a collision may experience
@@ -413,7 +413,7 @@ export default function ChapterNine() {
               risk of severe injuries or fatalities. Beyond physical injuries,
               being involved in such collisions can have long-lasting
               psychological effects, causing anxiety and post-traumatic stress
-              disorder (PTSD) due to the traumatic nature of the experience.{" "}
+              disorder (PTSD) due to the traumatic nature of the experience.
             </p>
             <p className="courseText">
               To mitigate these risks, drivers should exercise caution,
@@ -422,7 +422,7 @@ export default function ChapterNine() {
               beams when appropriate to spot animals on the road from a greater
               distance. Always wear seat belts and ensure all occupants are
               restrained to reduce the risk of injury in the event of a
-              collision.{" "}
+              collision.
             </p>
             <h5 className="sectionSubheading">
               B. Animals most active at dusk and dawn
@@ -437,7 +437,7 @@ export default function ChapterNine() {
               these periods, you should exercise caution and follow safety
               precautions to avoid collisions with deer. These precautions
               include reducing speed, staying alert for any movement along the
-              roadside, and using high beams when appropriate.{" "}
+              roadside, and using high beams when appropriate.
             </p>
             <p className="courseText">
               Similarly, various small mammals like raccoons are also more
@@ -447,7 +447,7 @@ export default function ChapterNine() {
               small animal suddenly crosses the road, it is important to avoid
               swerving to avoid it, as swerving can lead to loss of control or
               collisions with other vehicles. Instead, brake as safely and
-              steadily as possible.{" "}
+              steadily as possible.
             </p>
             <h5 className="sectionSubheading">
               C. Don’t jeopardize vehicle control when avoiding animals.
@@ -457,7 +457,7 @@ export default function ChapterNine() {
               natural to react instinctively. However, making abrupt and extreme
               maneuvers to avoid the animal can be dangerous and potentially
               lead to more severe consequences. It is essential for you to stay
-              calm and composed in such situations to make safe decisions.{" "}
+              calm and composed in such situations to make safe decisions.
             </p>
             <p className="courseText">
               Abrupt swerving is hazardous, especially at high speeds, as it can
@@ -466,7 +466,7 @@ export default function ChapterNine() {
               swerving, the best initial response is to slow down gradually and
               apply the brakes smoothly. This gives the animal more time to
               react and move away from the road and allows other drivers behind
-              you to anticipate your actions.{" "}
+              you to anticipate your actions.
             </p>
             <p className="courseText">
               Using your horn, if safe to do so, can help alert the animal and
@@ -474,7 +474,7 @@ export default function ChapterNine() {
               response to headlights, but the sound of the horn may startle them
               into moving out of the way. While trying to avoid the animal, it's
               essential to stay in your lane and avoid crossing into oncoming
-              traffic or driving onto the shoulder excessively.{" "}
+              traffic or driving onto the shoulder excessively.
             </p>
             <p className="courseText">
               Maintaining focus on the road and surroundings is crucial during
