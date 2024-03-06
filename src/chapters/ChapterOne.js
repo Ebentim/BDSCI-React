@@ -830,8 +830,6 @@ export default function ChapterOne() {
         ) : (
           <One />
         )}
-
-        <ReactPlayer />
       </div>
     </>
   );
