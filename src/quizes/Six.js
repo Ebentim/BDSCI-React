@@ -12,6 +12,9 @@ const QuizAnswers = {
   five: "All the above.",
   six: "The lane closest to the left curb.",
   seven: "DMV.",
+  eight: "Maintain a consistent speed and increase your following distance.",
+  nine: " Within 10 days of the accident",
+  ten: "Fatigue",
 };
 export default function Six() {
   const { updateScore } = useQuiz();
@@ -214,6 +217,60 @@ export default function Six() {
         description={
           showDescription
             ? "Submitting a written report to the DMV ensures that accurate records are maintained, and it helps authorities track and manage traffic incidents. Reporting collisions to the DMV is an essential step in the post-accident process."
+            : null
+        }
+      />
+      <RadioButton
+        classname="bold"
+        question="8. You are driving in heavy traffic, and the driver behind you is tailgating closely. What should you do?"
+        option1="Brake abruptly to signal your concern"
+        option2="Maintain a consistent speed and increase your following distance."
+        option3="Use your horn aggressively to alert the tailgating driver."
+        optionDiv="option"
+        ida="sevenA"
+        idb="sevenB"
+        idc="sevenC"
+        check={selectedOptions.seven}
+        onchange={handleOptionChange}
+        description={
+          showDescription
+            ? "When a driver is tailgating you, it's essential to prioritize safety and reduce the risk of a rear-end collision. Maintain a consistent speed and increase your following distance to create buffer space between your vehicle and the one ahead allowing you more time to react if the tailgating driver suddenly brakes."
+            : null
+        }
+      />
+      <RadioButton
+        classname="bold"
+        question="9. You must file a Traffic Accident Report with the California Department of Motor Vehicles (DMV)?"
+        option1="Within 5 days of the accident"
+        option2="Within 15 days of the accident"
+        option3=" Within 10 days of the accident"
+        optionDiv="option"
+        ida="sevenA"
+        idb="sevenB"
+        idc="sevenC"
+        check={selectedOptions.seven}
+        onchange={handleOptionChange}
+        description={
+          showDescription
+            ? "When involved in an accident, you must file a Traffic Accident Report with the California Department of Motor Vehicles (DMV) within ten days If the accident results in injury, death, or property damage exceeding $1,000. Failing to report within the specified timeframe may result in consequences such as fines or other legal complications."
+            : null
+        }
+      />
+      <RadioButton
+        classname="bold"
+        question="10. Which factor significantly impairs attention, reaction time, decision-making abilities, and overall cognitive functioning, posing serious risks on the road?"
+        option1="Emotional Problems"
+        option2="Operator Error"
+        option3="Fatigue"
+        optionDiv="option"
+        ida="sevenA"
+        idb="sevenB"
+        idc="sevenC"
+        check={selectedOptions.seven}
+        onchange={handleOptionChange}
+        description={
+          showDescription
+            ? " fatigue, both physical and mental, is a critical factor that significantly impacts driver performance. It impairs attention, reaction time, decision-making abilities, and overall cognitive functioning, posing serious risks on the road."
             : null
         }
       />

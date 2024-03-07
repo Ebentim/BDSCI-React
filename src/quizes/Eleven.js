@@ -3,7 +3,22 @@ import { RadioButton } from "../Assets/radio";
 import { NavButtons } from "../Assets/next";
 import { Modal } from "../Assets/modal";
 import "../styles/general.css";
-import { useState, useEffect } from "react";
+import { useState } from "react";
+
+const QuizAnswers = {
+  one: "Allow a larger following distance",
+  two: "Large trucks have bigger blind spots than most passenger vehicles.",
+  three: "Keep your eyes moving to look for possible hazards",
+  four: "When you are within 200 feet of a cross street where you plan to turn right",
+  five: "To increase centrifugal force",
+  six: "To mitigate blind spots and improve visibility.",
+  seven:
+    "Motorcycles are harder to see due to their smaller size and can fall into blind spots",
+  eight: "To protect against abrasions and road rash.",
+  nine: "To protect your head in the event of an accident.",
+  ten: "To maintain stability and minimize potential imbalance.",
+};
+
 export default function Eleven() {
   const { updateScore } = useQuiz();
   const [selectedOptions, setSelectedOptions] = useState({});
@@ -11,18 +26,6 @@ export default function Eleven() {
   const [showModal, setShowModal] = useState(false);
   let score = 0;
   const [totalScore, setTotalScore] = useState(score);
-  const QuizAnswers = {
-    one: "Slowing down to look at collision scene",
-    two: "Vehicle is in line with other parked vehicles",
-    three: "In an unmarked crosswalk",
-    four: "Turned to the right (away from the street)",
-    five: "Stay out of the intersection until traffic clears",
-    six: "Avoiding unnecessary lane changes",
-    seven: "Drive to a safe place, stop and rest",
-    eight: "It is illegal under all circumstances",
-    nine: "Transformation of social interactions and the ability to live farther from city centers",
-    ten: "By limiting job opportunities across various sectors",
-  };
 
   const handleOptionChange = (question, option) => {
     setSelectedOptions((prevState) => ({ ...prevState, [question]: option }));
@@ -45,11 +48,6 @@ export default function Eleven() {
     setShowDescription(true);
     setShowModal(true);
   };
-
-  useEffect(() => {
-    setShowDescription(true);
-    setShowModal(true);
-  }, [totalScore]);
 
   const handleModal = () => {
     setSelectedOptions({});
@@ -96,10 +94,10 @@ export default function Eleven() {
       </p>
       <RadioButton
         classname="bold"
-        question="1. Which of the following blocks the smooth flow of traffic?"
-        option1="Slowing down to look at collision scene"
-        option2="Avoiding unnecessary lane changes"
-        option3="Using public transportation instead of your vehicle"
+        question="1. When you are behind a motorcycle, you should:"
+        option1="be ready to use your horn"
+        option2="Drive more slowly"
+        option3="Allow a larger following distance"
         name="one"
         optionDiv="option"
         ida="oneA"
@@ -109,17 +107,17 @@ export default function Eleven() {
         onchange={handleOptionChange}
         description={
           showDescription
-            ? "Slowing down to look at accidents or unusual things causes traffic jams and should be avoided."
+            ? "Allow for at least a three to four-second following distance when behind a motorcyclist. Following too closely can be dangerous as motorcycles can stop quickly. If the motorcyclist makes a mistake, having extra distance gives you more time to avoid a collision. This is especially crucial on wet or icy roads, gravel roads, and metal surfaces like bridges, gratings, and tracks."
             : null
         }
       />
 
       <RadioButton
         classname="bold"
-        question="2. Parallel parking is when the:"
-        option1="Front wheels are turned toward the street."
-        option2="Vehicle is in line with other parked vehicles"
-        option3="Rear wheels are touching the curb."
+        question="2. Which of the following statements about blind spots is true?"
+        option1="They are eliminated if you have one outside mirror on each side of the vehicle."
+        option2="Large trucks have bigger blind spots than most passenger vehicles."
+        option3="Blind spots can be checked by looking in your rear-view mirrors."
         name="two"
         ptionDiv="option"
         ida="twoA"
@@ -129,17 +127,17 @@ export default function Eleven() {
         onchange={handleOptionChange}
         description={
           showDescription
-            ? "Parallel parking is a crucial skill for drivers, especially in urban areas with limited parking spaces. This maneuver requires aligning the vehicle parallel to the curb between two parked vehicles. "
+            ? "Understanding the size and location of blind spots is crucial for safe driving, especially when sharing the road with larger vehicles. Drivers need to be aware of these blind spots and take precautions to avoid potential accidents."
             : null
         }
       />
 
       <RadioButton
         classname="bold"
-        question="3. It is illegal to park your vehicle:"
-        option1="In an unmarked crosswalk"
-        option2="Within three feet of a private driveway."
-        option3="In a bicycle lane. "
+        question="3. You drive defensively when you"
+        option1="Always put one car length between you and the car ahead"
+        option2="Look only at the car in front of you while driving"
+        option3="Keep your eyes moving to look for possible hazards"
         name="three"
         optionDiv="option"
         ida="threeA"
@@ -147,14 +145,19 @@ export default function Eleven() {
         idc="threeC"
         check={selectedOptions.three}
         onchange={handleOptionChange}
+        description={
+          showDescription
+            ? "Defensive driving involves being aware of your surroundings and anticipating potential hazards to prevent accidents. Keeping your eyes moving helps you stay alert and identify potential dangers on the road."
+            : null
+        }
       />
 
       <RadioButton
         classname="bold"
-        question="4. When parking uphill on a two-way street with no curbs, your front wheels should be:"
-        option1="Turned to the left (toward the street)"
-        option2="Turned to the right (away from the street)"
-        option3="Parallel to the pavement"
+        question="4. When can you drive in a bike lane?"
+        option1="During rush hour traffic, if there are no bicyclists in the bike lane"
+        option2="When you are within 200 feet of a cross street where you plan to turn right"
+        option3="When you want to pass a driver ahead of you who is turning right"
         name="four"
         optionDiv="option"
         ida="fourA"
@@ -164,17 +167,17 @@ export default function Eleven() {
         onchange={handleOptionChange}
         description={
           showDescription
-            ? "When parking uphill on a two-way street with no curbs, it is recommended to turn your front wheels to the right. This is a safety measure to prevent the vehicle from rolling into traffic if the brakes fail."
+            ? "You are allowed to enter a bike lane within 200 feet of a cross street when preparing to make a right turn. It's important to be cautious and yield to any bicyclists in the lane."
             : null
         }
       />
 
       <RadioButton
         classname="bold"
-        question="5. If you have a green light, but traffic is blocking the intersection, you should:"
-        option1="Stay out of the intersection until traffic clears"
-        option2="Enter the intersection and wait until traffic clears"
-        option3="Merge into another lane, and try to go around the traffic"
+        question="5. What is the purpose of leaning a bicycle or motorcycle toward the inside when cornering?"
+        option1="To increase centrifugal force"
+        option2="To disrupt the balance between forces"
+        option3="To counterbalance the outward force and maintain stability"
         name="five"
         optionDiv="option"
         ida="fiveA"
@@ -184,17 +187,17 @@ export default function Eleven() {
         onchange={handleOptionChange}
         description={
           showDescription
-            ? "When you have a green light but the intersection is blocked, it's important to wait until you can safely clear the intersection before proceeding. Blocking an intersection can impede the flow of traffic and create safety hazards."
+            ? "Leaning a bicycle or motorcycle toward the inside while cornering helps counterbalance the outward force and maintain stability during the turn."
             : null
         }
       />
 
       <RadioButton
         classname="bold"
-        question="6. At intersections, crosswalks, and railroad crossings, you should always:"
-        option1="Slowing down to look at collision scene"
-        option2="Avoiding unnecessary lane changes"
-        option3="Slowly pass vehicles that seem to be stopped for no reason"
+        question="6. You should adjust side mirrors correctly and practice shoulder checks especially when sharing the road with motorcycles"
+        option1="To mitigate blind spots and improve visibility."
+        option2="To minimize fuel consumption"
+        option3="To reduce the risk of punctures"
         name="six"
         optionDiv="option"
         ida="sixA"
@@ -204,17 +207,17 @@ export default function Eleven() {
         onchange={handleOptionChange}
         description={
           showDescription
-            ? "It is important to check the sides of your vehicle at intersections, crosswalks, and railroad crossings to be aware of any potential hazards."
+            ? "Adjusting side mirrors correctly and practicing shoulder checks help mitigate blind spots and improve the visibility of motorcycles."
             : null
         }
       />
 
       <RadioButton
         classname="bold"
-        question="7. If you get sleepy while driving, you should:"
-        option1="Drive to a safe place, stop and rest"
-        option2="Play the audio loudly and roll down the windows"
-        option3="Drink coffee to make you more alert"
+        question="7. You should be concious of motorcycle especially in congested traffic because"
+        option1="Motorcycles can travel at higher speeds than cars"
+        option2="Motorcycles are harder to see due to their smaller size and can fall into blind spots"
+        option3="Motorcycles require less space on the road"
         name="seven"
         optionDiv="option"
         ida="sevenA"
@@ -224,17 +227,17 @@ export default function Eleven() {
         onchange={handleOptionChange}
         description={
           showDescription
-            ? "If you get sleepy while driving, it's essential to pull over to a safe location and take a break to rest. This is a crucial safety measure to prevent accidents caused by drowsy driving."
+            ? "Motorcycles' reduced visibility, especially in blind spots, makes it crucial for drivers to be aware of them when sharing the road. Adjusting mirrors, performing shoulder checks, and maintaining a safe following distance help mitigate this risk."
             : null
         }
       />
 
       <RadioButton
         classname="bold"
-        question="8. Which of the following is true about double parking?"
-        option1="It is allowed if you are making a delivery"
-        option2="It is illegal under all circumstances"
-        option3="It is illegal unless you wait in the vehicle"
+        question="8. Wear a heavy jacket made of textile or durable textile material when riding a motorcycle"
+        option1="To stay warm in cold weather."
+        option2="To protect against abrasions and road rash."
+        option3="To make a fashion statement."
         name="eight"
         optionDiv="option"
         ida="eightA"
@@ -244,17 +247,17 @@ export default function Eleven() {
         onchange={handleOptionChange}
         description={
           showDescription
-            ? "Double parking refers to parking a vehicle next to or near another parked vehicle on the roadway side of the parked vehicle. This practice is prohibited as it can impede traffic flow and create unsafe conditions."
+            ? "Wearing a heavy jacket made of leather or durable textile material is crucial for protecting the rider against abrasions and road rash in the event of a fall or slide. It provides a layer of protection for the skin, reducing the risk of injuries during accidents."
             : null
         }
       />
 
       <RadioButton
         classname="bold"
-        question="9. What societal changes were brought about by the advent of the automobile?"
-        option1="Increased reliance on public transportation"
-        option2="Limited access to employment and services in city centers"
-        option3="Transformation of social interactions and the ability to live farther from city centers"
+        question="9. What is the primary purpose of insisting on a properly fitting helmet?"
+        option1="To enhance your appearance during the ride."
+        option2="To meet fashion standards."
+        option3="To protect your head in the event of an accident."
         name="nine"
         optionDiv="option"
         ida="nineA"
@@ -264,17 +267,17 @@ export default function Eleven() {
         onchange={handleOptionChange}
         description={
           showDescription
-            ? "The advent of the automobile indeed brought about significant societal changes. The ability to travel by car transformed social interactions by providing greater mobility and flexibility. Additionally, it allowed people to live farther from city centers, leading to suburbanization and changes in housing patterns."
+            ? "Wearing a properly fitting helmet is crucial for the safety of a motorcycle passenger, as it provides the best protection and reduces the risk of head injuries during an accident."
             : null
         }
       />
 
       <RadioButton
         classname="bold"
-        question="10. How has the automotive industry contributed to global economies?"
-        option1="By limiting job opportunities across various sectors"
-        option2="By fostering interdependence only within the automotive sector"
-        option3="By generating employment opportunities, contributing to economic growth, and fostering interdependence with other sectors"
+        question="Why is it important for a motorcycle passenger to lean with the driver during turns?"
+        option1="To show synchronization with the rider."
+        option2="To maintain stability and minimize potential imbalance."
+        option3="To perform stunts and tricks during the ride."
         name="ten"
         optionDiv="option"
         ida="TenA"
@@ -284,7 +287,7 @@ export default function Eleven() {
         onchange={handleOptionChange}
         description={
           showDescription
-            ? "The automotive industry plays a crucial role in job creation, economic growth, and fostering interconnectedness with other sectors, such as manufacturing, technology, and transportation."
+            ? "Leaning with the driver during turns helps in maintaining the motorcycle's balance, allowing for smoother navigation through curves. It is a safety measure to prevent any imbalance that may occur if the passenger does not lean in the same direction as the driver."
             : null
         }
       />

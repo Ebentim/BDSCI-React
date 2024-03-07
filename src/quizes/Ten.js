@@ -3,7 +3,21 @@ import { RadioButton } from "../Assets/radio";
 import { NavButtons } from "../Assets/next";
 import { Modal } from "../Assets/modal";
 import "../styles/general.css";
-import { useState, useEffect } from "react";
+import { useState } from "react";
+
+const QuizAnswers = {
+  one: "Weight",
+  two: "Even over-the-counter drugs can impair your driving",
+  three: "Eight hundredths (0.08) of one percent",
+  four: "It ensures full control over the vehicle and rational decision-making.",
+  five: "Appoint a designated driver who remains sober.",
+  six: "To prevent accidents due to impairment.",
+  seven: "Antihistamines",
+  eight: "Impaired coordination",
+  nine: "It impairs perception, coordination, and attention",
+  ten: "Erratic speed control",
+};
+
 export default function Ten() {
   const { updateScore } = useQuiz();
   const [selectedOptions, setSelectedOptions] = useState({});
@@ -11,18 +25,6 @@ export default function Ten() {
   const [showModal, setShowModal] = useState(false);
   let score = 0;
   const [totalScore, setTotalScore] = useState(score);
-  const QuizAnswers = {
-    one: "Slowing down to look at collision scene",
-    two: "Vehicle is in line with other parked vehicles",
-    three: "In an unmarked crosswalk",
-    four: "Turned to the right (away from the street)",
-    five: "Stay out of the intersection until traffic clears",
-    six: "Avoiding unnecessary lane changes",
-    seven: "Drive to a safe place, stop and rest",
-    eight: "It is illegal under all circumstances",
-    nine: "Transformation of social interactions and the ability to live farther from city centers",
-    ten: "By limiting job opportunities across various sectors",
-  };
 
   const handleOptionChange = (question, option) => {
     setSelectedOptions((prevState) => ({ ...prevState, [question]: option }));
@@ -45,11 +47,6 @@ export default function Ten() {
     setShowDescription(true);
     setShowModal(true);
   };
-
-  useEffect(() => {
-    setShowDescription(true);
-    setShowModal(true);
-  }, [totalScore]);
 
   const handleModal = () => {
     setSelectedOptions({});
@@ -96,10 +93,10 @@ export default function Ten() {
       </p>
       <RadioButton
         classname="bold"
-        question="1. Which of the following blocks the smooth flow of traffic?"
-        option1="Slowing down to look at collision scene"
-        option2="Avoiding unnecessary lane changes"
-        option3="Using public transportation instead of your vehicle"
+        question="1. Which of the following factors affect an individual's absorption of alcohol?"
+        option1="Weight"
+        option2="Height"
+        option3="intelligence"
         name="one"
         optionDiv="option"
         ida="oneA"
@@ -109,17 +106,17 @@ export default function Ten() {
         onchange={handleOptionChange}
         description={
           showDescription
-            ? "Slowing down to look at accidents or unusual things causes traffic jams and should be avoided."
+            ? "Various things can influence how a person's body takes in alcohol, like their weight, gender, the food in their stomach, and how much alcohol they've had. The only way to get alcohol out of someone's system is to be patient and wait."
             : null
         }
       />
 
       <RadioButton
         classname="bold"
-        question="2. Parallel parking is when the:"
-        option1="Front wheels are turned toward the street."
-        option2="Vehicle is in line with other parked vehicles"
-        option3="Rear wheels are touching the curb."
+        question="2. Which of these statements is true about drugs and driving?"
+        option1="Any prescription drug is safe to use if you don't feel droway"
+        option2="Even over-the-counter drugs can impair your driving"
+        option3="Only illegal drugs can impair your driving"
         name="two"
         ptionDiv="option"
         ida="twoA"
@@ -129,17 +126,17 @@ export default function Ten() {
         onchange={handleOptionChange}
         description={
           showDescription
-            ? "Parallel parking is a crucial skill for drivers, especially in urban areas with limited parking spaces. This maneuver requires aligning the vehicle parallel to the curb between two parked vehicles. "
+            ? "Taking certain medications, whether prescribed by a doctor or bought over the counter, can make it unsafe for you to drive. This includes medications for things like colds, and allergies, or to relax your nerves and muscles. It's against the law to drive if these drugs affect your ability to drive safely. The law treats all drugs the same, whether they are illegal, prescribed by a doctor, or bought without a prescription."
             : null
         }
       />
 
       <RadioButton
         classname="bold"
-        question="3. It is illegal to park your vehicle:"
-        option1="In an unmarked crosswalk"
-        option2="Within three feet of a private driveway."
-        option3="In a bicycle lane. "
+        question="3. It is illegal for a person, 21 years of age or older to drive with a blood concentration that is ______ or more"
+        option1="One tenth (0.01) of one percent"
+        option2="Eight hundredths (0.08) of one percent"
+        option3="Five hundredths (0.05) of one percent"
         name="three"
         optionDiv="option"
         ida="threeA"
@@ -147,14 +144,19 @@ export default function Ten() {
         idc="threeC"
         check={selectedOptions.three}
         onchange={handleOptionChange}
+        description={
+          showDescription
+            ? "The blood alcohol concentration (BAC) limit for drivers aged 21 or older in California is 0.08. Exceeding this limit is considered illegal and will result in penalties such as fines, license suspension, or other consequences."
+            : null
+        }
       />
 
       <RadioButton
         classname="bold"
-        question="4. When parking uphill on a two-way street with no curbs, your front wheels should be:"
-        option1="Turned to the left (toward the street)"
-        option2="Turned to the right (away from the street)"
-        option3="Parallel to the pavement"
+        question="4. Why is choosing abstinence from alcohol and drugs while driving considered the most effective and responsible choice?"
+        option1="It is a legal requirement."
+        option2="It ensures full control over the vehicle and rational decision-making."
+        option3="It is a common social norm."
         name="four"
         optionDiv="option"
         ida="fourA"
@@ -164,17 +166,17 @@ export default function Ten() {
         onchange={handleOptionChange}
         description={
           showDescription
-            ? "When parking uphill on a two-way street with no curbs, it is recommended to turn your front wheels to the right. This is a safety measure to prevent the vehicle from rolling into traffic if the brakes fail."
+            ? "Abstinence from alcohol and drugs while driving allows the driver to maintain full control over the vehicle and make rational decisions."
             : null
         }
       />
 
       <RadioButton
         classname="bold"
-        question="5. If you have a green light, but traffic is blocking the intersection, you should:"
-        option1="Stay out of the intersection until traffic clears"
-        option2="Enter the intersection and wait until traffic clears"
-        option3="Merge into another lane, and try to go around the traffic"
+        question="5. What is a responsible approach to attending social events involving alcohol?"
+        option1="Appoint a designated driver who remains sober."
+        option2="Encourage everyone to drink as much as they want."
+        option3="Call a taxi for others if they seem intoxicated."
         name="five"
         optionDiv="option"
         ida="fiveA"
@@ -184,17 +186,17 @@ export default function Ten() {
         onchange={handleOptionChange}
         description={
           showDescription
-            ? "When you have a green light but the intersection is blocked, it's important to wait until you can safely clear the intersection before proceeding. Blocking an intersection can impede the flow of traffic and create safety hazards."
+            ? "Appointing a designated driver is a responsible choice at social events involving alcohol."
             : null
         }
       />
 
       <RadioButton
         classname="bold"
-        question="6. At intersections, crosswalks, and railroad crossings, you should always:"
-        option1="Slowing down to look at collision scene"
-        option2="Avoiding unnecessary lane changes"
-        option3="Slowly pass vehicles that seem to be stopped for no reason"
+        question="6. Why is it advised to stay where you are and wait until sober enough to drive if unsure about your ability to drive safely after consuming alcohol or drugs?"
+        option1="To avoid traffic congestion."
+        option2="To save money on transportation."
+        option3="To prevent accidents due to impairment."
         name="six"
         optionDiv="option"
         ida="sixA"
@@ -204,17 +206,17 @@ export default function Ten() {
         onchange={handleOptionChange}
         description={
           showDescription
-            ? "It is important to check the sides of your vehicle at intersections, crosswalks, and railroad crossings to be aware of any potential hazards."
+            ? "Staying where you are and waiting until sober to drive is important to prevent accidents due to impaired judgment, reaction time, and coordination associated with alcohol or drug consumption."
             : null
         }
       />
 
       <RadioButton
         classname="bold"
-        question="7. If you get sleepy while driving, you should:"
-        option1="Drive to a safe place, stop and rest"
-        option2="Play the audio loudly and roll down the windows"
-        option3="Drink coffee to make you more alert"
+        question="7. Which over-the-counter (OTC) medication ingredient can potentially cause drowsiness and affect a driver's alertness and reaction time?"
+        option1="Antihistamines"
+        option2="Decongestants"
+        option3="Pain relievers"
         name="seven"
         optionDiv="option"
         ida="sevenA"
@@ -224,17 +226,17 @@ export default function Ten() {
         onchange={handleOptionChange}
         description={
           showDescription
-            ? "If you get sleepy while driving, it's essential to pull over to a safe location and take a break to rest. This is a crucial safety measure to prevent accidents caused by drowsy driving."
+            ? "Antihistamines, commonly found in some OTC cold and allergy medicines, can cause drowsiness as a side effect, negatively impacting a driver's alertness and reaction time."
             : null
         }
       />
 
       <RadioButton
         classname="bold"
-        question="8. Which of the following is true about double parking?"
-        option1="It is allowed if you are making a delivery"
-        option2="It is illegal under all circumstances"
-        option3="It is illegal unless you wait in the vehicle"
+        question="8. What is a concerning side effect of narcotics like codeine and Demerol in terms of driving ability?"
+        option1="Enhanced coordination"
+        option2="Increased concentration"
+        option3="Impaired coordination"
         name="eight"
         optionDiv="option"
         ida="eightA"
@@ -244,17 +246,17 @@ export default function Ten() {
         onchange={handleOptionChange}
         description={
           showDescription
-            ? "Double parking refers to parking a vehicle next to or near another parked vehicle on the roadway side of the parked vehicle. This practice is prohibited as it can impede traffic flow and create unsafe conditions."
+            ? "Narcotics, including codeine and Demerol, are central nervous system depressants that can induce a state of drowsiness, stupor, and impaired coordination, hindering a driver's ability to control the vehicle effectively."
             : null
         }
       />
 
       <RadioButton
         classname="bold"
-        question="9. What societal changes were brought about by the advent of the automobile?"
-        option1="Increased reliance on public transportation"
-        option2="Limited access to employment and services in city centers"
-        option3="Transformation of social interactions and the ability to live farther from city centers"
+        question="9. Why is driving under the influence of medical marijuana illegal in California?"
+        option1="It causes extreme sedation"
+        option2="It impairs perception, coordination, and attention"
+        option3="It induces a false sense of well-being"
         name="nine"
         optionDiv="option"
         ida="nineA"
@@ -264,17 +266,17 @@ export default function Ten() {
         onchange={handleOptionChange}
         description={
           showDescription
-            ? "The advent of the automobile indeed brought about significant societal changes. The ability to travel by car transformed social interactions by providing greater mobility and flexibility. Additionally, it allowed people to live farther from city centers, leading to suburbanization and changes in housing patterns."
+            ? "Driving under the influence of medical marijuana is illegal due to its impairing effects."
             : null
         }
       />
 
       <RadioButton
         classname="bold"
-        question="10. How has the automotive industry contributed to global economies?"
-        option1="By limiting job opportunities across various sectors"
-        option2="By fostering interdependence only within the automotive sector"
-        option3="By generating employment opportunities, contributing to economic growth, and fostering interdependence with other sectors"
+        question="10. During peak DUI hours between 10:00 P.M. and 2:00 A.M., what is a common behavior exhibited by impaired drivers that increases the risk of accidents?"
+        option1="Consistent speed control"
+        option2="Predictable lane changes"
+        option3="Erratic speed control"
         name="ten"
         optionDiv="option"
         ida="TenA"
@@ -284,7 +286,7 @@ export default function Ten() {
         onchange={handleOptionChange}
         description={
           showDescription
-            ? "The automotive industry plays a crucial role in job creation, economic growth, and fostering interconnectedness with other sectors, such as manufacturing, technology, and transportation."
+            ? "Impaired drivers during peak DUI hours may display unpredictable behavior, including fluctuating between unreasonably fast and slow speeds, which increases the risk of accidents and endangers other road users."
             : null
         }
       />

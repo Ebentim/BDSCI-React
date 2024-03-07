@@ -3,7 +3,21 @@ import { RadioButton } from "../Assets/radio";
 import { NavButtons } from "../Assets/next";
 import { Modal } from "../Assets/modal";
 import "../styles/general.css";
-import { useState, useEffect } from "react";
+import { useState } from "react";
+
+const QuizAnswers = {
+  one: "Harmful and destructive behaviors may affect them.",
+  two: "To address heightened stimulation of the nervous system.",
+  three: "Comprehensive driver education programs",
+  four: "Isolation from friends and family.",
+  five: "Relative inexperience and higher likelihood of fatalities",
+  six: "Listlessness and lethargy.",
+  seven: "Zero tolerance is applied.",
+  eight: "Inducing relaxation and calmness.",
+  nine: "Teens' developing brains and limited driving experience",
+  ten: "Consequences such as fines, license suspension, or jail time.",
+};
+
 export default function Thirteen() {
   const { updateScore } = useQuiz();
   const [selectedOptions, setSelectedOptions] = useState({});
@@ -11,18 +25,6 @@ export default function Thirteen() {
   const [showModal, setShowModal] = useState(false);
   let score = 0;
   const [totalScore, setTotalScore] = useState(score);
-  const QuizAnswers = {
-    one: "Slowing down to look at collision scene",
-    two: "Vehicle is in line with other parked vehicles",
-    three: "In an unmarked crosswalk",
-    four: "Turned to the right (away from the street)",
-    five: "Stay out of the intersection until traffic clears",
-    six: "Avoiding unnecessary lane changes",
-    seven: "Drive to a safe place, stop and rest",
-    eight: "It is illegal under all circumstances",
-    nine: "Transformation of social interactions and the ability to live farther from city centers",
-    ten: "By limiting job opportunities across various sectors",
-  };
 
   const handleOptionChange = (question, option) => {
     setSelectedOptions((prevState) => ({ ...prevState, [question]: option }));
@@ -46,20 +48,17 @@ export default function Thirteen() {
     setShowModal(true);
   };
 
-  useEffect(() => {
-    setShowDescription(true);
-    setShowModal(true);
-  }, [totalScore]);
-
   const handleModal = () => {
     setSelectedOptions({});
     setShowModal(false);
   };
+
   const SubmitButton = () => (
     <NavButtons classname={"nextButton"} onclick={submitQuiz} disable={false}>
       <a href="#quizHead">Submit</a>
     </NavButtons>
   );
+
   const CloseModal = () => {
     return (
       <div className="modal">
@@ -96,10 +95,10 @@ export default function Thirteen() {
       </p>
       <RadioButton
         classname="bold"
-        question="1. Which of the following blocks the smooth flow of traffic?"
-        option1="Slowing down to look at collision scene"
-        option2="Avoiding unnecessary lane changes"
-        option3="Using public transportation instead of your vehicle"
+        question="1. Why might drug abuse impact not only the person involved but also their family and friends?"
+        option1="It creates a sense of independence."
+        option2="Harmful and destructive behaviors may affect them."
+        option3="It promotes healthier relationships."
         name="one"
         optionDiv="option"
         ida="oneA"
@@ -109,17 +108,17 @@ export default function Thirteen() {
         onchange={handleOptionChange}
         description={
           showDescription
-            ? "Slowing down to look at accidents or unusual things causes traffic jams and should be avoided."
+            ? "Drug abuse can lead to harmful and destructive behaviors that impact not only the individual but also their family and friends who may witness or suffer from the consequences."
             : null
         }
       />
 
       <RadioButton
         classname="bold"
-        question="2. Parallel parking is when the:"
-        option1="Front wheels are turned toward the street."
-        option2="Vehicle is in line with other parked vehicles"
-        option3="Rear wheels are touching the curb."
+        question="2. Why is immediate medical attention necessary in extreme cases of upper use?"
+        option1="To induce relaxation."
+        option2="To address heightened stimulation of the nervous system."
+        option3="To promote drowsiness."
         name="two"
         ptionDiv="option"
         ida="twoA"
@@ -129,17 +128,17 @@ export default function Thirteen() {
         onchange={handleOptionChange}
         description={
           showDescription
-            ? "Parallel parking is a crucial skill for drivers, especially in urban areas with limited parking spaces. This maneuver requires aligning the vehicle parallel to the curb between two parked vehicles. "
+            ? "Extreme cases of upper use can lead to rapid heart rate, elevated blood pressure, and even convulsions or seizures, requiring immediate medical attention."
             : null
         }
       />
 
       <RadioButton
         classname="bold"
-        question="3. It is illegal to park your vehicle:"
-        option1="In an unmarked crosswalk"
-        option2="Within three feet of a private driveway."
-        option3="In a bicycle lane. "
+        question="3. What factor has contributed to the decline in teens drinking and driving over the past few decades?"
+        option1="Increased peer pressure"
+        option2="Comprehensive driver education programs"
+        option3="Higher tolerance to alcohol in teens"
         name="three"
         optionDiv="option"
         ida="threeA"
@@ -147,14 +146,19 @@ export default function Thirteen() {
         idc="threeC"
         check={selectedOptions.three}
         onchange={handleOptionChange}
+        description={
+          showDescription
+            ? "Comprehensive driver education programs, among other factors, have contributed to the decline in teens drinking and driving."
+            : null
+        }
       />
 
       <RadioButton
         classname="bold"
-        question="4. When parking uphill on a two-way street with no curbs, your front wheels should be:"
-        option1="Turned to the left (toward the street)"
-        option2="Turned to the right (away from the street)"
-        option3="Parallel to the pavement"
+        question="4. What is necessary to break the cycle of drug misuse?"
+        option1="Isolation from friends and family."
+        option2="Ignoring the problem and hoping it goes away."
+        option3="Professional help, intervention, and support."
         name="four"
         optionDiv="option"
         ida="fourA"
@@ -164,17 +168,17 @@ export default function Thirteen() {
         onchange={handleOptionChange}
         description={
           showDescription
-            ? "When parking uphill on a two-way street with no curbs, it is recommended to turn your front wheels to the right. This is a safety measure to prevent the vehicle from rolling into traffic if the brakes fail."
+            ? "Breaking the cycle of drug misuse requires intervention, support, and professional help, such as therapies, counseling, and rehabilitation programs."
             : null
         }
       />
 
       <RadioButton
         classname="bold"
-        question="5. If you have a green light, but traffic is blocking the intersection, you should:"
-        option1="Stay out of the intersection until traffic clears"
-        option2="Enter the intersection and wait until traffic clears"
-        option3="Merge into another lane, and try to go around the traffic"
+        question="5. Young drivers (ages 16-20) are at a significantly higher risk of being involved in alcohol-related accidents due to:"
+        option1="Lack of parental involvement"
+        option2="Lower blood alcohol concentration (BAC) levels"
+        option3="Relative inexperience and higher likelihood of fatalities"
         name="five"
         optionDiv="option"
         ida="fiveA"
@@ -184,17 +188,17 @@ export default function Thirteen() {
         onchange={handleOptionChange}
         description={
           showDescription
-            ? "When you have a green light but the intersection is blocked, it's important to wait until you can safely clear the intersection before proceeding. Blocking an intersection can impede the flow of traffic and create safety hazards."
+            ? "Young drivers (ages 16-20) are at a significantly higher risk of being involved in alcohol-related accidents, which are more likely to result in fatalities."
             : null
         }
       />
 
       <RadioButton
         classname="bold"
-        question="6. At intersections, crosswalks, and railroad crossings, you should always:"
-        option1="Slowing down to look at collision scene"
-        option2="Avoiding unnecessary lane changes"
-        option3="Slowly pass vehicles that seem to be stopped for no reason"
+        question="6. What is one of the primary effects of downers on behavior?"
+        option1="Increased alertness."
+        option2="Listlessness and lethargy."
+        option3="Heightened coordination."
         name="six"
         optionDiv="option"
         ida="sixA"
@@ -204,17 +208,17 @@ export default function Thirteen() {
         onchange={handleOptionChange}
         description={
           showDescription
-            ? "It is important to check the sides of your vehicle at intersections, crosswalks, and railroad crossings to be aware of any potential hazards."
+            ? "Downers, or depressants, can lead to listlessness, drowsiness, and lethargy, impacting alertness and coordination."
             : null
         }
       />
 
       <RadioButton
         classname="bold"
-        question="7. If you get sleepy while driving, you should:"
-        option1="Drive to a safe place, stop and rest"
-        option2="Play the audio loudly and roll down the windows"
-        option3="Drink coffee to make you more alert"
+        question="7. What is California's stance on alcohol and drugs for drivers under 21 years old?"
+        option1="They are allowed a small amount."
+        option2="Zero tolerance is applied."
+        option3="They can consume alcohol if accompanied by an adult."
         name="seven"
         optionDiv="option"
         ida="sevenA"
@@ -224,17 +228,17 @@ export default function Thirteen() {
         onchange={handleOptionChange}
         description={
           showDescription
-            ? "If you get sleepy while driving, it's essential to pull over to a safe location and take a break to rest. This is a crucial safety measure to prevent accidents caused by drowsy driving."
+            ? "California has a zero-tolerance policy for drivers under 21, meaning they cannot have any amount of alcohol or drugs in their system."
             : null
         }
       />
 
       <RadioButton
         classname="bold"
-        question="8. Which of the following is true about double parking?"
-        option1="It is allowed if you are making a delivery"
-        option2="It is illegal under all circumstances"
-        option3="It is illegal unless you wait in the vehicle"
+        question="8. What adverse effects can uppers, also known as stimulants, have on the central nervous system?"
+        option1="Inducing relaxation and calmness."
+        option2="Slowing down the heart rate."
+        option3="Stimulation of the central nervous system."
         name="eight"
         optionDiv="option"
         ida="eightA"
@@ -244,17 +248,17 @@ export default function Thirteen() {
         onchange={handleOptionChange}
         description={
           showDescription
-            ? "Double parking refers to parking a vehicle next to or near another parked vehicle on the roadway side of the parked vehicle. This practice is prohibited as it can impede traffic flow and create unsafe conditions."
+            ? "Uppers, or stimulants, stimulate the central nervous system, leading to increased alertness, energy, and euphoria."
             : null
         }
       />
 
       <RadioButton
         classname="bold"
-        question="9. What societal changes were brought about by the advent of the automobile?"
-        option1="Increased reliance on public transportation"
-        option2="Limited access to employment and services in city centers"
-        option3="Transformation of social interactions and the ability to live farther from city centers"
+        question="9. Why are teens more likely to exhibit impaired driving skills even at lower blood alcohol levels compared to adults?"
+        option1="Teens' developing brains and limited driving experience"
+        option2="Teens generally have a higher tolerance to alcohol"
+        option3="Lack of public awareness campaigns"
         name="nine"
         optionDiv="option"
         ida="nineA"
@@ -264,17 +268,17 @@ export default function Thirteen() {
         onchange={handleOptionChange}
         description={
           showDescription
-            ? "The advent of the automobile indeed brought about significant societal changes. The ability to travel by car transformed social interactions by providing greater mobility and flexibility. Additionally, it allowed people to live farther from city centers, leading to suburbanization and changes in housing patterns."
+            ? "Teens have developing brains, limited decision-making skills, and less driving experience, making them more vulnerable to impaired driving even at lower blood alcohol levels."
             : null
         }
       />
 
       <RadioButton
         classname="bold"
-        question="10. How has the automotive industry contributed to global economies?"
-        option1="By limiting job opportunities across various sectors"
-        option2="By fostering interdependence only within the automotive sector"
-        option3="By generating employment opportunities, contributing to economic growth, and fostering interdependence with other sectors"
+        question="10. What are the consequences of violating DUI laws?"
+        option1="No consequences for the first offense."
+        option2="Only a warning is issued."
+        option3="Consequences such as fines, license suspension, or jail time."
         name="ten"
         optionDiv="option"
         ida="TenA"
@@ -284,7 +288,7 @@ export default function Thirteen() {
         onchange={handleOptionChange}
         description={
           showDescription
-            ? "The automotive industry plays a crucial role in job creation, economic growth, and fostering interconnectedness with other sectors, such as manufacturing, technology, and transportation."
+            ? "Violation of DUI laws can lead to various consequences, including fines, license suspension, or jail time."
             : null
         }
       />

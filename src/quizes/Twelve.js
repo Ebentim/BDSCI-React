@@ -3,7 +3,22 @@ import { RadioButton } from "../Assets/radio";
 import { NavButtons } from "../Assets/next";
 import { Modal } from "../Assets/modal";
 import "../styles/general.css";
-import { useState, useEffect } from "react";
+import { useState } from "react";
+
+const QuizAnswers = {
+  one: "100 feet",
+  two: "Headlights",
+  three:
+    "Not assume the other driver will make space for you to return to your lane",
+  four: "Increase your chances of an accident",
+  five: "To alert oncoming traffic where you cannot see at least 200 feet ahead",
+  six: "Limited driving experience",
+  seven: "Short-term thinking",
+  eight: "Difficulty in responding to unexpected events",
+  nine: "Reinforce a false sense of security",
+  ten: "Reduced risk perception",
+};
+
 export default function Twelve() {
   const { updateScore } = useQuiz();
   const [selectedOptions, setSelectedOptions] = useState({});
@@ -11,18 +26,6 @@ export default function Twelve() {
   const [showModal, setShowModal] = useState(false);
   let score = 0;
   const [totalScore, setTotalScore] = useState(score);
-  const QuizAnswers = {
-    one: "Slowing down to look at collision scene",
-    two: "Vehicle is in line with other parked vehicles",
-    three: "In an unmarked crosswalk",
-    four: "Turned to the right (away from the street)",
-    five: "Stay out of the intersection until traffic clears",
-    six: "Avoiding unnecessary lane changes",
-    seven: "Drive to a safe place, stop and rest",
-    eight: "It is illegal under all circumstances",
-    nine: "Transformation of social interactions and the ability to live farther from city centers",
-    ten: "By limiting job opportunities across various sectors",
-  };
 
   const handleOptionChange = (question, option) => {
     setSelectedOptions((prevState) => ({ ...prevState, [question]: option }));
@@ -45,11 +48,6 @@ export default function Twelve() {
     setShowDescription(true);
     setShowModal(true);
   };
-
-  useEffect(() => {
-    setShowDescription(true);
-    setShowModal(true);
-  }, [totalScore]);
 
   const handleModal = () => {
     setSelectedOptions({});
@@ -96,10 +94,10 @@ export default function Twelve() {
       </p>
       <RadioButton
         classname="bold"
-        question="1. Which of the following blocks the smooth flow of traffic?"
-        option1="Slowing down to look at collision scene"
-        option2="Avoiding unnecessary lane changes"
-        option3="Using public transportation instead of your vehicle"
+        question="1. You are about to make a left turn, you must signal continuously for how many feet before making the turn?"
+        option1="100 feet"
+        option2="50 feet"
+        option3="75 feet"
         name="one"
         optionDiv="option"
         ida="oneA"
@@ -109,17 +107,17 @@ export default function Twelve() {
         onchange={handleOptionChange}
         description={
           showDescription
-            ? "Slowing down to look at accidents or unusual things causes traffic jams and should be avoided."
+            ? "When you are about to make a left turn, you are required to signal continuously for at least 100 feet before making the turn. Signaling in advance helps notify other drivers and pedestrians about your intentions."
             : null
         }
       />
 
       <RadioButton
         classname="bold"
-        question="2. Parallel parking is when the:"
-        option1="Front wheels are turned toward the street."
-        option2="Vehicle is in line with other parked vehicles"
-        option3="Rear wheels are touching the curb."
+        question="2. It is a very windy day. You are driving and a dust storm blows across the freeway reducing your visibility. You should drive slower and turn on your:"
+        option1="Interior lights"
+        option2="Parking lights"
+        option3="Headlights"
         name="two"
         ptionDiv="option"
         ida="twoA"
@@ -129,17 +127,17 @@ export default function Twelve() {
         onchange={handleOptionChange}
         description={
           showDescription
-            ? "Parallel parking is a crucial skill for drivers, especially in urban areas with limited parking spaces. This maneuver requires aligning the vehicle parallel to the curb between two parked vehicles. "
+            ? "In a dust storm that reduces visibility, you should drive slower and turn on your headlights to increase visibility for yourself and other drivers."
             : null
         }
       />
 
       <RadioButton
         classname="bold"
-        question="3. It is illegal to park your vehicle:"
-        option1="In an unmarked crosswalk"
-        option2="Within three feet of a private driveway."
-        option3="In a bicycle lane. "
+        question="3. If you plan to pass another vehicle, you should:"
+        option1="Not assume the other driver will make space for you to return to your lane"
+        option2="Assume the other driver will let you pass if you use your turn signal"
+        option3="Assume the other driver will maintain a constant speed"
         name="three"
         optionDiv="option"
         ida="threeA"
@@ -147,14 +145,19 @@ export default function Twelve() {
         idc="threeC"
         check={selectedOptions.three}
         onchange={handleOptionChange}
+        description={
+          showDescription
+            ? "You are responsible for your actions when passing another vehicle. Do not rely on assumptions about the behavior of the other driver."
+            : null
+        }
       />
 
       <RadioButton
         classname="bold"
-        question="4. When parking uphill on a two-way street with no curbs, your front wheels should be:"
-        option1="Turned to the left (toward the street)"
-        option2="Turned to the right (away from the street)"
-        option3="Parallel to the pavement"
+        question="4. If you drive faster than other vehicles on a road with one lane in each direction and continually pass the other cars, you will:"
+        option1="Get to your destination much faster and safer"
+        option2="Increase your chances of an accident"
+        option3="Help prevent traffic congestion"
         name="four"
         optionDiv="option"
         ida="fourA"
@@ -164,17 +167,17 @@ export default function Twelve() {
         onchange={handleOptionChange}
         description={
           showDescription
-            ? "When parking uphill on a two-way street with no curbs, it is recommended to turn your front wheels to the right. This is a safety measure to prevent the vehicle from rolling into traffic if the brakes fail."
+            ? "Driving faster or continuously passing other vehicles on a road with one lane in each direction, can lead to unsafe driving conditions, and increase the risk of accidents"
             : null
         }
       />
 
       <RadioButton
         classname="bold"
-        question="5. If you have a green light, but traffic is blocking the intersection, you should:"
-        option1="Stay out of the intersection until traffic clears"
-        option2="Enter the intersection and wait until traffic clears"
-        option3="Merge into another lane, and try to go around the traffic"
+        question="5. You may use your horn on narrow mountain roads:"
+        option1="To alert oncoming traffic where you cannot see at least 200 feet ahead"
+        option2="To let pedestrians know you are there"
+        option3="To signal to other drivers that you are in a hurry"
         name="five"
         optionDiv="option"
         ida="fiveA"
@@ -184,17 +187,17 @@ export default function Twelve() {
         onchange={handleOptionChange}
         description={
           showDescription
-            ? "When you have a green light but the intersection is blocked, it's important to wait until you can safely clear the intersection before proceeding. Blocking an intersection can impede the flow of traffic and create safety hazards."
+            ? "Using your horn on narrow mountain roads in situations where visibility is limited is a safety measure to alert other drivers of your presence and prevent potential collisions."
             : null
         }
       />
 
       <RadioButton
         classname="bold"
-        question="6. At intersections, crosswalks, and railroad crossings, you should always:"
-        option1="Slowing down to look at collision scene"
-        option2="Avoiding unnecessary lane changes"
-        option3="Slowly pass vehicles that seem to be stopped for no reason"
+        question="6. Which factor contributes to young driver's limited ability to recognize and assess potential unsafe driving conditions?"
+        option1="Lack of maturity"
+        option2="Limited driving experience"
+        option3="Emotional regulation"
         name="six"
         optionDiv="option"
         ida="sixA"
@@ -204,17 +207,17 @@ export default function Twelve() {
         onchange={handleOptionChange}
         description={
           showDescription
-            ? "It is important to check the sides of your vehicle at intersections, crosswalks, and railroad crossings to be aware of any potential hazards."
+            ? "Limited driving experience hinders the ability to encounter various road and weather conditions, making it challenging for young drivers to identify potential dangers."
             : null
         }
       />
 
       <RadioButton
         classname="bold"
-        question="7. If you get sleepy while driving, you should:"
-        option1="Drive to a safe place, stop and rest"
-        option2="Play the audio loudly and roll down the windows"
-        option3="Drink coffee to make you more alert"
+        question="7. What contributes to the 'No One Got Hurt' attitude among drivers engaging in risky behaviors?"
+        option1="Overconfidence"
+        option2="Short-term thinking"
+        option3="Lack of empathy"
         name="seven"
         optionDiv="option"
         ida="sevenA"
@@ -224,17 +227,17 @@ export default function Twelve() {
         onchange={handleOptionChange}
         description={
           showDescription
-            ? "If you get sleepy while driving, it's essential to pull over to a safe location and take a break to rest. This is a crucial safety measure to prevent accidents caused by drowsy driving."
+            ? "The 'No One Got Hurt' attitude is fueled by a lack of understanding of consequences and short-term thinking, where drivers underestimate the risks associated with their actions."
             : null
         }
       />
 
       <RadioButton
         classname="bold"
-        question="8. Which of the following is true about double parking?"
-        option1="It is allowed if you are making a delivery"
-        option2="It is illegal under all circumstances"
-        option3="It is illegal unless you wait in the vehicle"
+        question="8. What challenges do novice drivers with limited exposure face?"
+        option1="Difficulty in responding to unexpected events"
+        option2="Overestimation of driving skills"
+        option3="Strict adherence to traffic laws"
         name="eight"
         optionDiv="option"
         ida="eightA"
@@ -244,17 +247,17 @@ export default function Twelve() {
         onchange={handleOptionChange}
         description={
           showDescription
-            ? "Double parking refers to parking a vehicle next to or near another parked vehicle on the roadway side of the parked vehicle. This practice is prohibited as it can impede traffic flow and create unsafe conditions."
+            ? "Novice drivers with limited exposure may struggle to respond appropriately to unexpected events due to their lack of experience in various road conditions and challenging scenarios."
             : null
         }
       />
 
       <RadioButton
         classname="bold"
-        question="9. What societal changes were brought about by the advent of the automobile?"
-        option1="Increased reliance on public transportation"
-        option2="Limited access to employment and services in city centers"
-        option3="Transformation of social interactions and the ability to live farther from city centers"
+        question="9. How can attempting to impress passengers impact driving behavior?"
+        option1="Enhance focus on the road"
+        option2="Reinforce a false sense of security"
+        option3="Encourage cautious driving "
         name="nine"
         optionDiv="option"
         ida="nineA"
@@ -264,17 +267,17 @@ export default function Twelve() {
         onchange={handleOptionChange}
         description={
           showDescription
-            ? "The advent of the automobile indeed brought about significant societal changes. The ability to travel by car transformed social interactions by providing greater mobility and flexibility. Additionally, it allowed people to live farther from city centers, leading to suburbanization and changes in housing patterns."
+            ? "Trying to impress passengers may contribute to overconfidence, reinforcing a false sense of security and encouraging risky maneuvers without considering the potential consequences."
             : null
         }
       />
 
       <RadioButton
         classname="bold"
-        question="10. How has the automotive industry contributed to global economies?"
-        option1="By limiting job opportunities across various sectors"
-        option2="By fostering interdependence only within the automotive sector"
-        option3="By generating employment opportunities, contributing to economic growth, and fostering interdependence with other sectors"
+        question="10. How do distractions especially from smartphones and social media pose a significant threat to young drivers?"
+        option1="Enhanced focus on the road"
+        option2="Reduced risk perception"
+        option3="Improved decision-making skills"
         name="ten"
         optionDiv="option"
         ida="TenA"
@@ -284,7 +287,7 @@ export default function Twelve() {
         onchange={handleOptionChange}
         description={
           showDescription
-            ? "The automotive industry plays a crucial role in job creation, economic growth, and fostering interconnectedness with other sectors, such as manufacturing, technology, and transportation."
+            ? "Distractions can reduce risk perception, making it difficult for young drivers to recognize and respond to potential hazards on the road. "
             : null
         }
       />

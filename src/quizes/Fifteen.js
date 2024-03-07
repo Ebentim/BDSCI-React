@@ -3,7 +3,21 @@ import { RadioButton } from "../Assets/radio";
 import { NavButtons } from "../Assets/next";
 import { Modal } from "../Assets/modal";
 import "../styles/general.css";
-import { useState, useEffect } from "react";
+import { useState } from "react";
+
+const QuizAnswers = {
+  one: "Ignore it and continue driving",
+  two: "An extreme expression of anger on the road.",
+  three: "Males under the age of 19",
+  four: "It reduces stress and anxiety.",
+  five: "Remaining composed and giving aggressive drivers plenty of space.",
+  six: "Acknowledging diverse driving experiences and maintaining a safe following distance.",
+  seven: "Ignoring traffic rules.",
+  eight: "It helps communicate intentions and ensures safe lane changes.",
+  nine: "It demonstrates empathy, kindness, and a caring attitude.",
+  ten: "66%",
+};
+
 export default function Fifteen() {
   const { updateScore } = useQuiz();
   const [selectedOptions, setSelectedOptions] = useState({});
@@ -11,18 +25,6 @@ export default function Fifteen() {
   const [showModal, setShowModal] = useState(false);
   let score = 0;
   const [totalScore, setTotalScore] = useState(score);
-  const QuizAnswers = {
-    one: "Slowing down to look at collision scene",
-    two: "Vehicle is in line with other parked vehicles",
-    three: "In an unmarked crosswalk",
-    four: "Turned to the right (away from the street)",
-    five: "Stay out of the intersection until traffic clears",
-    six: "Avoiding unnecessary lane changes",
-    seven: "Drive to a safe place, stop and rest",
-    eight: "It is illegal under all circumstances",
-    nine: "Transformation of social interactions and the ability to live farther from city centers",
-    ten: "By limiting job opportunities across various sectors",
-  };
 
   const handleOptionChange = (question, option) => {
     setSelectedOptions((prevState) => ({ ...prevState, [question]: option }));
@@ -46,20 +48,17 @@ export default function Fifteen() {
     setShowModal(true);
   };
 
-  useEffect(() => {
-    setShowDescription(true);
-    setShowModal(true);
-  }, [totalScore]);
-
   const handleModal = () => {
     setSelectedOptions({});
     setShowModal(false);
   };
+
   const SubmitButton = () => (
     <NavButtons classname={"nextButton"} onclick={submitQuiz} disable={false}>
       <a href="#quizHead">Submit</a>
     </NavButtons>
   );
+
   const CloseModal = () => {
     return (
       <div className="modal">
@@ -96,10 +95,10 @@ export default function Fifteen() {
       </p>
       <RadioButton
         classname="bold"
-        question="1. Which of the following blocks the smooth flow of traffic?"
-        option1="Slowing down to look at collision scene"
-        option2="Avoiding unnecessary lane changes"
-        option3="Using public transportation instead of your vehicle"
+        question="1. What should you do if another driver honks at you?"
+        option1="Ignore it and continue driving"
+        option2="Honk back"
+        option3="Make an obscene gesture"
         name="one"
         optionDiv="option"
         ida="oneA"
@@ -109,17 +108,17 @@ export default function Fifteen() {
         onchange={handleOptionChange}
         description={
           showDescription
-            ? "Slowing down to look at accidents or unusual things causes traffic jams and should be avoided."
+            ? "When another driver honks at you, make sure to stay calm, avoid confrontation, and continue driving safely without escalating the situation."
             : null
         }
       />
 
       <RadioButton
         classname="bold"
-        question="2. Parallel parking is when the:"
-        option1="Front wheels are turned toward the street."
-        option2="Vehicle is in line with other parked vehicles"
-        option3="Rear wheels are touching the curb."
+        question="2. What is road rage, and how does it manifest?"
+        option1="A common reaction to poor driving skills."
+        option2="An extreme expression of anger on the road."
+        option3="A strategy for effective anger management."
         name="two"
         ptionDiv="option"
         ida="twoA"
@@ -129,17 +128,17 @@ export default function Fifteen() {
         onchange={handleOptionChange}
         description={
           showDescription
-            ? "Parallel parking is a crucial skill for drivers, especially in urban areas with limited parking spaces. This maneuver requires aligning the vehicle parallel to the curb between two parked vehicles. "
+            ? "Road rage is described as an extreme expression of anger while driving. This behavior is dangerous and often stems from immaturity, poor impulse control, stress inability, and a lack of emotional regulation."
             : null
         }
       />
 
       <RadioButton
         classname="bold"
-        question="3. It is illegal to park your vehicle:"
-        option1="In an unmarked crosswalk"
-        option2="Within three feet of a private driveway."
-        option3="In a bicycle lane. "
+        question="3. Which demographic group tends to exhibit the highest prevalence of road rage?"
+        option1="Females over the age of 30"
+        option2="Individuals between the ages of 40-50"
+        option3="Males under the age of 19"
         name="three"
         optionDiv="option"
         ida="threeA"
@@ -147,14 +146,19 @@ export default function Fifteen() {
         idc="threeC"
         check={selectedOptions.three}
         onchange={handleOptionChange}
+        description={
+          showDescription
+            ? "Males under the age of 19 are particularly susceptible to engaging in aggressive driving behaviors."
+            : null
+        }
       />
 
       <RadioButton
         classname="bold"
-        question="4. When parking uphill on a two-way street with no curbs, your front wheels should be:"
-        option1="Turned to the left (toward the street)"
-        option2="Turned to the right (away from the street)"
-        option3="Parallel to the pavement"
+        question="4. How does tailgating contribute to road hazards?"
+        option1="It reduces stress and anxiety."
+        option2="It encourages courteous driving."
+        option3=" It increases stopping distance, raising the risk of collisions."
         name="four"
         optionDiv="option"
         ida="fourA"
@@ -164,17 +168,17 @@ export default function Fifteen() {
         onchange={handleOptionChange}
         description={
           showDescription
-            ? "When parking uphill on a two-way street with no curbs, it is recommended to turn your front wheels to the right. This is a safety measure to prevent the vehicle from rolling into traffic if the brakes fail."
+            ? "Tailgating reduces the time available for a driver to react to sudden stops or emergencies, increasing the risk of rear-end collisions."
             : null
         }
       />
 
       <RadioButton
         classname="bold"
-        question="5. If you have a green light, but traffic is blocking the intersection, you should:"
-        option1="Stay out of the intersection until traffic clears"
-        option2="Enter the intersection and wait until traffic clears"
-        option3="Merge into another lane, and try to go around the traffic"
+        question="5. When encountering aggressive behavior from other drivers, what is essential for maintaining a safer driving environment?"
+        option1="Remaining composed and giving aggressive drivers plenty of space."
+        option2="Avoiding any space between vehicles."
+        option3="Making eye contact."
         name="five"
         optionDiv="option"
         ida="fiveA"
@@ -184,17 +188,17 @@ export default function Fifteen() {
         onchange={handleOptionChange}
         description={
           showDescription
-            ? "When you have a green light but the intersection is blocked, it's important to wait until you can safely clear the intersection before proceeding. Blocking an intersection can impede the flow of traffic and create safety hazards."
+            ? "Staying calm, maintaining distance, and avoiding escalating situations are crucial for ensuring road safety when encountering aggressive behavior from other drivers."
             : null
         }
       />
 
       <RadioButton
         classname="bold"
-        question="6. At intersections, crosswalks, and railroad crossings, you should always:"
-        option1="Slowing down to look at collision scene"
-        option2="Avoiding unnecessary lane changes"
-        option3="Slowly pass vehicles that seem to be stopped for no reason"
+        question="6. What is a patient and safety-focused response when encountering slow drivers on the road?"
+        option1="Tailgating to encourage faster driving."
+        option2="Acknowledging diverse driving experiences and maintaining a safe following distance."
+        option3="Ignoring slow drivers completely."
         name="six"
         optionDiv="option"
         ida="sixA"
@@ -204,17 +208,17 @@ export default function Fifteen() {
         onchange={handleOptionChange}
         description={
           showDescription
-            ? "It is important to check the sides of your vehicle at intersections, crosswalks, and railroad crossings to be aware of any potential hazards."
+            ? "Patient and safety-focused responses involve acknowledging diverse driving experiences, maintaining a safe following distance, and avoiding risky behaviors like tailgating."
             : null
         }
       />
 
       <RadioButton
         classname="bold"
-        question="7. If you get sleepy while driving, you should:"
-        option1="Drive to a safe place, stop and rest"
-        option2="Play the audio loudly and roll down the windows"
-        option3="Drink coffee to make you more alert"
+        question="7. How can a driver showcase adaptability in different driving conditions?"
+        option1="Ignoring traffic rules."
+        option2="Speeding up in response to faster vehicles."
+        option3="Adapting to various driving conditions and handling different circumstances."
         name="seven"
         optionDiv="option"
         ida="sevenA"
@@ -224,17 +228,17 @@ export default function Fifteen() {
         onchange={handleOptionChange}
         description={
           showDescription
-            ? "If you get sleepy while driving, it's essential to pull over to a safe location and take a break to rest. This is a crucial safety measure to prevent accidents caused by drowsy driving."
+            ? "Adapting to various driving conditions reflects adaptability and flexibility in handling different circumstances."
             : null
         }
       />
 
       <RadioButton
         classname="bold"
-        question="8. Which of the following is true about double parking?"
-        option1="It is allowed if you are making a delivery"
-        option2="It is illegal under all circumstances"
-        option3="It is illegal unless you wait in the vehicle"
+        question="8. Why is it important to use turn signals and check mirrors before changing lanes?"
+        option1="It's a legal requirement."
+        option2="It helps communicate intentions and ensures safe lane changes."
+        option3="It causes unnecessary delays."
         name="eight"
         optionDiv="option"
         ida="eightA"
@@ -244,17 +248,17 @@ export default function Fifteen() {
         onchange={handleOptionChange}
         description={
           showDescription
-            ? "Double parking refers to parking a vehicle next to or near another parked vehicle on the roadway side of the parked vehicle. This practice is prohibited as it can impede traffic flow and create unsafe conditions."
+            ? "Using turn signals and checking mirrors before changing lanes is crucial for communicating intentions and ensuring safe transitions on the road."
             : null
         }
       />
 
       <RadioButton
         classname="bold"
-        question="9. What societal changes were brought about by the advent of the automobile?"
-        option1="Increased reliance on public transportation"
-        option2="Limited access to employment and services in city centers"
-        option3="Transformation of social interactions and the ability to live farther from city centers"
+        question="How does responsible and respectful driving reflect on a driver's character?"
+        option1="It demonstrates empathy, kindness, and a caring attitude."
+        option2="It showcases values for disorder and disregard for others."
+        option3="It highlights a preference for aggressive behavior."
         name="nine"
         optionDiv="option"
         ida="nineA"
@@ -264,17 +268,17 @@ export default function Fifteen() {
         onchange={handleOptionChange}
         description={
           showDescription
-            ? "The advent of the automobile indeed brought about significant societal changes. The ability to travel by car transformed social interactions by providing greater mobility and flexibility. Additionally, it allowed people to live farther from city centers, leading to suburbanization and changes in housing patterns."
+            ? "Responsible and respectful driving showcases values such as empathy, kindness, and a caring attitude toward fellow road users."
             : null
         }
       />
 
       <RadioButton
         classname="bold"
-        question="10. How has the automotive industry contributed to global economies?"
-        option1="By limiting job opportunities across various sectors"
-        option2="By fostering interdependence only within the automotive sector"
-        option3="By generating employment opportunities, contributing to economic growth, and fostering interdependence with other sectors"
+        question="10. What percentage of traffic fatalities is attributed to aggressive driving behaviors, according to reports from SafeMotorist?"
+        option1="66%"
+        option2="37%"
+        option3="2%"
         name="ten"
         optionDiv="option"
         ida="TenA"
@@ -284,7 +288,7 @@ export default function Fifteen() {
         onchange={handleOptionChange}
         description={
           showDescription
-            ? "The automotive industry plays a crucial role in job creation, economic growth, and fostering interconnectedness with other sectors, such as manufacturing, technology, and transportation."
+            ? "The text mentions that 66% of traffic fatalities result from aggressive driving behaviors, according to reports from SafeMotorist."
             : null
         }
       />
