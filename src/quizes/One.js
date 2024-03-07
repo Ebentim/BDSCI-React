@@ -46,11 +46,6 @@ export default function One() {
     setShowModal(true);
   };
 
-  useEffect(() => {
-    setShowDescription(true);
-    setShowModal(true);
-  }, [totalScore]);
-
   const handleModal = () => {
     setSelectedOptions({});
     setShowModal(false);
