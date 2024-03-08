@@ -80,7 +80,7 @@ export default function Fourteen() {
   return (
     <div className="quizBody">
       <div className="course-quiz-buttons" id="quizHead">
-        <h4 className="sectionHeading">Unit One Quiz </h4>
+        <h4 className="sectionHeading">Quiz</h4>
         <h4 className="sectionHeading">Total Score: {totalScore}%</h4>
       </div>
       <p className="sectionQuote">
@@ -118,7 +118,7 @@ export default function Fourteen() {
         option2="Keep your phone within easy reach so you will not need to take your eyes off the road."
         option3="Review the number before answering a call."
         name="two"
-        ptionDiv="option"
+        optionDiv="option"
         ida="twoA"
         idb="twoB"
         idc="twoC"

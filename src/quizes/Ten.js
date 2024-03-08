@@ -80,7 +80,7 @@ export default function Ten() {
   return (
     <div className="quizBody">
       <div className="course-quiz-buttons" id="quizHead">
-        <h4 className="sectionHeading">Unit One Quiz </h4>
+        <h4 className="sectionHeading">Quiz</h4>
         <h4 className="sectionHeading">Total Score: {totalScore}%</h4>
       </div>
       <p className="sectionQuote">
@@ -118,7 +118,7 @@ export default function Ten() {
         option2="Even over-the-counter drugs can impair your driving"
         option3="Only illegal drugs can impair your driving"
         name="two"
-        ptionDiv="option"
+        optionDiv="option"
         ida="twoA"
         idb="twoB"
         idc="twoC"

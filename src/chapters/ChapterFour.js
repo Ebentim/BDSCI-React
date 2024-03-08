@@ -388,9 +388,8 @@ export default function ChapterFour() {
                   <span className="bold">Right turn on red signals: </span>In
                   certain jurisdictions, right turns on red signals are allowed
                   after a complete stop and yielding to oncoming traffic and
-                  pedestrians. Drivers must familiarize themselves with local
-                  traffic laws and exercise caution when making right turns on
-                  red.
+                  pedestrians. You must exercise caution when making right turns
+                  on red.
                 </li>
                 <li className="courseText">
                   <span className="bold">Designated lanes: </span>Intersections

@@ -78,7 +78,7 @@ export default function One() {
   return (
     <div className="quizBody">
       <div className="course-quiz-buttons" id="quizHead">
-        <h4 className="sectionHeading">Unit One Quiz </h4>
+        <h4 className="sectionHeading">Quiz</h4>
         <h4 className="sectionHeading">Total Score: {totalScore}%</h4>
       </div>
       <p className="sectionQuote">
@@ -116,7 +116,7 @@ export default function One() {
         option2="Vehicle is in line with other parked vehicles"
         option3="Rear wheels are touching the curb."
         name="two"
-        ptionDiv="option"
+        optionDiv="option"
         ida="twoA"
         idb="twoB"
         idc="twoC"

@@ -81,7 +81,7 @@ export default function Eleven() {
   return (
     <div className="quizBody">
       <div className="course-quiz-buttons" id="quizHead">
-        <h4 className="sectionHeading">Unit One Quiz </h4>
+        <h4 className="sectionHeading">Quiz</h4>
         <h4 className="sectionHeading">Total Score: {totalScore}%</h4>
       </div>
       <p className="sectionQuote">
@@ -119,7 +119,7 @@ export default function Eleven() {
         option2="Large trucks have bigger blind spots than most passenger vehicles."
         option3="Blind spots can be checked by looking in your rear-view mirrors."
         name="two"
-        ptionDiv="option"
+        optionDiv="option"
         ida="twoA"
         idb="twoB"
         idc="twoC"

@@ -78,7 +78,7 @@ export default function Six() {
   return (
     <div className="quizBody">
       <div className="course-quiz-buttons" id="quizHead">
-        <h4 className="sectionHeading">Unit One Quiz </h4>
+        <h4 className="sectionHeading">Quiz</h4>
         <h4 className="sectionHeading">Total Score: {totalScore}%</h4>
       </div>
       <p className="sectionQuote">
@@ -95,6 +95,7 @@ export default function Six() {
         option1="If the shoulder is wide enough to accommodate your vehicle"
         option2="If the vehicle ahead of you is turning left"
         option3="Under no circumstances"
+        name="one"
         optionDiv="option"
         ida="oneA"
         idb="oneB"
@@ -110,7 +111,8 @@ export default function Six() {
         option1="Are following a small passenger vehicle"
         option2="Are being tailgated by another driver"
         option3="Are driving more slowly than the posted speed limit"
-        ptionDiv="option"
+        optionDiv="option"
+        name="two"
         ida="twoA"
         idb="twoB"
         idc="twoC"

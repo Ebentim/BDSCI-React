@@ -80,7 +80,7 @@ export default function Nine() {
   return (
     <div className="quizBody">
       <div className="course-quiz-buttons" id="quizHead">
-        <h4 className="sectionHeading">Unit One Quiz </h4>
+        <h4 className="sectionHeading">Quiz</h4>
         <h4 className="sectionHeading">Total Score: {totalScore}%</h4>
       </div>
       <p className="sectionQuote">
@@ -118,7 +118,7 @@ export default function Nine() {
         option2="When you have enough space to cross the intersection before the light turns red."
         option3="When you cannot completely cross the intersection."
         name="two"
-        ptionDiv="option"
+        optionDiv="option"
         ida="twoA"
         idb="twoB"
         idc="twoC"
@@ -234,6 +234,7 @@ export default function Nine() {
         option2="To increase the chances of being noticed by drivers."
         option3="To obstruct visibility for drivers"
         optionDiv="option"
+        name="eight"
         ida="eightA"
         idb="eightB"
         idc="eightC"

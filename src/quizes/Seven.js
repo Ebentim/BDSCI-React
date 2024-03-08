@@ -77,7 +77,7 @@ export default function Seven() {
   return (
     <div className="quizBody">
       <div className="course-quiz-buttons" id="quizHead">
-        <h4 className="sectionHeading">Unit One Quiz </h4>
+        <h4 className="sectionHeading">Quiz</h4>
         <h4 className="sectionHeading">Total Score: {totalScore}%</h4>
       </div>
       <p className="sectionQuote">
@@ -115,7 +115,7 @@ export default function Seven() {
         option2="Make Speed and Directional changes more gradually than you would otherwise"
         option3="Drive as you would under normal conditions"
         name="two"
-        ptionDiv="option"
+        optionDiv="option"
         ida="twoA"
         idb="twoB"
         idc="twoC"

@@ -79,7 +79,7 @@ export default function Eight() {
   return (
     <div className="quizBody">
       <div className="course-quiz-buttons" id="quizHead">
-        <h4 className="sectionHeading">Unit One Quiz </h4>
+        <h4 className="sectionHeading">Quiz </h4>
         <h4 className="sectionHeading">Total Score: {totalScore}%</h4>
       </div>
       <p className="sectionQuote">
@@ -116,7 +116,8 @@ export default function Eight() {
         option1="Transmission"
         option2="Engine"
         option3="Steering System"
-        ptionDiv="option"
+        optionDiv="option"
+        name="two"
         ida="twoA"
         idb="twoB"
         idc="twoC"

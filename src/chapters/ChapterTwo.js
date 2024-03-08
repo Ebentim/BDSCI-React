@@ -5,11 +5,11 @@ import "../styles/general.css";
 import humanEye from "../Assets/images/image59.png";
 import humanEyeStructure from "../Assets/images/image67.png";
 import snellenChart from "../Assets/images/image34.png";
+const sections = {
+  sectionOne: "The Pyschological Nature of the Driver",
+  sectionTwo: "The Physiological Nature of the Driver",
+};
 export default function ChapterTwo() {
-  const sections = {
-    sectionOne: "The Pyschological Nature of the Driver",
-    sectionTwo: "The Physiological Nature of the Driver",
-  };
   const [showQuiz, setShowQuiz] = useState(false);
 
   const handleQuiz = () => {

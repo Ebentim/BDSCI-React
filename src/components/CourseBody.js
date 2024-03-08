@@ -13,6 +13,7 @@ import ChapterTwelve from "../chapters/ChapterTwelve";
 import ChapterThirteen from "../chapters/ChapterThirteen";
 import ChapterFourteen from "../chapters/ChapterFourteen";
 import ChapterFifteen from "../chapters/ChapterFifteen";
+import FinalQuiz from "../quizes/FinalQuiz";
 import PrivateRoute from "./PrivateRoute";
 import "../styles/general.css";
 import Timer from "../components/Timer";
@@ -130,6 +131,7 @@ export default function CourseBod() {
   };
 
   return (
+    // <FinalQuiz />
     <div>
       <div className="TimerContainer">
         <Timer />
