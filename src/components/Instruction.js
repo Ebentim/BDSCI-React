@@ -1,19 +1,22 @@
 import { useState, useEffect } from "react";
 import Bar from "../components/Bar";
 import { useAuth } from "../contexts/AuthContext";
-import "../styles/general.css"
+import "../styles/general.css";
 export default function Instruction() {
-  const {accessToken} = useAuth()
-  const [userProfile, setUserProfile] = useState([])
+  const { accessToken } = useAuth();
+  const [userProfile, setUserProfile] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("/api/dashboard", {
-          method: "GET",
-          headers: {
-            Authorization: accessToken,
-          },
-        });
+        const response = await fetch(
+          "https://bakkers-driving-school.onrender.com/api/dashboard",
+          {
+            method: "GET",
+            headers: {
+              Authorization: accessToken,
+            },
+          }
+        );
 
         if (response.ok) {
           const data = await response.json();
@@ -35,7 +38,7 @@ export default function Instruction() {
   }, [accessToken]);
   return (
     <>
-      <div className = "instruction-container">
+      <div className="instruction-container">
         <p className="courseText">
           This course is designed to equip you with the knowledge and skills you
           need to become a safe and responsible driver. To complete the course

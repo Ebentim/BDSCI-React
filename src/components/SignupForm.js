@@ -40,7 +40,7 @@ function SignupForm() {
           .required("Your date of birth is equired"),
       })}
       onSubmit={(values, { setSubmitting, resetForm }) => {
-        fetch("/api/signup", {
+        fetch("https://bakkers-driving-school.onrender.com/api/signup", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -79,7 +79,11 @@ function SignupForm() {
       }}
     >
       <Form className="signup-form">
-      <p style={{textAlign:"center", fontSize: "1.5rem", color: "#365486"}}>Sign up</p>
+        <p
+          style={{ textAlign: "center", fontSize: "1.5rem", color: "#365486" }}
+        >
+          Sign up
+        </p>
         <Field
           className="form-input"
           name="firstname"

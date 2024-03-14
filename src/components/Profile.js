@@ -12,12 +12,15 @@ function Profile() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("/api/dashboard", {
-          method: "GET",
-          headers: {
-            Authorization: accessToken,
-          },
-        });
+        const response = await fetch(
+          "https://bakkers-driving-school.onrender.com/api/dashboard",
+          {
+            method: "GET",
+            headers: {
+              Authorization: accessToken,
+            },
+          }
+        );
 
         if (response.ok) {
           const data = await response.json();
@@ -40,10 +43,8 @@ function Profile() {
 
   const ProceedButton = () => {
     return (
-      <Link to ="/instruction">
-        <NavButtons classname="proceed">
-        Proceed to Course
-      </NavButtons>
+      <Link to="/instruction">
+        <NavButtons classname="proceed">Proceed to Course</NavButtons>
       </Link>
     );
   };
@@ -59,39 +60,39 @@ function Profile() {
   return (
     <div className="Profile-details">
       {Object.keys(userProfile).length > 0 ? (
-      <>
-      <div className="timeLeft-Container">
-        <h3 className="timer">
-          {" "}
-          <span>Final Quiz in : </span>
-          <span>
-            {hours < 10 ? "0" + hours : hours}:{" "}
-            {minutes < 10 ? "0" + minutes : minutes}:{" "}
-            {seconds < 10 ? "0" + seconds : seconds}
-          </span>
-        </h3>
-      </div>
-        <div>
-          <div className="names">
-            <div className="profileImage">
-              {userProfile.firstname[0]}
-              {userProfile.lastname[0]}
+        <>
+          <div className="timeLeft-Container">
+            <h3 className="timer">
+              {" "}
+              <span>Final Quiz in : </span>
+              <span>
+                {hours < 10 ? "0" + hours : hours}:{" "}
+                {minutes < 10 ? "0" + minutes : minutes}:{" "}
+                {seconds < 10 ? "0" + seconds : seconds}
+              </span>
+            </h3>
+          </div>
+          <div>
+            <div className="names">
+              <div className="profileImage">
+                {userProfile.firstname[0]}
+                {userProfile.lastname[0]}
+              </div>
+              <div className="userName">
+                <p>
+                  {userProfile.firstname} {userProfile.lastname}
+                </p>
+              </div>{" "}
+              <ProceedButton />
             </div>
-            <div className="userName">
-              <p>
-                {userProfile.firstname} {userProfile.lastname}
-              </p>
-            </div>{" "}
-            <ProceedButton />
+            <div className="contact-details">
+              <p className="contact">Address: {userProfile.address}</p>
+              <p className="contact">Email: {userProfile.email}</p>
+              <p className="contact">Birthday: {userProfile.birthdate}</p>
+              <p className="contact">State: California</p>
+            </div>
           </div>
-          <div className="contact-details">
-            <p className="contact">Address: {userProfile.address}</p>
-            <p className="contact">Email: {userProfile.email}</p>
-            <p className="contact">Birthday: {userProfile.birthdate}</p>
-            <p className="contact">State: California</p>
-          </div>
-        </div>
-      </>
+        </>
       ) : (
         <ProfileSkeleton />
       )}
