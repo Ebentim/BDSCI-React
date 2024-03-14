@@ -46,6 +46,7 @@ export default function Signin() {
 
                 if (accessToken) {
                   setAccessToken(accessToken);
+                  alert(accessToken, "Navigating to dashboard");
                   navigate("/dashboard");
                 } else {
                   throw new Error("Access token not provided");
@@ -58,6 +59,7 @@ export default function Signin() {
                 setSubmissionStatus(false);
               }
             };
+            fetchData();
           }}
         >
           <Form className="signin-form">
