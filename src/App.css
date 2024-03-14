@@ -9,8 +9,13 @@
   font-family: roboto slab;
   text-decoration: none;
 }
-body {
+.App {
   /* background: #DCF2F1; */
+  display: grid;
+  gap: 5px;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 50px auto 50px;
+  grid-template-areas: "h h h h h h h h h h h h" "m m m m m m m m m m m m" "f f f f f f f f f f f f";
 }
 .timer {
   font-family: "Protest Strike", sans-serif;
@@ -19,16 +24,12 @@ body {
   font-size: 2vmin;
 }
 .header {
-  width: 100vw;
-  height: 50px;
+  grid-area: h;
   background: #365486;
   border-radius: 2px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 }
-.headerSignIn {
-  margin-right: 30px;
+main {
+  grid-area: m;
 }
 /* BDS */
 h1 {
@@ -40,6 +41,7 @@ h1 {
   margin-left: 20px;
 }
 .footer {
+  grid-area: f;
   bottom: 0%;
   display: flex;
   justify-content: center;
@@ -48,35 +50,29 @@ h1 {
   font-size: 30px;
   background: #365486;
   color: #dcf2f1;
-  width: 100vw;
 }
 .Homepage {
-  height: 80vh;
+  height: 100%;
   width: 92vw;
-  border: 1px solid #ff50001a;
+  /* border: 1px solid #ff50001a; */
   border-radius: 7px;
-  margin: 40px auto;
-}
-.container {
-  height: 90%;
-  width: 90%;
-  margin: auto;
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  margin: 50px auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
 }
 .text-container {
-  width: 40%;
+  grid-column: 1/2;
+  width: 100%;
+  margin: auto 0;
 }
 .form-container {
-  position: absolute;
-  width: 40%;
-  right: 5%;
-  top: 10%;
-  height: auto;
+  grid-column: 2/-1;
+  width: auto;
+  max-width: 95%;
+  height: fit-content;
   padding: 25px;
-  background: rgb(127, 199, 217);
+  background: #7fc7d9;
   border-radius: 9px;
 }
 
@@ -89,20 +85,19 @@ h1 {
   border: none;
 }
 .form-input:focus {
-  outline: 2px solid #365486;
+  border: 2px solid #365486;
 }
 .errorMessage {
   width: 90%;
   color: red;
   margin: 0 auto;
-  font-size: x-small;
+  font-size: small;
 }
 .course-name {
   font-family: "Kavoon";
   font-style: normal;
   font-weight: 400;
   font-size: 30px;
-  overflow: hidden;
   color: #365486;
 }
 
@@ -122,29 +117,34 @@ h1 {
     background-position: 300px 0;
   }
 }
-.signin-page-container{
-  height: 90vh;
-
+.signin-page-container {
+  grid-area: m;
+  justify-content: center;
+  align-items: center;
 }
 .Signin-page {
+  height: auto;
+  min-height: 85vh;
+  max-height: 100vh;
   position: relative;
 }
 .signin-form {
-  background: rgb(127, 199, 217);
+  background: #7fc7d9;
   border-radius: 9px;
-  height: auto;
   padding: 20px;
   width: 300px;
+  display: flex;
+  flex-direction: column;
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, 50%);
-  display: flex;
-  flex-direction: column;
+  transform: translate(-50%, -50%);
 }
 .signin-form input {
-  padding: 5px;
+  padding: 10px;
   margin: 10px 0;
+  border-radius: 9px;
+  border: none;
 }
 #signin-form button {
   padding: 5px;
@@ -174,5 +174,72 @@ h1 {
   to {
     transform: scale(1.5);
     opacity: 0;
+  }
+}
+
+/* For large screens */
+@media (min-width: 992px) {
+  /* Styles for large screens */
+}
+
+/* For medium screens */
+@media (min-width: 768px) and (max-width: 991px) {
+  .App {
+    display: grid;
+    gap: 10px;
+    margin: 0 20px;
+    grid-template-rows: 40px auto 40px;
+    margin: auto;
+  }
+  h1 {
+    font-size: 30px;
+    margin-left: 10px;
+  }
+}
+
+/* For small screens */
+@media (max-width: 767px) {
+  .App {
+    display: grid;
+    gap: 3px;
+    margin: 0 5px;
+    grid-template-rows: 30px auto 30px;
+    margin: auto;
+  }
+  h1 {
+    font-size: 20px;
+    margin-left: 5px;
+  }
+  .Homepage {
+    background: #dcf2f1;
+    margin: 0 10px;
+    width: 100%;
+    border-radius: 7px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, 1fr);
+    gap: 15px;
+    justify-content: center;
+    align-content: center;
+  }
+  .text-container {
+    grid-column: 1/-1;
+    grid-row: 1/2;
+    margin: 0 auto;
+    position: relative;
+    border-radius: 9px;
+  }
+  .texts {
+    position: absolute;
+    bottom: 10px;
+    margin: 0 20px;
+  }
+
+  .form-container {
+    grid-column: 1/-1;
+    grid-row: 2/-1;
+    margin: 25px auto;
+    align-self: center;
+    width: 100%;
   }
 }

@@ -1,15 +1,22 @@
 import { Formik, Form, Field, ErrorMessage } from "formik";
-import { useContext, useState } from "react";
+import { useState } from "react";
 import { useAuth } from "../contexts/AuthContext";
 import * as Yup from "yup";
 import "../App.css";
 import "../styles/general.css";
 import { useNavigate } from "react-router-dom";
+import { NavButtons } from "../Assets/next";
 
 export default function Signin() {
   const { setAccessToken } = useAuth();
   const [submissionStatus, setSubmissionStatus] = useState(false);
   const navigate = useNavigate();
+  const SubmitButtons = () =>
+    submissionStatus ? (
+      <NavButtons classname="Signup submitting"></NavButtons>
+    ) : (
+      <NavButtons classname="Signup">Sign In</NavButtons>
+    );
 
   return (
     <div className="signin-page-container">
@@ -71,21 +78,26 @@ export default function Signin() {
 
             <Field name="email" type="email" placeholder="Email" />
 
-            <ErrorMessage name="email" />
-
+            <div className="errorMessage">
+              {" "}
+              <ErrorMessage name="email" />
+            </div>
             <label htmlFor="password">Password</label>
 
             <Field name="password" type="password" placeholder="Password" />
 
-            <ErrorMessage name="password" />
+            <div className="errorMessage">
+              <ErrorMessage name="password" />
+            </div>
 
-            {submissionStatus ? (
+            {/* {submissionStatus ? (
               <button className="Signup submitting"></button>
             ) : (
               <button type="submit" className="Signup">
                 Sign in
               </button>
-            )}
+            )} */}
+            <SubmitButtons />
           </Form>
         </Formik>
       </div>

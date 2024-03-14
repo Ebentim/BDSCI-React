@@ -1,13 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { NavButtons } from "../Assets/next";
 import "../App.css";
 import "../styles/general.css";
 function SignupForm() {
-  const SignupButton = () => {
-    return <NavButtons classname="Signup">Sign Up</NavButtons>;
-  };
+  const [submissionStatus, setSubmissionStatus] = useState(false);
+  const SignupButton = () =>
+    submissionStatus ? (
+      <NavButtons classname="Signup submitting"></NavButtons>
+    ) : (
+      <NavButtons classname="Signup">Sign Up</NavButtons>
+    );
+
   return (
     <Formik
       initialValues={{
@@ -40,6 +45,7 @@ function SignupForm() {
           .required("Your date of birth is equired"),
       })}
       onSubmit={(values, { setSubmitting, resetForm }) => {
+        setSubmissionStatus(true);
         fetch("https://bakkers-driving-school.onrender.com/api/signup", {
           method: "POST",
           headers: {
@@ -75,6 +81,7 @@ function SignupForm() {
           })
           .finally(() => {
             setSubmitting(false);
+            setSubmissionStatus(false);
           });
       }}
     >
