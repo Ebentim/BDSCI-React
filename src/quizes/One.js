@@ -29,7 +29,7 @@ export default function One() {
   const fetchScore = async () => {
     try {
       const response = await fetch(
-        "http://localhost:5000/api/get-score/chapterone",
+        "https://bakkers-driving-school.onrender.com/api/get-score/chapterone",
         {
           method: "GET",
           headers: {
