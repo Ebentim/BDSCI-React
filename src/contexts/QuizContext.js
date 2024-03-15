@@ -19,7 +19,7 @@ export const QuizScoreProvider = ({ children }) => {
         [chapter]: score,
       }));
     } else {
-      alert(
+      console.log(
         `Your Score is ${(score / 10) * 100}%, Please review the course again`
       );
     }
@@ -27,14 +27,17 @@ export const QuizScoreProvider = ({ children }) => {
 
   const saveScoreToDatabase = async (userId, chapter, score) => {
     try {
-      await fetch(`/api/submit-quiz/${chapter}`, {
-        method: "POST",
-        headers: {
-          Authorization: accessToken,
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ score, userId }), // Include userId in the request body
-      });
+      await fetch(
+        `https://bakkers-driving-school.onrender.com/api/submit-quiz/${chapter}`,
+        {
+          method: "POST",
+          headers: {
+            Authorization: accessToken,
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ score, userId }), // Include userId in the request body
+        }
+      );
     } catch (error) {
       console.error("Error saving score to the database:", error);
     }

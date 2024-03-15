@@ -27,13 +27,13 @@ export default function ChapterOne() {
   };
   const ToQuiz = () => {
     return (
-      <NavButtons classname={"nextButton"} onclick={handleQuiz}>
+      <NavButtons classname="nextButton" onclick={handleQuiz}>
         Take Unit Quiz
       </NavButtons>
     );
   };
   return (
-    <>
+    <main>
       <div className="courseBody" id="one">
         <h3 className=" bold unitHeading">
           Unit One: Driving is Your Responsibility
@@ -41,6 +41,7 @@ export default function ChapterOne() {
         {!showQuiz ? (
           <div className="courseContentContainer">
             <div className="courseOutline">
+              <h4 className="sectionSubheading outlineName">Outline</h4>
               <ul className="sectionList">
                 {Object.entries(sections).map(([key, value]) => {
                   return (
@@ -831,6 +832,6 @@ export default function ChapterOne() {
           <One />
         )}
       </div>
-    </>
+    </main>
   );
 }

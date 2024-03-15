@@ -25,13 +25,13 @@ function Profile() {
         if (response.ok) {
           const data = await response.json();
           setUserProfile(data.user);
+          console.log(data.user);
         } else {
           console.error("Failed to fetch user details");
           // Handle specific error cases if needed
         }
       } catch (error) {
         console.error("Error fetching user details:", error);
-        console.error(accessToken, error);
         // Handle other types of errors if needed
       }
     };
@@ -72,7 +72,7 @@ function Profile() {
               </span>
             </h3>
           </div>
-          <div>
+          <div className="details-container">
             <div className="names">
               <div className="profileImage">
                 {userProfile.firstname[0]}

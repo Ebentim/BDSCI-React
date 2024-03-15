@@ -46,8 +46,7 @@ export default function CourseBod() {
   const handPrev = () => {
     if (chapter > 1) {
       setChapter({ type: "minus" });
-    } // Activated Chapter only
-    console.log(chapter);
+    }
   };
 
   const NextChapter = () => {
@@ -132,12 +131,12 @@ export default function CourseBod() {
 
   return (
     // <FinalQuiz />
-    <div>
+    <main>
       <div className="TimerContainer">
         <Timer />
       </div>
       {chapter === 1 ? (
-        <div className="NextButtonContainer">
+        <div className="ToChapterTwo">
           <NextChapter />
         </div>
       ) : (
@@ -176,6 +175,6 @@ export default function CourseBod() {
       ) : chapter === 15 ? (
         <ChapterFifteen />
       ) : null}
-    </div>
+    </main>
   );
 }

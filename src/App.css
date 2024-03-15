@@ -30,6 +30,7 @@
 }
 main {
   grid-area: m;
+  width: 100%;
 }
 /* BDS */
 h1 {
@@ -241,5 +242,8 @@ h1 {
     margin: 25px auto;
     align-self: center;
     width: 100%;
+  }
+  .footer {
+    font-size: 16px;
   }
 }

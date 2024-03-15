@@ -1,5 +1,7 @@
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { NavButtons } from "../Assets/next";
 export default function Bar() {
+  const navigate = useNavigate();
   const navs = {
     unitOne: {
       unitName: "Unit One: Driving is Your Responsibility",
@@ -158,15 +160,22 @@ export default function Bar() {
       link: "/FinalQuiz",
     },
   };
-
+  const handleCLick = (e) => {
+    navigate("/coursebody");
+  };
+  const CourseBody = () => (
+    <NavButtons classname="nextButton" onclick={handleCLick}>
+      Take course
+    </NavButtons>
+  );
   return (
     <div className="sidebar">
       {Object.values(navs).map((item, index) => (
         <h5 className="navItem" key={index}>
-          <Link to={`/coursebody`}>{item.unitName}</Link>
-          {/* <Link to={`/coursebody#${item.link}`}>{item.unitName}</Link> */}
+          {item.unitName}
         </h5>
       ))}
+      <CourseBody />
     </div>
   );
 }

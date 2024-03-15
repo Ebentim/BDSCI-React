@@ -53,7 +53,6 @@ export default function Signin() {
 
                 if (accessToken) {
                   setAccessToken(accessToken);
-                  alert(accessToken, "Navigating to dashboard");
                   navigate("/dashboard");
                 } else {
                   throw new Error("Access token not provided");

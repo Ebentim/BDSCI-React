@@ -6,7 +6,7 @@ function Homepage() {
   const SignInButton = () => {
     return (
       <Link to="/Signin" className="headerSignIn">
-        <NavButtons classname="nextButton">Sign In</NavButtons>
+        <NavButtons classname="Signup">Sign In</NavButtons>
       </Link>
     );
   };

@@ -4,25 +4,56 @@ import { NavButtons } from "../Assets/next";
 import { Modal } from "../Assets/modal";
 import "../styles/general.css";
 import { useState, useEffect } from "react";
+import { useAuth } from "../contexts/AuthContext";
+const QuizAnswers = {
+  one: "Slowing down to look at collision scene",
+  two: "Vehicle is in line with other parked vehicles",
+  three: "In an unmarked crosswalk",
+  four: "Turned to the right (away from the street)",
+  five: "Stay out of the intersection until traffic clears",
+  six: "Avoiding unnecessary lane changes",
+  seven: "Drive to a safe place, stop and rest",
+  eight: "It is illegal under all circumstances",
+  nine: "Transformation of social interactions and the ability to live farther from city centers",
+  ten: "By limiting job opportunities across various sectors",
+};
 export default function One() {
+  const { accessToken, userId } = useAuth();
   const { updateScore } = useQuiz();
   const [selectedOptions, setSelectedOptions] = useState({});
   const [showDescription, setShowDescription] = useState(false);
   const [showModal, setShowModal] = useState(false);
-  let score = 0;
+  let score;
   const [totalScore, setTotalScore] = useState(score);
-  const QuizAnswers = {
-    one: "Slowing down to look at collision scene",
-    two: "Vehicle is in line with other parked vehicles",
-    three: "In an unmarked crosswalk",
-    four: "Turned to the right (away from the street)",
-    five: "Stay out of the intersection until traffic clears",
-    six: "Avoiding unnecessary lane changes",
-    seven: "Drive to a safe place, stop and rest",
-    eight: "It is illegal under all circumstances",
-    nine: "Transformation of social interactions and the ability to live farther from city centers",
-    ten: "By limiting job opportunities across various sectors",
+
+  const fetchScore = async () => {
+    try {
+      const response = await fetch(
+        "http://localhost:5000/api/get-score/chapterone",
+        {
+          method: "GET",
+          headers: {
+            Authorization: accessToken,
+          },
+        }
+      );
+
+      if (!response.ok) {
+        throw new Error("Failed to fetch score");
+      }
+
+      const data = await response.json();
+      score = data.score;
+      console.log(data);
+    } catch (error) {
+      console.error(error);
+      // Handle error, e.g., show error message
+    }
   };
+
+  if (accessToken) {
+    fetchScore();
+  }
 
   const handleOptionChange = (question, option) => {
     setSelectedOptions((prevState) => ({ ...prevState, [question]: option }));

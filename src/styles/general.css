@@ -26,14 +26,10 @@
   background: #365486;
   color: #dcf2f1;
 }
-.courseBody {
-  width: 90%;
-  margin: 0 auto;
-}
 .unitHeading {
   display: block;
   text-align: center;
-  margin: 10px 0;
+  margin: 10px auto;
   font-size: 2em;
 }
 .courseOutline {
@@ -97,9 +93,8 @@
   margin-left: 10px;
 }
 .instruction-container {
-  width: 90vw;
-  margin: auto;
-  margin-bottom: 20px;
+  grid-area: m;
+  margin: 0 15px 15px 15px;
 }
 .option {
   display: flex;
@@ -165,6 +160,97 @@ input[type="radio"] :active {
 .modal-text {
   color: #dcf2f1;
 }
-#ul{
+#ul {
   list-style-type: disc;
+}
+.nextButtonContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.ToChapterTwo {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+@media (max-width: 767px) {
+  .courseBody {
+    margin: auto;
+  }
+  .courseContentContainer {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .instruction-container {
+    width: 100%;
+  }
+  .unitHeading {
+    display: block;
+    text-align: center;
+    margin: 10px 0;
+    font-size: 2em;
+  }
+  .courseOutline {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-radius: 9px;
+    background-color: #dcf2f1;
+    margin-right: 0;
+    padding-right: 0;
+    height: auto;
+  }
+  .courseVideo {
+    height: auto;
+    max-height: 500px;
+    width: auto;
+    max-width: 100%;
+    margin: 10px 0;
+  }
+  .courseImageContainer {
+    height: auto;
+    width: auto;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  .courseImage {
+    height: 250px;
+    width: auto;
+    max-width: 100%;
+    margin: 10px 0;
+  }
+  .TimerContainer {
+    padding: 10px;
+    font-size: 25px;
+    text-align: center;
+    background-color: #dcf2f1e6;
+    width: 100%;
+    z-index: 1;
+  }
+  .modal {
+    border-radius: 9px;
+    height: 150px;
+    width: auto;
+    max-width: 300px;
+    padding: 20px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #365486;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100000000;
+  }
+  .modal-text {
+    color: #dcf2f1;
+  }
 }

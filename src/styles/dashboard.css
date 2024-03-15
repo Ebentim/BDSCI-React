@@ -3,6 +3,7 @@
 .Profile-details {
   height: 90vh;
   background-color: #dcf2f1;
+  grid-area: m;
 }
 .timeLeft-Container {
   padding: 10px;
@@ -54,4 +55,24 @@
   color: #dcf2f1;
   border: none;
   padding: 10px;
+}
+@media (min-width: 768px) and (max-width: 991px) {
+}
+@media (max-width: 767px) {
+  .timeLeft-Container * {
+    font-size: 25px;
+  }
+  .profileImage {
+    display: none;
+  }
+  .names {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+  }
+  .userName {
+    margin-bottom: 50px;
+  }
 }
