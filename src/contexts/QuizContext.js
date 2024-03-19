@@ -29,6 +29,7 @@ export const QuizScoreProvider = ({ children }) => {
     try {
       await fetch(
         `https://bakkers-driving-school.onrender.com/api/submit-quiz/${chapter}`,
+        // `/api/submit-quiz/${chapter}`,
         {
           method: "POST",
           headers: {

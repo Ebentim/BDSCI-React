@@ -14,6 +14,7 @@ function Profile() {
       try {
         const response = await fetch(
           "https://bakkers-driving-school.onrender.com/api/dashboard",
+          // "/api/dashboard",
           {
             method: "GET",
             headers: {

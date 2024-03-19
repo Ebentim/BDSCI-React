@@ -1,4 +1,5 @@
 import { Formik, Form, Field, ErrorMessage } from "formik";
+import { jwtDecode } from "jwt-decode";
 import { useState } from "react";
 import { useAuth } from "../contexts/AuthContext";
 import * as Yup from "yup";
@@ -8,7 +9,7 @@ import { useNavigate } from "react-router-dom";
 import { NavButtons } from "../Assets/next";
 
 export default function Signin() {
-  const { setAccessToken } = useAuth();
+  const { setAccessToken, setUserId } = useAuth();
   const [submissionStatus, setSubmissionStatus] = useState(false);
   const navigate = useNavigate();
   const SubmitButtons = () =>
@@ -35,6 +36,7 @@ export default function Signin() {
               try {
                 const response = await fetch(
                   "https://bakkers-driving-school.onrender.com/api/signin",
+                  // "/api/signin",
                   {
                     method: "POST",
                     headers: {
@@ -50,9 +52,11 @@ export default function Signin() {
 
                 const data = await response.json();
                 const accessToken = data?.accessToken;
+                const decodedToken = jwtDecode(accessToken);
 
                 if (accessToken) {
                   setAccessToken(accessToken);
+                  setUserId(decodedToken?.userid);
                   navigate("/dashboard");
                 } else {
                   throw new Error("Access token not provided");
@@ -88,14 +92,6 @@ export default function Signin() {
             <div className="errorMessage">
               <ErrorMessage name="password" />
             </div>
-
-            {/* {submissionStatus ? (
-              <button className="Signup submitting"></button>
-            ) : (
-              <button type="submit" className="Signup">
-                Sign in
-              </button>
-            )} */}
             <SubmitButtons />
           </Form>
         </Formik>

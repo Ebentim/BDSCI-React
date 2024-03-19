@@ -3,7 +3,7 @@ import { RadioButton } from "../Assets/radio";
 import { NavButtons } from "../Assets/next";
 import { Modal } from "../Assets/modal";
 import "../styles/general.css";
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useAuth } from "../contexts/AuthContext";
 const QuizAnswers = {
   one: "Slowing down to look at collision scene",
@@ -18,18 +18,17 @@ const QuizAnswers = {
   ten: "By limiting job opportunities across various sectors",
 };
 export default function One() {
-  const { accessToken, userId } = useAuth();
+  const { accessToken } = useAuth();
   const { updateScore } = useQuiz();
   const [selectedOptions, setSelectedOptions] = useState({});
   const [showDescription, setShowDescription] = useState(false);
   const [showModal, setShowModal] = useState(false);
-  let score;
-  const [totalScore, setTotalScore] = useState(score);
-
+  const [score, setScore] = useState(null);
   const fetchScore = async () => {
     try {
       const response = await fetch(
         "https://bakkers-driving-school.onrender.com/api/get-score/chapterone",
+        // "http://localhost:5000/api/get-score/chapterone",
         {
           method: "GET",
           headers: {
@@ -43,17 +42,17 @@ export default function One() {
       }
 
       const data = await response.json();
-      score = data.score;
-      console.log(data);
+      setScore(data.score);
     } catch (error) {
       console.error(error);
-      // Handle error, e.g., show error message
     }
   };
 
-  if (accessToken) {
-    fetchScore();
-  }
+  useEffect(() => {
+    if (accessToken) {
+      fetchScore();
+    }
+  });
 
   const handleOptionChange = (question, option) => {
     setSelectedOptions((prevState) => ({ ...prevState, [question]: option }));
@@ -67,11 +66,9 @@ export default function One() {
       }
     });
 
-    score = currentScore;
-    setTotalScore((score / 10) * 100);
-
+    setScore(currentScore);
     // Use the score variable directly in the updateScore function
-    await updateScore("chapterone", score);
+    updateScore("chapterone", score);
 
     setShowDescription(true);
     setShowModal(true);
@@ -90,8 +87,8 @@ export default function One() {
     return (
       <div className="modal">
         <p className="modal-text">
-          you scored {totalScore}%{" "}
-          {totalScore >= 80
+          you scored {(score / 10) * 100 + " %"}{" "}
+          {score >= 8
             ? "you have now completed this unit, process to the next unit"
             : "please review the course content and try again in 2 hours time"}{" "}
         </p>
@@ -110,13 +107,21 @@ export default function One() {
     <div className="quizBody">
       <div className="course-quiz-buttons" id="quizHead">
         <h4 className="sectionHeading">Quiz</h4>
-        <h4 className="sectionHeading">Total Score: {totalScore}%</h4>
+        <h4 className="sectionHeading">
+          Total Score:{" "}
+          {score !== null ? (
+            (score / 10) * 100
+          ) : (
+            <span className="bold">0</span>
+          )}{" "}
+          %
+        </h4>
       </div>
       <p className="sectionQuote">
         <span className="bold">Instructions: </span>Choose the Correct options
         from the questions below{" "}
         <span className="bold">
-          Current Score is {totalScore === 0 ? "0" : totalScore + "%"}
+          Current Score is {score !== 0 ? (score / 10) * 100 : 0 + " %"}
         </span>
         . This will be updated after taking the test
       </p>
