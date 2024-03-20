@@ -68,7 +68,7 @@ export default function One() {
 
     setScore(currentScore);
     // Use the score variable directly in the updateScore function
-    updateScore("chapterone", score);
+    await updateScore("chapterone", score);
 
     setShowDescription(true);
     setShowModal(true);

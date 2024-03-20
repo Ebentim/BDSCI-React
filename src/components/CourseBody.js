@@ -13,25 +13,28 @@ import ChapterTwelve from "../chapters/ChapterTwelve";
 import ChapterThirteen from "../chapters/ChapterThirteen";
 import ChapterFourteen from "../chapters/ChapterFourteen";
 import ChapterFifteen from "../chapters/ChapterFifteen";
-import FinalQuiz from "../quizes/FinalQuiz";
-import PrivateRoute from "./PrivateRoute";
+// import FinalQuiz from "../quizes/FinalQuiz";
 import "../styles/general.css";
 import Timer from "../components/Timer";
 import { NavButtons } from "../Assets/next";
-import { useReducer, useState } from "react";
+import { useReducer } from "react";
+import { useQuiz } from "../contexts/QuizContext";
 const reducer = (value, action) => {
   switch (action.type) {
     case "plus":
       return ++value;
-      break;
     case "minus":
       return --value;
+    default:
+      console.log(value);
   }
 };
 export default function CourseBod() {
+  const { quizScores } = useQuiz();
+  // const [score, setScore] = useState({});
   const startChapter = 1;
   const [chapter, setChapter] = useReducer(reducer, startChapter);
-  const [disableNextButton, setDisableNextButton] = useState(true); // This is meant to disable the next chapter, if the student doesn't scale the current chapter's quiz by at least 80%
+  // const [disableNextButton, setDisableNextButton] = useState(false); // This is meant to disable the next chapter, if the student doesn't scale the current chapter's quiz by at least 80%
 
   const handleNext = () => {
     if (
@@ -41,6 +44,7 @@ export default function CourseBod() {
       setChapter({ type: "plus" });
     }
     console.log(chapter);
+    console.log(quizScores?.chapterone);
   };
 
   const handPrev = () => {
@@ -54,7 +58,7 @@ export default function CourseBod() {
       <NavButtons
         onclick={handleNext}
         classname="nextButton"
-        // disable={disableNextsButton}
+        // disable={disableNextButton}
       >
         To{" "}
         {chapter === 1
