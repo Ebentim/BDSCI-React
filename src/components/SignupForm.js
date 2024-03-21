@@ -46,13 +46,17 @@ function SignupForm() {
       })}
       onSubmit={(values, { setSubmitting, resetForm }) => {
         setSubmissionStatus(true);
-        fetch("https://bakkers-driving-school.onrender.com/api/signup", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(values),
-        })
+        fetch(
+          "https://bakkers-driving-school.onrender.com/api/signup",
+          // "http://localhost:5000/api/signup",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(values),
+          }
+        )
           .then((response) => {
             if (!response.ok) {
               alert(

@@ -10,6 +10,7 @@ export default function Instruction() {
       try {
         const response = await fetch(
           "https://bakkers-driving-school.onrender.com/api/dashboard",
+          // "http://localhost:5000/api/dashboard",
           {
             method: "GET",
             headers: {

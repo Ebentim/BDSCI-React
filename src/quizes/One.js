@@ -18,7 +18,7 @@ const QuizAnswers = {
   ten: "By limiting job opportunities across various sectors",
 };
 export default function One() {
-  const { accessToken } = useAuth();
+  const { accessToken, userId } = useAuth();
   const { updateScore } = useQuiz();
   const [selectedOptions, setSelectedOptions] = useState({});
   const [showDescription, setShowDescription] = useState(false);
@@ -27,8 +27,10 @@ export default function One() {
   const fetchScore = async () => {
     try {
       const response = await fetch(
-        "https://bakkers-driving-school.onrender.com/api/get-score/chapterone",
+        // "https://bakkers-driving-school.onrender.com/api/get-score/chapterone",
         // "http://localhost:5000/api/get-score/chapterone",
+        `https://bakkers-driving-school.onrender.com/api/get-user-scores/${userId}`,
+        // `http://localhost:5000/api/get-user-scores/${userId}`,
         {
           method: "GET",
           headers: {
@@ -42,17 +44,19 @@ export default function One() {
       }
 
       const data = await response.json();
-      setScore(data.score);
+      console.log(data.scores.chapterone, "from db");
+      setScore(data.scores.chapterone || 0);
+      console.log(data.scores.chapterone, "after updated");
     } catch (error) {
       console.error(error);
     }
   };
 
   useEffect(() => {
-    if (accessToken) {
+    if (accessToken && userId) {
       fetchScore();
     }
-  });
+  }, [accessToken, userId]);
 
   const handleOptionChange = (question, option) => {
     setSelectedOptions((prevState) => ({ ...prevState, [question]: option }));
@@ -65,10 +69,11 @@ export default function One() {
         currentScore++;
       }
     });
-
-    setScore(currentScore);
+    if (currentScore >= 8) {
+      await updateScore("chapterone", currentScore);
+      setScore(currentScore);
+    }
     // Use the score variable directly in the updateScore function
-    await updateScore("chapterone", score);
 
     setShowDescription(true);
     setShowModal(true);
