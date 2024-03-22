@@ -1,9 +1,10 @@
 import { useQuiz } from "../contexts/QuizContext";
+import { useAuth } from "../contexts/AuthContext";
 import { RadioButton } from "../Assets/radio";
 import { NavButtons } from "../Assets/next";
 import { Modal } from "../Assets/modal";
 import "../styles/general.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import yields from "../Assets/images/yield.jpg";
 import windingRoad from "../Assets/images/winding-road.jpg";
 import flashingYellow from "../Assets/images/flashing-yellow.gif";
@@ -56,21 +57,50 @@ const QuizAnswers = {
   thirtyNine: "blue",
   fourty: "The vehicle traveling uphill",
 };
+const styles = {
+  height: "auto",
+  maxHeight: "150px",
+  width: "auto",
+  maxWidth: "150px",
+};
 
 export default function FinalQuiz() {
+  const { accessToken, userId } = useAuth();
   const { updateScore } = useQuiz();
   const [selectedOptions, setSelectedOptions] = useState({});
   const [showDescription, setShowDescription] = useState(false);
   const [showModal, setShowModal] = useState(false);
-  let score = 0;
-  const [totalScore, setTotalScore] = useState(score);
+  const [score, setScore] = useState(null);
+  const fetchScore = async () => {
+    try {
+      const response = await fetch(
+        `https://bakkers-driving-school.onrender.com/api/get-user-scores/${userId}`,
+        {
+          method: "GET",
+          headers: {
+            Authorization: accessToken,
+          },
+        }
+      );
 
-  const styles = {
-    height: "auto",
-    maxHeight: "150px",
-    width: "auto",
-    maxWidth: "150px",
+      if (!response.ok) {
+        throw new Error("Failed to fetch score");
+      }
+
+      const data = await response.json();
+      console.log(data.scores.chaptertwo, "from db");
+      setScore(data.scores.chaptertwo || 0);
+      console.log(data.scores.chaptertwo, "after updated");
+    } catch (error) {
+      console.error(error);
+    }
   };
+
+  useEffect(() => {
+    if (accessToken && userId) {
+      fetchScore();
+    }
+  }, [accessToken, userId]);
 
   const handleOptionChange = (question, option) => {
     setSelectedOptions((prevState) => ({ ...prevState, [question]: option }));
@@ -83,12 +113,11 @@ export default function FinalQuiz() {
         currentScore++;
       }
     });
-
-    score = currentScore;
-    setTotalScore((score / 10) * 100);
-
+    if (currentScore >= 8) {
+      await updateScore("chaptertwo", currentScore);
+      setScore(currentScore);
+    }
     // Use the score variable directly in the updateScore function
-    await updateScore("finalquiz", score);
 
     setShowDescription(true);
     setShowModal(true);
@@ -107,8 +136,8 @@ export default function FinalQuiz() {
     return (
       <div className="modal">
         <p className="modal-text">
-          you scored {totalScore}%{" "}
-          {totalScore >= 80
+          you scored {(score / 10) * 100 + " %"}{" "}
+          {score >= 8
             ? "you have now completed this unit, process to the next unit"
             : "please review the course content and try again in 2 hours time"}{" "}
         </p>
@@ -126,18 +155,26 @@ export default function FinalQuiz() {
   return (
     <div className="quizBody">
       <div className="course-quiz-buttons" id="quizHead">
-        <h4 className="sectionHeading">Unit One Quiz </h4>
-        <h4 className="sectionHeading">Total Score: {totalScore}%</h4>
+        <h4 className="sectionHeading">Quiz</h4>
+        <h4 className="sectionHeading">
+          Total Score:{" "}
+          {score !== null ? (
+            (score / 10) * 100
+          ) : (
+            <span className="bold">0</span>
+          )}{" "}
+          %
+        </h4>
       </div>
       <p className="sectionQuote">
         <span className="bold">Instructions: </span>Choose the Correct options
         from the questions below{" "}
         <span className="bold">
-          Current Score is {totalScore === 0 ? "0" : totalScore + "%"}
+          Current Score is {score !== 0 ? (score / 10) * 100 : 0 + " %"}
         </span>
         . This will be updated after taking the test
       </p>
-      <img src={yields} alt="question Image" style={styles} />
+      <img src={yields} alt="question first" style={styles} />
       <RadioButton
         classname="bold"
         question="1. What type of sign is this?"
@@ -157,7 +194,7 @@ export default function FinalQuiz() {
             : null
         }
       />
-      <img src={windingRoad} alt="question Image" style={styles} />
+      <img src={windingRoad} alt="question second" style={styles} />
       <RadioButton
         classname="bold"
         question="2. This sign warns you about"
@@ -192,7 +229,7 @@ export default function FinalQuiz() {
         onchange={handleOptionChange}
         description={showDescription ? "" : null}
       />
-      <img src={flashingYellow} alt="question Image" style={styles} />
+      <img src={flashingYellow} alt="question third" style={styles} />
       <RadioButton
         classname="bold"
         question="4. A traffic signal with a flashing yellow arrow means that you should"

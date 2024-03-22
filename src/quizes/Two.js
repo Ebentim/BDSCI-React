@@ -25,15 +25,11 @@ export default function Two() {
   const [selectedOptions, setSelectedOptions] = useState({});
   const [showDescription, setShowDescription] = useState(false);
   const [showModal, setShowModal] = useState(false);
-  const [score, setScore] = useState(0);
-  const [totalScore, setTotalScore] = useState(score);
-
+  const [score, setScore] = useState(null);
   const fetchScore = async () => {
     try {
       const response = await fetch(
-        // "https://bakkers-driving-school.onrender.com/api/get-score/chapterone",
-        // "http://localhost:5000/api/get-score/chapterone",
-        `http://localhost:5000/api/get-user-scores/:${userId}`,
+        `https://bakkers-driving-school.onrender.com/api/get-user-scores/${userId}`,
         {
           method: "GET",
           headers: {
@@ -47,7 +43,9 @@ export default function Two() {
       }
 
       const data = await response.json();
-      setScore(data.score);
+      console.log(data.scores.chaptertwo, "from db");
+      setScore(data.scores.chaptertwo || 0);
+      console.log(data.scores.chaptertwo, "after updated");
     } catch (error) {
       console.error(error);
     }
@@ -56,12 +54,8 @@ export default function Two() {
   useEffect(() => {
     if (accessToken && userId) {
       fetchScore();
-    } else {
-      console.log(
-        `either accessToken ${accessToken} or userID ${userId} was missing`
-      );
     }
-  });
+  }, [accessToken, userId]);
 
   const handleOptionChange = (question, option) => {
     setSelectedOptions((prevState) => ({ ...prevState, [question]: option }));
@@ -74,10 +68,11 @@ export default function Two() {
         currentScore++;
       }
     });
-
-    setScore(currentScore);
+    if (currentScore >= 8) {
+      await updateScore("chaptertwo", currentScore);
+      setScore(currentScore);
+    }
     // Use the score variable directly in the updateScore function
-    await updateScore("chapterone", score);
 
     setShowDescription(true);
     setShowModal(true);

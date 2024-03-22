@@ -47,8 +47,8 @@ function SignupForm() {
       onSubmit={(values, { setSubmitting, resetForm }) => {
         setSubmissionStatus(true);
         fetch(
-          "https://bakkers-driving-school.onrender.com/api/signup",
-          // "http://localhost:5000/api/signup",
+          // "https://bakkers-driving-school.onrender.com/api/signup",
+          "http://localhost:5000/api/signup",
           {
             method: "POST",
             headers: {

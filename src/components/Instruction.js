@@ -9,8 +9,8 @@ export default function Instruction() {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          "https://bakkers-driving-school.onrender.com/api/dashboard",
-          // "http://localhost:5000/api/dashboard",
+          // "https://bakkers-driving-school.onrender.com/api/dashboard",
+          "http://localhost:5000/api/dashboard",
           {
             method: "GET",
             headers: {

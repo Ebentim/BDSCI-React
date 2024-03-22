@@ -27,10 +27,7 @@ export default function One() {
   const fetchScore = async () => {
     try {
       const response = await fetch(
-        // "https://bakkers-driving-school.onrender.com/api/get-score/chapterone",
-        // "http://localhost:5000/api/get-score/chapterone",
         `https://bakkers-driving-school.onrender.com/api/get-user-scores/${userId}`,
-        // `http://localhost:5000/api/get-user-scores/${userId}`,
         {
           method: "GET",
           headers: {

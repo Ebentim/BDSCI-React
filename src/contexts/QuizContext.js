@@ -26,17 +26,18 @@ export const QuizScoreProvider = ({ children }) => {
   };
 
   const saveScoreToDatabase = async (userId, chapter, score) => {
+    console.log(userId, chapter, score);
     try {
       await fetch(
-        `https://bakkers-driving-school.onrender.com/api/update-user-score/${userId}/${chapter}`,
-        // `http://localhost:5000/api/update-user-score/${userId}/${chapter}`,
+        // `https://bakkers-driving-school.onrender.com/api/update-user-score/${userId}/${chapter}`,
+        `http://localhost:5000/api/update-user-score/${userId}/${chapter}`,
         {
-          method: "POST",
+          method: "PUT",
           headers: {
             Authorization: accessToken,
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({ score, userId }), // Include userId in the request body
+          body: JSON.stringify({ chapter, score }), // Include userId in the request body
         }
       );
     } catch (error) {
