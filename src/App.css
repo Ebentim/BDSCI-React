@@ -13,8 +13,9 @@
   /* background: #DCF2F1; */
   display: grid;
   gap: 5px;
+  min-height: 100vh;
   grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: 50px auto 50px;
+  grid-template-rows: 50px auto auto;
   grid-template-areas: "h h h h h h h h h h h h" "m m m m m m m m m m m m" "f f f f f f f f f f f f";
 }
 .timer {
@@ -27,6 +28,7 @@
   grid-area: h;
   background: #365486;
   border-radius: 2px;
+  width: 100vw;
 }
 main {
   grid-area: m;
@@ -42,6 +44,7 @@ h1 {
   margin-left: 20px;
 }
 .footer {
+  width: 100vw;
   grid-area: f;
   bottom: 0%;
   display: flex;
