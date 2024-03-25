@@ -43,9 +43,7 @@ export default function Thirteen() {
       }
 
       const data = await response.json();
-      console.log(data.scores.chapterthirteen, "from db");
       setScore(data.scores.chapterthirteen || 0);
-      console.log(data.scores.chapterthirteen, "after updated");
     } catch (error) {
       console.error(error);
     }

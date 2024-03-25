@@ -41,9 +41,7 @@ export default function One() {
       }
 
       const data = await response.json();
-      console.log(data.scores.chapterone, "from db");
       setScore(data.scores.chapterone || 0);
-      console.log(data.scores.chapterone, "after updated");
     } catch (error) {
       console.error(error);
     }

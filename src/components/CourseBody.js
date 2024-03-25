@@ -13,11 +13,11 @@ import ChapterTwelve from "../chapters/ChapterTwelve";
 import ChapterThirteen from "../chapters/ChapterThirteen";
 import ChapterFourteen from "../chapters/ChapterFourteen";
 import ChapterFifteen from "../chapters/ChapterFifteen";
-// import FinalQuiz from "../quizes/FinalQuiz";
+import FinalQuiz from "../quizes/FinalQuiz";
 import "../styles/general.css";
 import Timer from "../components/Timer";
 import { NavButtons } from "../Assets/next";
-import { useReducer } from "react";
+import { useReducer, useEffect, useState } from "react";
 import { useQuiz } from "../contexts/QuizContext";
 const reducer = (value, action) => {
   switch (action.type) {
@@ -30,11 +30,11 @@ const reducer = (value, action) => {
   }
 };
 export default function CourseBod() {
-  const { quizScores } = useQuiz();
-  // const [score, setScore] = useState({});
+  const { scoreFromDb } = useQuiz();
+  console.log(scoreFromDb, "from course body");
   const startChapter = 1;
   const [chapter, setChapter] = useReducer(reducer, startChapter);
-  // const [disableNextButton, setDisableNextButton] = useState(false); // This is meant to disable the next chapter, if the student doesn't scale the current chapter's quiz by at least 80%
+  const [disableNextButton, setDisableNextButton] = useState(false); // This is meant to disable the next chapter, if the student doesn't scale the current chapter's quiz by at least 80%
 
   const handleNext = () => {
     if (
@@ -42,9 +42,8 @@ export default function CourseBod() {
       (chapter === 15 && localStorage.getItem("lastTime") === 0 && chapter < 17)
     ) {
       setChapter({ type: "plus" });
+      disableNextButton ? console.log("disabled") : console.log("enabled");
     }
-    console.log(chapter);
-    console.log(quizScores?.chapterone);
   };
 
   const handPrev = () => {
@@ -52,13 +51,146 @@ export default function CourseBod() {
       setChapter({ type: "minus" });
     }
   };
+  useEffect(() => {
+    // const styles = { display: disableNextButton ? "none" : "block" };
+    const handleDisbleButton = () => {
+      switch (chapter) {
+        case 1:
+          if (scoreFromDb.chapterone < 8) {
+            setDisableNextButton(true);
+          } else {
+            setDisableNextButton(false);
+          }
+          break;
+        case 2:
+          if (scoreFromDb.chaptertwo < 8) {
+            setDisableNextButton(true);
+          } else {
+            setDisableNextButton(false);
+          }
+          break;
+        case 3:
+          if (scoreFromDb.chapterthree < 8) {
+            setDisableNextButton(true);
+          } else {
+            setDisableNextButton(false);
+          }
+          break;
+        case 4:
+          if (scoreFromDb.chapterfour < 8) {
+            setDisableNextButton(true);
+          } else {
+            setDisableNextButton(false);
+          }
+          break;
+        case 5:
+          if (scoreFromDb.chapterfive < 8) {
+            setDisableNextButton(true);
+          } else {
+            setDisableNextButton(false);
+          }
+          break;
+        case 6:
+          if (scoreFromDb.chaptersix < 8) {
+            setDisableNextButton(true);
+          } else {
+            setDisableNextButton(false);
+          }
+          break;
+        case 7:
+          if (scoreFromDb.chapterseven < 8) {
+            setDisableNextButton(true);
+          } else {
+            setDisableNextButton(false);
+          }
+          break;
+        case 8:
+          if (scoreFromDb.chaptereight < 8) {
+            setDisableNextButton(true);
+          } else {
+            setDisableNextButton(false);
+          }
+          break;
+        case 9:
+          if (scoreFromDb.chapternine < 8) {
+            setDisableNextButton(true);
+          } else {
+            setDisableNextButton(false);
+          }
+          break;
+        case 10:
+          if (scoreFromDb.chapterten < 8) {
+            setDisableNextButton(true);
+          } else {
+            setDisableNextButton(false);
+          }
+          break;
+        case 11:
+          if (scoreFromDb.chaptereleven < 8) {
+            setDisableNextButton(true);
+          } else {
+            setDisableNextButton(false);
+          }
+          break;
+        case 12:
+          if (scoreFromDb.chaptertwelve < 8) {
+            setDisableNextButton(true);
+          } else {
+            setDisableNextButton(false);
+          }
+          break;
+        case 13:
+          if (scoreFromDb.chapterthirteen < 8) {
+            setDisableNextButton(true);
+          } else {
+            setDisableNextButton(false);
+          }
+          break;
+        case 14:
+          if (scoreFromDb.chapterfourteen < 8) {
+            setDisableNextButton(true);
+          } else {
+            setDisableNextButton(false);
+          }
+          break;
+        case 15:
+          if (scoreFromDb.chapterfifteen < 8) {
+            setDisableNextButton(true);
+          } else {
+            setDisableNextButton(false);
+          }
+          break;
+        default:
+          setDisableNextButton(false);
+      }
+    };
+    handleDisbleButton();
+  }, [
+    chapter,
+    disableNextButton,
+    scoreFromDb.chaptereight,
+    scoreFromDb.chaptereleven,
+    scoreFromDb.chapterfifteen,
+    scoreFromDb.chapterfive,
+    scoreFromDb.chapterfour,
+    scoreFromDb.chapterfourteen,
+    scoreFromDb.chapternine,
+    scoreFromDb.chapterone,
+    scoreFromDb.chapterseven,
+    scoreFromDb.chaptersix,
+    scoreFromDb.chapterten,
+    scoreFromDb.chapterthirteen,
+    scoreFromDb.chapterthree,
+    scoreFromDb.chaptertwelve,
+    scoreFromDb.chaptertwo,
+  ]);
 
   const NextChapter = () => {
     return (
       <NavButtons
         onclick={handleNext}
         classname="nextButton"
-        // disable={disableNextButton}
+        disable={disableNextButton}
       >
         To{" "}
         {chapter === 1
@@ -134,7 +266,6 @@ export default function CourseBod() {
   };
 
   return (
-    // <FinalQuiz />
     <main>
       <div className="TimerContainer">
         <Timer />
@@ -178,7 +309,9 @@ export default function CourseBod() {
         <ChapterFourteen />
       ) : chapter === 15 ? (
         <ChapterFifteen />
-      ) : null}
+      ) : (
+        <FinalQuiz />
+      )}
     </main>
   );
 }

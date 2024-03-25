@@ -43,9 +43,7 @@ export default function Ten() {
       }
 
       const data = await response.json();
-      console.log(data.scores.chapterten, "from db");
       setScore(data.scores.chapterten || 0);
-      console.log(data.scores.chapterten, "after updated");
     } catch (error) {
       console.error(error);
     }

@@ -41,9 +41,7 @@ export default function Seven() {
       }
 
       const data = await response.json();
-      console.log(data.scores.chapterseven, "from db");
       setScore(data.scores.chapterseven || 0);
-      console.log(data.scores.chapterseven, "after updated");
     } catch (error) {
       console.error(error);
     }

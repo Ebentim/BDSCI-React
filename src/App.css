@@ -29,10 +29,12 @@
   background: #365486;
   border-radius: 2px;
   width: 100vw;
+  margin: 0 auto;
 }
 main {
   grid-area: m;
-  width: 100%;
+  width: 95vw;
+  margin: 0 auto;
 }
 /* BDS */
 h1 {
@@ -44,7 +46,7 @@ h1 {
   margin-left: 20px;
 }
 .footer {
-  width: 100vw;
+  width: 100%;
   grid-area: f;
   bottom: 0%;
   display: flex;
@@ -54,6 +56,7 @@ h1 {
   font-size: 30px;
   background: #365486;
   color: #dcf2f1;
+  margin: 0 auto;
 }
 .Homepage {
   height: 100%;
@@ -67,8 +70,8 @@ h1 {
 }
 .text-container {
   grid-column: 1/2;
-  width: 100%;
-  margin: auto 0;
+  width: 95%;
+  margin: auto;
 }
 .form-container {
   grid-column: 2/-1;
@@ -206,7 +209,7 @@ h1 {
   .App {
     display: grid;
     gap: 3px;
-    margin: 0 5px;
+    /* margin: 0 5px; */
     grid-template-rows: 30px auto 30px;
     margin: auto;
   }
@@ -216,8 +219,8 @@ h1 {
   }
   .Homepage {
     background: #dcf2f1;
-    margin: 0 10px;
-    width: 100%;
+    margin: 0 auto;
+    width: 100vw;
     border-radius: 7px;
     display: grid;
     grid-template-columns: 1fr;
@@ -227,9 +230,12 @@ h1 {
     align-content: center;
   }
   .text-container {
+    background-color: #ffffff;
+    box-shadow: 0 0 15px 10px rgb(255, 255, 255);
+    /* box-shadow: 0 0 15px 10px #dcf2f1; */
     grid-column: 1/-1;
     grid-row: 1/2;
-    margin: 0 auto;
+    margin: 15px auto 0 auto;
     position: relative;
     border-radius: 9px;
   }
@@ -240,9 +246,11 @@ h1 {
   }
 
   .form-container {
+    box-shadow: 0 0 15px 10px rgb(255, 255, 255);
+
     grid-column: 1/-1;
     grid-row: 2/-1;
-    margin: 25px auto;
+    margin: 0 auto 25px auto;
     align-self: center;
     width: 100%;
   }

@@ -43,9 +43,7 @@ export default function Nine() {
       }
 
       const data = await response.json();
-      console.log(data.scores.chapternine, "from db");
       setScore(data.scores.chapternine || 0);
-      console.log(data.scores.chapternine, "after updated");
     } catch (error) {
       console.error(error);
     }

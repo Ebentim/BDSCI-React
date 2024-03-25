@@ -44,9 +44,7 @@ export default function Twelve() {
       }
 
       const data = await response.json();
-      console.log(data.scores.chaptertwelve, "from db");
       setScore(data.scores.chaptertwelve || 0);
-      console.log(data.scores.chaptertwelve, "after updated");
     } catch (error) {
       console.error(error);
     }

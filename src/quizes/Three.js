@@ -42,9 +42,7 @@ export default function Three() {
       }
 
       const data = await response.json();
-      console.log(data.scores.chapterthree, "from db");
       setScore(data.scores.chapterthree || 0);
-      console.log(data.scores.chapterthree, "after updated");
     } catch (error) {
       console.error(error);
     }

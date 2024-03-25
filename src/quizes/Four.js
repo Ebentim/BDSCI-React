@@ -47,9 +47,7 @@ export default function Four() {
       }
 
       const data = await response.json();
-      console.log(data.scores.chapterfour, "from db");
       setScore(data.scores.chapterfour || 0);
-      console.log(data.scores.chapterfour, "after updated");
     } catch (error) {
       console.error(error);
     }

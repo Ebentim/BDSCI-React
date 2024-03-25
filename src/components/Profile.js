@@ -25,7 +25,6 @@ function Profile() {
         if (response.ok) {
           const data = await response.json();
           setUserProfile(data.user);
-          console.log(data.user);
         } else {
           console.error("Failed to fetch user details");
           // Handle specific error cases if needed

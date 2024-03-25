@@ -43,9 +43,7 @@ export default function Eight() {
       }
 
       const data = await response.json();
-      console.log(data.scores.chaptereight, "from db");
       setScore(data.scores.chaptereight || 0);
-      console.log(data.scores.chaptereight, "after updated");
     } catch (error) {
       console.error(error);
     }

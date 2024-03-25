@@ -43,9 +43,7 @@ export default function Fourteen() {
       }
 
       const data = await response.json();
-      console.log(data.scores.chapterfourteen, "from db");
       setScore(data.scores.chapterfourteen || 0);
-      console.log(data.scores.chapterfourteen, "after updated");
     } catch (error) {
       console.error(error);
     }

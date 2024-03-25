@@ -41,9 +41,7 @@ export default function Six() {
       }
 
       const data = await response.json();
-      console.log(data.scores.chaptersix, "from db");
       setScore(data.scores.chaptersix || 0);
-      console.log(data.scores.chaptersix, "after updated");
     } catch (error) {
       console.error(error);
     }

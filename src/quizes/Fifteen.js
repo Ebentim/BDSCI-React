@@ -43,9 +43,7 @@ export default function Fifteen() {
       }
 
       const data = await response.json();
-      console.log(data.scores.chapterfifteen, "from db");
       setScore(data.scores.chapterfifteen || 0);
-      console.log(data.scores.chapterfifteen, "after updated");
     } catch (error) {
       console.error(error);
     }
