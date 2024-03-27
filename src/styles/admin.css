@@ -1,0 +1,44 @@
+#maintable {
+  display: grid;
+  grid-template-rows: 40px auto;
+  width: 90vw;
+  margin: auto;
+}
+
+#maintable button {
+  background-color: #365486;
+  color: white;
+  padding: 5px 15px;
+  width: fit-content;
+  border: none;
+  border-radius: 8px;
+}
+
+#table-head {
+  display: flex;
+  flex-wrap: nowrap;
+  background-color: yellowgreen;
+}
+.head {
+  flex: 1 0 calc(100% / 8);
+  padding: 10px;
+  box-sizing: border-box;
+  border: 1px solid;
+}
+#table-body > tr {
+  display: flex;
+  flex-wrap: nowrap;
+}
+.body {
+  flex: 1 0 calc(100% / 8);
+  padding: 10px;
+  box-sizing: border-box;
+  border: 1px solid;
+  text-align: center;
+}
+.email {
+  overflow-x: hidden;
+}
+#table-body tr:nth-child(even) {
+  background-color: #ededed;
+}
