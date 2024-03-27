@@ -82,11 +82,11 @@ function SignupForm() {
       }}
     >
       <Form className="signup-form">
-        <p
+        <h3
           style={{ textAlign: "center", fontSize: "1.5rem", color: "#365486" }}
         >
           Sign up
-        </p>
+        </h3>
         <Field
           className="form-input"
           name="firstname"
