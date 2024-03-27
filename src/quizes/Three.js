@@ -148,7 +148,7 @@ export default function Three() {
         option1="When waiting to make a left turn at a traffic light"
         option2="When Parked on a hill or sloping driveway"
         option3="When parked on the side of a level roadway where there is no curb"
-        ptionDiv="option"
+        optionDiv="option"
         ida="twoA"
         idb="twoB"
         idc="twoC"

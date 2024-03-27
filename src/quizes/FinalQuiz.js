@@ -200,7 +200,7 @@ export default function FinalQuiz() {
         option2="Slippery road"
         option3="Windy road"
         name="two"
-        ptionDiv="option"
+        optionDiv="option"
         ida="twoA"
         idb="twoB"
         idc="twoC"

@@ -43,7 +43,6 @@ function App() {
 
             <Route path="/" element={<Navigate to="/" />} />
           </Routes>
-          <Footer />
         </QuizScoreProvider>
         <Routes>
           <Route path="/adminsignup" element={<Adminsignup />} />
@@ -54,6 +53,7 @@ function App() {
           />
           <Route path="/Admin" element={<Navigate to="/adminsignup" />} />
         </Routes>
+        <Footer />
       </AuthProvider>
     </div>
   );

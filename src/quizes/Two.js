@@ -154,7 +154,7 @@ export default function Two() {
         option2="3 Seconds"
         option3="4 Seconds"
         name="two"
-        ptionDiv="option"
+        optionDiv="option"
         ida="twoA"
         idb="twoB"
         idc="twoC"

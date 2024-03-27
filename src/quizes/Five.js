@@ -151,7 +151,7 @@ export default function Five() {
         option1="When waiting to make a left turn at a traffic light"
         option2="You should never drive faster than is safe for current conditions."
         option3="The maximum speed limit in California is 70 mph on certain freeways."
-        ptionDiv="option"
+        optionDiv="option"
         ida="twoA"
         idb="twoB"
         idc="twoC"

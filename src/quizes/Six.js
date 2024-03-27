@@ -267,7 +267,7 @@ export default function Six() {
         ida="sevenA"
         idb="sevenB"
         idc="sevenC"
-        check={selectedOptions.seven}
+        check={selectedOptions.eight}
         onchange={handleOptionChange}
         description={
           showDescription
@@ -285,7 +285,7 @@ export default function Six() {
         ida="sevenA"
         idb="sevenB"
         idc="sevenC"
-        check={selectedOptions.seven}
+        check={selectedOptions.nine}
         onchange={handleOptionChange}
         description={
           showDescription
@@ -303,7 +303,7 @@ export default function Six() {
         ida="sevenA"
         idb="sevenB"
         idc="sevenC"
-        check={selectedOptions.seven}
+        check={selectedOptions.ten}
         onchange={handleOptionChange}
         description={
           showDescription
