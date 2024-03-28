@@ -318,6 +318,7 @@ export default function Four() {
         option1="Pedestrians walking along the road ahead"
         option2="Pedestrian crossing ahead"
         option3="Pedestrians must not cross here"
+        name="eight"
         optionDiv="option"
         ida="eightA"
         idb="eightB"

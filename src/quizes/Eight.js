@@ -273,6 +273,7 @@ export default function Eight() {
         option1="Higher speeds result in lower fuel consumption"
         option2="Maintaining a steady speed has no effect on fuel efficiency"
         option3="Higher speeds lead to increased fuel consumption"
+        name="eight"
         optionDiv="option"
         ida="eightA"
         idb="eightB"

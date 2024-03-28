@@ -61,7 +61,7 @@ h1 {
   color: #dcf2f1;
   margin: 0 auto;
   max-height: 35px;
-  position: absolute;
+  position: relative;
 }
 .Homepage {
   height: 100%;
