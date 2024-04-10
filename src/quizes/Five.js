@@ -66,7 +66,7 @@ export default function Five() {
       }
     });
     if (currentScore >= 8) {
-      await updateScore("chaptertwo", currentScore);
+      await updateScore("chapterfive", currentScore);
       setScore(currentScore);
     }
     // Use the score variable directly in the updateScore function
