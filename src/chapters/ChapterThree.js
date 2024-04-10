@@ -18,9 +18,9 @@ export default function ChapterThree() {
   };
   const ToQuiz = () => {
     return (
-      <NavButtons classname={"nextButton"} onclick={handleQuiz}>
-        Take Unit Quiz
-      </NavButtons>
+      <NavButtons classname={"nextButton toQuiz"} onclick={handleQuiz}>
+Unit Three Complete, Take the Quiz
+  </NavButtons>
     );
   };
 

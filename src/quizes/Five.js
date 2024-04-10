@@ -42,7 +42,7 @@ export default function Five() {
       }
 
       const data = await response.json();
-      setScore(data.scores.chaptertwo || 0);
+      setScore(data.scores.chapterfive || 0);
     } catch (error) {
       console.error(error);
     }

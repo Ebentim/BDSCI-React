@@ -13,14 +13,14 @@ export default function ChapterTwelve() {
   };
   const ToQuiz = () => {
     return (
-      <NavButtons classname={"nextButton"} onclick={handleQuiz}>
-        Take Unit Quiz
+      <NavButtons classname={"nextButton toQuiz"} onclick={handleQuiz}>
+        Unit Twelve Complete, Take the Quiz
       </NavButtons>
     );
   };
 
   return (
-    <div className="courseBody" id="four">
+    <div className="courseBody" id="twelve">
       <h3 className="bold unitHeading">
         Unit Twelve: Risk Taking and Risk Perception of Teenagers
       </h3>

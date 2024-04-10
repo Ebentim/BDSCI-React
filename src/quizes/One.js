@@ -11,11 +11,11 @@ const QuizAnswers = {
   three: "In an unmarked crosswalk",
   four: "Turned to the right (away from the street)",
   five: "Stay out of the intersection until traffic clears",
-  six: "Avoiding unnecessary lane changes",
+  six: "16",
   seven: "Drive to a safe place, stop and rest",
   eight: "It is illegal under all circumstances",
   nine: "Transformation of social interactions and the ability to live farther from city centers",
-  ten: "By limiting job opportunities across various sectors",
+  ten: "By generating employment opportunities, contributing to economic growth, and fostering interdependence with other sectors",
 };
 export default function One() {
   const { accessToken, userId } = useAuth();
@@ -220,13 +220,12 @@ export default function One() {
             : null
         }
       />
-
       <RadioButton
         classname="bold"
-        question="6. At intersections, crosswalks, and railroad crossings, you should always:"
-        option1="Slowing down to look at collision scene"
-        option2="Avoiding unnecessary lane changes"
-        option3="Slowly pass vehicles that seem to be stopped for no reason"
+        question="6. What is the minimum age requirement for a minors’ driver license in the state of California"
+        option1="16"
+        option2="15"
+        option3="17"
         name="six"
         optionDiv="option"
         ida="sixA"

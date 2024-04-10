@@ -17,14 +17,14 @@ export default function ChapterThirteen() {
   };
   const ToQuiz = () => {
     return (
-      <NavButtons classname={"nextButton"} onclick={handleQuiz}>
-        Take Unit Quiz
+      <NavButtons classname={"nextButton toQuiz"} onclick={handleQuiz}>
+        Unit Thirteen COmplete, Take the Quiz
       </NavButtons>
     );
   };
 
   return (
-    <div className="courseBody" id="four">
+    <div className="courseBody" id="thirteen">
       <h3 className="bold unitHeading">Unit Thirteen: Substance Abuse</h3>
       {showQuiz ? (
         <Thirteen />

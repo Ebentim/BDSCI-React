@@ -18,7 +18,7 @@ body {
   gap: 5px;
   min-height: 100vh;
   grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: 50px auto auto;
+  grid-template-rows: 50px auto 50px;
   grid-template-areas: "h h h h h h h h h h h h" "m m m m m m m m m m m m" "f f f f f f f f f f f f";
 }
 .timer {
@@ -37,6 +37,8 @@ body {
 main {
   grid-area: m;
   width: 95vw;
+  height: auto;
+  min-height: 95vh;
   margin: 0 auto;
 }
 /* BDS */
@@ -51,7 +53,6 @@ h1 {
 .footer {
   width: 100%;
   grid-area: f;
-  bottom: 0%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -61,7 +62,6 @@ h1 {
   color: #dcf2f1;
   margin: 0 auto;
   max-height: 35px;
-  position: relative;
 }
 .Homepage {
   height: 100%;

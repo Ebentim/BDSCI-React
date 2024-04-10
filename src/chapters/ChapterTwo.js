@@ -17,8 +17,8 @@ export default function ChapterTwo() {
   };
   const ToQuiz = () => {
     return (
-      <NavButtons classname={"nextButton"} onclick={handleQuiz}>
-        Take Unit Quiz
+      <NavButtons classname={"nextButton toQuiz"} onclick={handleQuiz}>
+        Unit Two Complete, Take the Quiz
       </NavButtons>
     );
   };

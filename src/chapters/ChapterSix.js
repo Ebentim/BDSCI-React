@@ -18,14 +18,14 @@ export default function ChapterSix() {
   };
   const ToQuiz = () => {
     return (
-      <NavButtons classname={"nextButton"} onclick={handleQuiz}>
-        Take Unit Quiz
+      <NavButtons classname={"nextButton toQuiz"} onclick={handleQuiz}>
+        Unit Six Complete, Take the Quiz
       </NavButtons>
     );
   };
 
   return (
-    <div className="courseBody" id="four">
+    <div className="courseBody" id="six">
       <h3 className="bold unitHeading">
         Unit Six: Causes and Costs of Accidents
       </h3>

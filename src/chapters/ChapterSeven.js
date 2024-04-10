@@ -18,14 +18,14 @@ export default function ChapterSeven() {
   };
   const ToQuiz = () => {
     return (
-      <NavButtons classname={"nextButton"} onclick={handleQuiz}>
-        Take Unit Quiz
+      <NavButtons classname={"nextButton toQuiz"} onclick={handleQuiz}>
+        Unit Seven Complete, Take the Quiz
       </NavButtons>
     );
   };
 
   return (
-    <div className="courseBody" id="four">
+    <div className="courseBody" id="seven">
       <h3 className="bold unitHeading">
         Unit Seven: Differences in Urban and Rural Driving
       </h3>

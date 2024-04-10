@@ -16,14 +16,14 @@ export default function ChapterTen() {
   };
   const ToQuiz = () => {
     return (
-      <NavButtons classname={"nextButton"} onclick={handleQuiz}>
-        Take Unit Quiz
+      <NavButtons classname={"nextButton toQuiz"} onclick={handleQuiz}>
+        Unit Ten Complete, Take the Quiz
       </NavButtons>
     );
   };
 
   return (
-    <div className="courseBody" id="four">
+    <div className="courseBody" id="ten">
       <h3 className="bold unitHeading">
         Unit Ten: Effects of Alcohol and Drugs
       </h3>

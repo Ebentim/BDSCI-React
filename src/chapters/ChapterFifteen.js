@@ -16,13 +16,13 @@ export default function ChapterEight() {
   };
   const ToQuiz = () => {
     return (
-      <NavButtons classname={"nextButton"} onclick={handleQuiz}>
-        Take Unit Quiz
+      <NavButtons classname={"nextButton toQuiz"} onclick={handleQuiz}>
+        Unit Fifteen Complete, Take the Quiz
       </NavButtons>
     );
   };
   return (
-    <div className="courseBody" id="four">
+    <div className="courseBody" id="fifteen">
       <h3 className="bold unitHeading">Unit Fifteen: Road Rage</h3>
       {showQuiz ? (
         <Fifteen />

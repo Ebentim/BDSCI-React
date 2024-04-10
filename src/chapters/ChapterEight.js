@@ -28,14 +28,13 @@ export default function ChapterEight() {
   };
   const ToQuiz = () => {
     return (
-      <NavButtons classname={"nextButton"} onclick={handleQuiz}>
-        Take Unit Quiz
-      </NavButtons>
+      <NavButtons classname={"nextButton, toQuiz"} onclick={handleQuiz}>
+Unit Eight Complete, Take the Quiz      </NavButtons>
     );
   };
 
   return (
-    <div className="courseBody" id="four">
+    <div className="courseBody" id="eight">
       <h3 className="bold unitHeading">
         Unit Eight: Critical Vehicle Systems and Subsystems
       </h3>
