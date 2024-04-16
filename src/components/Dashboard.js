@@ -201,7 +201,7 @@ const Dashboard = () => {
           }
           className="view-progress-button"
         >
-          {showProgressTable ? "View Detals" : "View Progress"}
+          {showProgressTable ? "View Details" : "View Progress"}
         </button>
       </section>
 

@@ -11,7 +11,8 @@ function Homepage() {
     );
   };
   return (
-    <main className="Homepage">
+    <main>
+      <div className="Homepage">
       <div className="text-container">
         <div className="texts">
           <h3 className="course-name">
@@ -27,6 +28,7 @@ function Homepage() {
       </div>
       <div className="form-container">
         <SignupForm />
+        </div>
       </div>
     </main>
   );

@@ -2,7 +2,7 @@ import { useState } from "react";
 import { NavButtons } from "../Assets/next";
 import Thirteen from "../quizes/Thirteen";
 const sections = {
-  sectionOne: "Illegal for Those Under 21 to Posess or use Alcohol",
+  sectionOne: "Illegal for Those Under 21 to Possess or use Alcohol",
   sectionTwo: "Statics",
   sectionThree: "Cycle of Abuse",
   sectionFour: "Drug Actions Within the Body",
@@ -31,6 +31,7 @@ export default function ChapterThirteen() {
       ) : (
         <div className="courseContentContainer">
           <div className="courseOutline">
+            <h4 className="sectionSubheading outlineName">Outline</h4>
             <ul className="sectionList">
               {Object.entries(sections).map(([key, value]) => (
                 <li key={key}>
@@ -358,7 +359,7 @@ export default function ChapterThirteen() {
                 impaired) offenses, aiming to protect the public from the
                 dangers posed by impaired drivers. The fines for such offenses
                 can vary depending on factors like whether it's a first-time
-                offense or a repeat offense within a certain timeframe.
+                offense or a repeat offense within a certain time frame.
               </p>
               <p className="courseText">
                 For a first-time DUI conviction in California, the base fine can

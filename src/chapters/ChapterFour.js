@@ -10,7 +10,7 @@ import "../styles/general.css";
 const sections = {
   sectionOne: "Recognizing Traffic Control Signals",
   sectionTwo: "Purpose and Meaning of Pavement and Curb Markings",
-  sectionThree: "Intersections, Crossingss that Require Special Stops",
+  sectionThree: "Intersections, Crossings that Require Special Stops",
   sectionFour: "Pictorial Messages",
 };
 export default function ChapterFour() {
@@ -34,6 +34,7 @@ export default function ChapterFour() {
       {!showQuiz ? (
         <div className="courseContentContainer">
           <div className="courseOutline">
+            <h4 className="sectionSubheading outlineName">Outline</h4>
             <ul className="sectionList">
               {Object.entries(sections).map(([key, value]) => (
                 <li key={key}>
@@ -44,7 +45,7 @@ export default function ChapterFour() {
           </div>
           <div>
             <div className="courseContents">
-              <h4 className="sectionHeaading" id="sectionOne">
+              <h4 className="sectionHeading" id="sectionOne">
                 Section 4.1. Recognizing Traffic Control Signals
               </h4>
               <img
@@ -198,12 +199,12 @@ export default function ChapterFour() {
                 allow="autoplay"
               ></iframe>
               <p className="courseText">
-                <span className="bolf">Red: </span>Requires vehicles to come to
+                <span className="bold">Red: </span>Requires vehicles to come to
                 a complete stop behind the stop line or at the intersection.
                 Drivers must remain stopped until the light changes to green.
               </p>
               <p className="courseText">
-                <span className="bolf">Yellow: </span>Indicates that the light
+                <span className="bold">Yellow: </span>Indicates that the light
                 is about to change from green to red. It serves as a warning for
                 drivers to prepare to stop safely, either by stopping if it is
                 safe to do so or by proceeding cautiously through the
@@ -638,7 +639,7 @@ export default function ChapterFour() {
               <h5 className="sectionSubheading">A. Railroad Crossing</h5>
               <iframe
                 src="https://drive.google.com/file/d/1p40q1Y1kSyAmtssrrqF2fjg14l5xkFXG/preview"
-                title="Railroad corssing"
+                title="Railroad crossing"
                 className="courseVideo"
                 allow="autoplay"
               ></iframe>
@@ -697,7 +698,7 @@ export default function ChapterFour() {
               <img
                 src={railroadSign}
                 className="courseImage"
-                alt="railroad crossinng sign"
+                alt="railroad crossing sign"
               />
               <p className="courseText">
                 Railroad crossings have two basic types of warnings: passive

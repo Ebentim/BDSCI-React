@@ -19,7 +19,8 @@ export default function ChapterFive() {
   const ToQuiz = () => {
     return (
       <NavButtons classname={"nextButton toQuiz"} onclick={handleQuiz}>
-        Unit Five Complete, Take the Quiz      </NavButtons>
+        Unit Five Complete, Take the Quiz{" "}
+      </NavButtons>
     );
   };
 
@@ -31,6 +32,7 @@ export default function ChapterFive() {
       {!showQuiz ? (
         <div className="courseContentContainer">
           <div className="courseOutline">
+            <h4 className="sectionSubheading outlineName">Outline</h4>
             <ul className="sectionList">
               {Object.entries(sections).map(([key, value]) => (
                 <li key={key}>
@@ -274,7 +276,7 @@ export default function ChapterFive() {
                 When an individual changes their residential address, they are
                 required to update their vehicle registration records. This
                 involves notifying the DMV of the new address within a specified
-                timeframe of 10 days. Failure to update the address may result
+                time frame of 10 days. Failure to update the address may result
                 in delays in receiving important documents, such as registration
                 renewal notices or vehicle-related correspondence.
               </p>
@@ -520,7 +522,7 @@ export default function ChapterFive() {
                 must stop before entering the crosswalk or the intersection
                 itself. The driver must remain stopped until they receive an
                 indication to proceed, with an exception mentioned in
-                subdivision (b)
+                subdivision (b).
               </p>
               <p className="courseText">
                 Subdivision (b) states that after stopping at a steady circular
@@ -1680,7 +1682,7 @@ export default function ChapterFive() {
                 the federal requirement for automatic restraints is rescinded.
               </p>
               <h5 className="sectionSubheading">
-                Somg control devices (27156 CVC)
+                Smog control devices (27156 CVC)
               </h5>
               <p className="courseText">
                 1. It is prohibited to operate or leave standing on a highway a
@@ -1874,7 +1876,7 @@ export default function ChapterFive() {
                 local agency.
               </p>
               <p className="courseText">
-                <span className="bold">3. Reporting Timeframe:</span> If no
+                <span className="bold">3. Reporting Time frame:</span> If no
                 party involved in an accident reports it to the DMV within one
                 year, the DMV is not obligated to file a report, and certain
                 driver's license suspension requirements do not apply.

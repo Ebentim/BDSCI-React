@@ -6,7 +6,7 @@ import ReactPlayer from "react-player/lazy";
 const sections = {
   sectionOne: "Faulty Driver Performance",
   sectionTwo: "Accident Avoidance and Prevention",
-  sectionThree: "Prcedures when Involved in an Accident",
+  sectionThree: "Procedures when Involved in an Accident",
   sectionFour: "Financial Responsibility Requirements",
 };
 
@@ -34,6 +34,7 @@ export default function ChapterSix() {
       ) : (
         <div className="courseContentContainer">
           <div className="courseOutline">
+            <h4 className="sectionSubheading outlineName">Outline</h4>
             <ul className="sectionList">
               {Object.entries(sections).map(([key, value]) => (
                 <li key={key}>
@@ -320,7 +321,7 @@ export default function ChapterSix() {
                   between their vehicle and the one in front.
                 </li>
               </ol>
-              <h5 className="sectionsubheading">Distracted Driving</h5>
+              <h5 className="sectionSubheading">Distracted Driving</h5>
               <ReactPlayer
                 url="https://youtu.be/t7911kgJJZc"
                 config={{
@@ -474,7 +475,7 @@ export default function ChapterSix() {
                 </li>
               </ol>
               <p className="courseText">
-                Effective Visual Scanning requirely a routine which includes:
+                Effective Visual Scanning requires a routine which includes:
               </p>
               <ol className="orderedList">
                 <li className="courseText">
@@ -673,7 +674,7 @@ export default function ChapterSix() {
                 Illegal and unsafe passing maneuvers increase the risk of
                 accidents. Hazards associated with unsafe passing include:
               </p>
-              <ol classNmae="orderedList">
+              <ol className="orderedList">
                 <li className="courseText">
                   Head-on Collisions: Passing in no-passing zones or without
                   proper visibility can result in head-on collisions, which are
@@ -700,7 +701,7 @@ export default function ChapterSix() {
                 perform safe passing maneuvers, drivers should consider the
                 following techniques:
               </p>
-              <ol classNmae="orderedList">
+              <ol className="orderedList">
                 <li className="courseText">
                   Proper signaling: Activate the appropriate turn signal to
                   indicate the intention to pass, allowing other drivers to
@@ -784,7 +785,7 @@ export default function ChapterSix() {
                 vehicles can impede traffic flow and create hazardous
                 conditions. Consequences of hogging the road include:
               </p>
-              <ol className="orderedlist">
+              <ol className="orderedList">
                 <li className="courseText">
                   Congestion and frustration: Slower-moving vehicles occupying
                   the left or center lanes can cause traffic congestion and lead
@@ -894,7 +895,7 @@ export default function ChapterSix() {
               </p>
               <ol className="orderedList">
                 <li className="courseText">
-                  .Collision Risk: Jaywalkers are at a higher risk of being hit
+                  Collision Risk: Jaywalkers are at a higher risk of being hit
                   by vehicles since drivers may not anticipate pedestrians
                   crossing outside designated areas.
                 </li>

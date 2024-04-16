@@ -10,8 +10,10 @@
 .nextButton {
   margin-top: 10px;
 }
-
-.toQuiz{
+.courseBody {
+  margin: auto;
+}
+.toQuiz {
   margin: 10px auto !important;
   border: 3px solid orange !important;
 }
@@ -38,8 +40,6 @@
   font-size: 2em;
 }
 .courseOutline {
-  border-right: 5px solid #365486;
-  margin-right: 15px;
   padding-right: 5px;
   height: auto;
 }
@@ -99,7 +99,7 @@
 }
 .instruction-container {
   grid-area: m;
-  margin: 0 15px 15px 15px;
+  margin-bottom: 16px;
 }
 .option {
   display: flex;
@@ -180,13 +180,11 @@ input[type="radio"] :active {
 }
 @media (max-width: 767px) {
   .courseBody {
-    margin: 0 auto;
+    margin: auto;
   }
   .courseContentContainer {
     display: flex;
     flex-direction: column;
-    margin-left: 10px;
-    margin-right: 10px;
   }
   .instruction-container {
     width: 100%;
@@ -201,7 +199,8 @@ input[type="radio"] :active {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
+    padding-left: 20px;
     border: none;
     border-radius: 9px;
     background-color: #dcf2f1;

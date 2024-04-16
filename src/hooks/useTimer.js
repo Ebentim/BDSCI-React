@@ -64,7 +64,7 @@ export const useTimer = (
       clearInterval(counting);
       document.removeEventListener("visibilitychange", handleVisibilityChange);
     };
-  }, [isActive, nextPhase, duration]);
+  }, [isActive, nextPhase, duration, handleVisibilityChange]);
 
   return duration;
 };

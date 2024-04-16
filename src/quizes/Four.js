@@ -207,7 +207,7 @@ export default function Four() {
 
       <RadioButton
         classname="bold"
-        question="4. If you approach a traffic light with a red signal and a police officer directs you to go through thhe intersection without stopping, you should?"
+        question="4. If you approach a traffic light with a red signal and a police officer directs you to go through the intersection without stopping, you should?"
         option1="Stop until the light turns green"
         option2="Go through the intersection without stopping."
         option3="Come to a complete stop before proceeding"

@@ -12,7 +12,7 @@ import powerTrain from "../Assets/images/image13.png";
 import cooling from "../Assets/images/image44.png";
 import brake from "../Assets/images/image6.png";
 import control from "../Assets/images/image3.png";
-import instrunmentPanel from "../Assets/images/image45.png";
+import instrumentPanel from "../Assets/images/image45.png";
 const sections = {
   sectionOne: "Construction of the Automobile",
   sectionTwo: "Safety Equipment",
@@ -29,7 +29,8 @@ export default function ChapterEight() {
   const ToQuiz = () => {
     return (
       <NavButtons classname={"nextButton, toQuiz"} onclick={handleQuiz}>
-Unit Eight Complete, Take the Quiz      </NavButtons>
+        Unit Eight Complete, Take the Quiz{" "}
+      </NavButtons>
     );
   };
 
@@ -43,6 +44,7 @@ Unit Eight Complete, Take the Quiz      </NavButtons>
       ) : (
         <div className="courseContentContainer">
           <div className="courseOutline">
+            <h4 className="sectionSubheading outlineName">Outline</h4>
             <ul className="sectionList">
               {Object.entries(sections).map(([key, value]) => (
                 <li key={key}>
@@ -714,8 +716,8 @@ Unit Eight Complete, Take the Quiz      </NavButtons>
                 Instrument Panel Lights, Chimes, and Gauges
               </h5>
               <img
-                src={instrunmentPanel}
-                alt="instrunment panel lights"
+                src={instrumentPanel}
+                alt="instrument panel lights"
                 className="courseImage"
               />
               <p className="courseText">
@@ -1247,7 +1249,7 @@ Unit Eight Complete, Take the Quiz      </NavButtons>
                 cap can lead to fuel evaporation, reducing fuel efficiency and
                 potentially triggering the "Check Engine" light.
               </p>
-              <h5 className="sectionSubheading">D. Guage and Instruments</h5>
+              <h5 className="sectionSubheading">D. Gauge and Instruments</h5>
               <p className="courseText">
                 The gauges and instruments in your vehicle provide critical
                 information about its performance and status. Regularly checking

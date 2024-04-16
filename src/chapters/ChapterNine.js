@@ -7,7 +7,7 @@ import pedestrian from "../Assets/images/image49.png";
 const sections = {
   sectionOne: "As a Pedestrian",
   sectionTwo: "As a Driver",
-  sectionThree: "Avoidinng Collisions with Animals",
+  sectionThree: "Avoiding Collisions with Animals",
 };
 
 export default function ChapterNine() {
@@ -32,6 +32,7 @@ export default function ChapterNine() {
       ) : (
         <div className="courseContentContainer">
           <div className="courseOutline">
+            <h4 className="sectionSubheading outlineName">Outline</h4>
             <ul className="sectionList">
               {Object.entries(sections).map(([key, value]) => (
                 <li key={key}>

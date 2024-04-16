@@ -6,7 +6,7 @@ import humanEye from "../Assets/images/image59.png";
 import humanEyeStructure from "../Assets/images/image67.png";
 import snellenChart from "../Assets/images/image34.png";
 const sections = {
-  sectionOne: "The Pyschological Nature of the Driver",
+  sectionOne: "The Psychological Nature of the Driver",
   sectionTwo: "The Physiological Nature of the Driver",
 };
 export default function ChapterTwo() {
@@ -28,6 +28,7 @@ export default function ChapterTwo() {
       {!showQuiz ? (
         <div className="courseContentContainer">
           <div className="courseOutline">
+            <h4 className="sectionSubheading outlineName">Outline</h4>
             <ul className="sectionList">
               {Object.entries(sections).map(([key, value]) => {
                 return (
@@ -107,7 +108,7 @@ export default function ChapterTwo() {
                 components working together to capture and process visual
                 information.
               </p>
-              <div className="courseimageContainer">
+              <div className="courseImageContainer">
                 <img
                   src={humanEye}
                   alt="The Human eye"
@@ -152,13 +153,13 @@ export default function ChapterTwo() {
               <p className="courseText">
                 The retina is a delicate and light-sensitive layer of tissue
                 located at the back of the eye. It contains specialized cells
-                called photoreceptors, which are responsible for converting the
-                incoming light into electrical signals. These photoreceptors,
+                called photoreceptor, which are responsible for converting the
+                incoming light into electrical signals. These photoreceptor,
                 known as rods and cones, react to different levels of light and
                 are crucial for visual perception.
               </p>
               <p className="courseText">
-                Once the photoreceptors in the retina capture the light, they
+                Once the photoreceptor in the retina capture the light, they
                 convert it into electrical signals. These signals then travel
                 from the retina through the optic nerve, a bundle of nerve
                 fibers, toward the brain. The optic nerve serves as a
@@ -233,7 +234,7 @@ export default function ChapterTwo() {
                 see at 200 feet) in at least one eye, you may not be scheduled
                 for a drive test in California.
               </p>
-              <h5 className="coursesubheading">
+              <h5 className="courseSubheading">
                 Distance judgment (depth perception)
               </h5>
               <p className="sectionQuote">
@@ -453,7 +454,7 @@ export default function ChapterTwo() {
                 informed about driving practices through education enhances safe
                 driving.
               </p>
-              <h5 className="sectionSubHeading">The ears and hearing</h5>
+              <h5 className="sectionSubheading">The ears and hearing</h5>
               <p className="sectionQuote">
                 Hearing is a vital sense for safe driving, enabling us to detect
                 crucial auditory cues on the road.
@@ -664,14 +665,320 @@ export default function ChapterTwo() {
                 carbon monoxide concerns while driving.
               </p>
               <h4 className="sectionHeading" id="sectionTwo">
-                The Pyschological Nature of the Driver
+                The Psychological Nature of the Driver
               </h4>
               <p className="sectionQuote">
                 Driving is not only a physical skill, but also a mental and
                 emotional activity that requires attention, concentration,
                 decision-making, and self-control.
               </p>
-              <p className="courseText"></p>
+              <h4 className="sectionSubheading">
+                A. Attitudes Essential to Good Driving
+              </h4>
+              <p className="sectionQuote">
+                Attitudes are the fuel that propels good driving, as they shape
+                our readiness, habits, and unwavering commitment to safety on
+                the road.
+              </p>
+              <p className="courseText">
+                Developing the right attitude is essential for becoming a
+                skilled and responsible driver. Attitudes influence our
+                motivation, habits, and the choices we make behind the wheel. In
+                this section, we will explore the attitudes that are vital for
+                good driving, emphasizing their significance in fostering safe
+                and responsible behaviors on the road.
+              </p>
+              <p className="courseText">
+                You need to be mentally prepared to drive responsibly. This
+                means being alert and focused, which helps you notice and avoid
+                hazards. For example, do you see that car in front of you that
+                is swerving slightly? Being alert can help you keep a safe
+                distance and avoid a collision.
+              </p>
+              <p className="courseText">
+                It also means making smart decisions, which helps you weigh
+                risks and act safely. For example, do you see that yellow light
+                ahead? Being smart can help you decide whether to stop or go
+                through, depending on the traffic and speed. Being mentally
+                prepared also helps you control your emotions, which prevents
+                road rage and stress.
+              </p>
+              <p className="courseText">
+                How do you feel when you drive? Do you get angry or anxious
+                easily? Being calm can help you deal with other drivers’
+                mistakes and enjoy the ride. It helps you adapt to changes, such
+                as traffic jams or bad weather. Imagine you are driving to an
+                important meeting and suddenly it starts raining heavily. How
+                would you handle the situation? Being adaptable can help you
+                adjust your speed, turn on your lights, and follow the road
+                signs. And it helps you avoid distractions, such as phones or
+                music. And it helps you resist the temptation of checking your
+                messages or singing along to your favorite tunes. All these
+                benefits of mental preparedness make driving safer and more
+                enjoyable for you and everyone else on the road.
+              </p>
+              <h4 className="sectionSubheading">
+                Analysis of Desired Habit Patterns
+              </h4>
+              <p className="courseText">
+                The development of desired habits and behaviors for safe driving
+                lays the groundwork for a lifetime of responsible and confident
+                navigation on the road
+              </p>
+              <p className="courseText">
+                The desired habit patterns are the ones that follow the four
+                main principles of safe driving: attention, respect,
+                responsibility, and improvement. These habits will help you be
+                more alert, focused, informed, and adaptable on the road. They
+                will also help you avoid conflicts, penalties, and collisions
+                with other road users. Some examples of these habits are:
+              </p>
+              <ul>
+                <li className="courseText">
+                  Drive defensively: Be ready for hazards, keep a safe distance,
+                  and scan the road.
+                </li>
+                <li className="courseText">
+                  Follow traffic rules: Obey laws, speed limits, and signs. Stop
+                  at stop signs, yield to pedestrians, and signal when turning
+                  or changing lanes.
+                </li>
+                <li className="courseText">
+                  Avoid distractions: Don’t use phones, eat, or do other things
+                  that take your eyes off the road. Use hands-free devices for
+                  phone calls if needed.
+                </li>
+                <li className="courseText">
+                  Manage emotions and be patient: Don’t get angry or stressed
+                  when driving. Control your emotions and avoid road rage. Be
+                  patient with other drivers and their mistakes.
+                </li>
+                <li className="courseText">
+                  Keep a safe distance: Stay at least two seconds behind the car
+                  in front. This gives you enough time to react if something
+                  happens.
+                </li>
+                <li className="courseText">
+                  Use mirrors and check blind spots: Look at your mirrors and
+                  blind spots before turning or changing lanes. Be aware of
+                  what’s around you and adjust your mirrors properly.
+                </li>
+                <li className="courseText">
+                  Be aware of the situation: Look for potential hazards, such as
+                  other cars, pedestrians, or cyclists. Drive differently
+                  depending on the road and weather conditions.
+                </li>
+                <li className="courseText">
+                  Stay updated with traffic laws: Know any changes or updates to
+                  traffic laws and regulations. Review the driver’s manual and
+                  learn any local traffic rules in your area.
+                </li>
+                <li className="courseText">
+                  Maintain your vehicle: Check your tires, brakes, lights, and
+                  signals regularly. Schedule maintenance and fix any problems
+                  as soon as possible.
+                </li>
+                <li className="courseText">
+                  Keep learning: Don’t stop learning new skills and techniques.
+                  Take advanced driving courses or defensive driving programs to
+                  improve your driving.
+                </li>
+              </ul>
+              <h4 className="sectionSubheading">
+                Establishment of Habit Patterns by Practice
+              </h4>
+              <p className="sectionQuote">
+                Repetition is the driving force behind skill development -
+                practice paves the way to establishing reliable driving habits.
+              </p>
+              <p className="courseText">
+                Consistent practice is crucial for developing and reinforcing
+                safe driving habits.
+              </p>
+              <p className="courseText">
+                <span className="bold">1. Skill development: </span>Safe driving
+                requires a combination of knowledge, skills, and experience.
+                Consistent practice allows learners to refine their skills and
+                build muscle memory, making safe driving habits second nature.
+                Regular practice helps learners become more comfortable and
+                confident behind the wheel.
+              </p>
+              <p className="courseText">
+                <span className="bold">2. Reinforcement of good habits: </span>
+                Consistency reinforces the formation of good habits. By
+                practicing safe driving techniques consistently, learners
+                reinforce positive behaviors and make them a natural part of
+                their driving routine. Repetition helps solidify safe habits,
+                ensuring they become automatic responses in various driving
+                situations.
+              </p>
+              <p className="courseText">
+                <span className="bold">
+                  3. Adaptation to different scenarios:{" "}
+                </span>
+                The road is dynamic, and each driving situation presents unique
+                challenges. Consistent practice exposes learners to different
+                scenarios, such as heavy traffic, adverse weather conditions, or
+                unfamiliar routes. Regular practice enables learners to adapt
+                their driving skills to various circumstances, enhancing their
+                ability to make safe decisions on the road.
+              </p>
+              <p className="courseText">
+                <span className="bold">4. Confidence-building: </span>Consistent
+                practice builds confidence. As learners develop their driving
+                skills and experience, they become more self-assured in their
+                abilities. This confidence helps them handle challenging
+                situations with composure and make safer decisions on the road.
+              </p>
+              <p className="courseText">
+                <span className="bold">
+                  5. Stay updated with road rules and changes:{" "}
+                </span>
+                Consistent practice keeps learners engaged with road rules and
+                any changes or updates to driving regulations. Staying updated
+                helps them align their driving behaviors with current standards
+                and expectations, ensuring they remain knowledgeable and
+                compliant with the law.
+              </p>
+              <p className="courseText">
+                <span className="bold">6. Preparation for emergencies: </span>
+                Safe driving involves being prepared for unexpected situations
+                and emergencies. Consistent practice allows learners to develop
+                quick reflexes, hazard perception skills, and effective
+                defensive driving techniques. Regular practice helps them become
+                better equipped to handle emergencies, minimizing risks and
+                potential accidents.
+              </p>
+              <p className="courseText">
+                <span className="bold">7. Continued improvement: </span>Safe
+                driving is an ongoing process of improvement. Consistent
+                practice allows learners to identify areas for improvement and
+                work on refining their skills. By regularly evaluating their
+                driving performance, seeking feedback, and seeking growth
+                opportunities, learners can continuously enhance their safe
+                driving habits.
+              </p>
+              <p className="courseText">
+                You should dedicate regular practice time, even after obtaining
+                your driver's license. Safe driving habits are not just for
+                passing a test but for a lifetime of responsible and secure
+                driving. With consistent practice, you can develop and reinforce
+                safe driving habits, ensure your safety and the safety of others
+                on the road.
+              </p>
+              <h4 className="sectionSubheading">
+                B. Causes of behavior Variables
+              </h4>
+              <p className="courseText">
+                Driving behavior is influenced by many factors, both internal
+                and external. These factors affect how we think, feel, and act
+                on the road. In this section, we will summarize and merge the
+                main points of the causes of behavior variables that contribute
+                to driving behavior.
+              </p>
+              <ul id="ul">
+                <li className="courseText">
+                  <span className="bold">Emotional tension: </span>This is the
+                  impact of emotions on driving behavior. Emotions such as
+                  anger, stress, or sadness can impair judgment, reaction time,
+                  and decision-making abilities. To ensure safe driving, it is
+                  essential to recognize the impact of emotional tension and
+                  strive for emotional control on the road.
+                </li>
+                <li className="courseText">
+                  <span className="bold">Environmental conditions: </span>These
+                  are the external factors that affect driving behavior. Factors
+                  such as weather, road conditions, and traffic congestion play
+                  a pivotal role in shaping driver behavior. To ensure safe
+                  driving, it is important to understand the influence of
+                  environmental conditions and adapt driving behavior
+                  accordingly.
+                </li>
+                <li className="courseText">
+                  <span className="bold">Heredity: </span>This is the influence
+                  of genetic makeup on driving behavior. Factors such as
+                  temperament, impulsivity, and risk-taking propensity may have
+                  a hereditary component. To ensure safe driving, it is
+                  important to recognize the role of heredity in driving
+                  behavior and take proactive measures to mitigate any
+                  predispositions towards risky driving habits.
+                </li>
+                <li className="courseText">
+                  <span className="bold">Physical conditions: </span>These are
+                  the physical health and abilities that affect driving
+                  performance. Factors like vision, hearing, mobility, and
+                  overall fitness influence a driver’s capacity to operate a
+                  vehicle safely. To ensure safe driving, it is important to
+                  assess physical conditions regularly and ensure they meet the
+                  requirements for safe driving.
+                </li>
+                <li className="courseText">
+                  <span className="bold">Training: </span>This is the role of
+                  driver education and training in shaping safe driving
+                  behaviors. Formal driver training programs provide learners
+                  with the knowledge, skills, and attitudes necessary for
+                  responsible and competent driving. To ensure safe driving, it
+                  is important to emphasize the significance of driver education
+                  and engage in training and continuous learning throughout the
+                  driving journey.
+                </li>
+              </ul>
+              <h4 className="sectionSubheading">
+                C. Undesirable traits of a driver
+              </h4>
+              <p className="courseText">
+                A driver’s behavior is influenced by many factors, both internal
+                and external. These factors affect how you think, feel, and act
+                on the road. While you strive for safe driving practices, it is
+                important to acknowledge and understand the traits that can
+                hinder your ability to be a responsible driver, as this will
+                allow you to take proactive steps to mitigate their negative
+                impact.
+              </p>
+              <p className="courseText">
+                <span className="bold">Aggressiveness: </span>When you act
+                angrily or violently on the road. It can lead to increased
+                accident risks and conflicts with other drivers. To overcome
+                aggressiveness, drivers should practice self-awareness, stress
+                management, empathy, and safe driving techniques.
+              </p>
+              <p className="courseText">
+                <span className="bold">Egotism: </span>When you prioritize your
+                own needs and desires above the safety of others. You endanger
+                yourself, and other road users (pedestrians and fellow drivers
+                alike). You should cultivate a mindset of shared responsibility,
+                respect, accountability, and collective effort.
+              </p>
+              <p className="courseText">
+                <span className="bold">Emotional instability: </span>This is
+                when drivers experience strong emotions that impair their
+                judgment, reaction time, and decision-making abilities. It can
+                increase the risk of aggressive behavior and impulsive actions.
+                To overcome emotional instability, drivers should practice
+                emotional regulation techniques, create a positive driving
+                environment, take breaks when needed, and seek professional help
+                if necessary.
+              </p>
+              <p className="courseText">
+                <span className="bold">Inattentiveness: </span>Multitasking
+                while driving is a behavior that can severely compromise your
+                reaction time and awareness of changing traffic conditions. You
+                should prioritize eliminating distractions, refraining from
+                engaging in non-driving activities, adopting mindful driving
+                techniques, and making effective use of technological aids that
+                restrict phone usage while driving for safe driving.
+              </p>
+              <p className="courseText">
+                <span className="bold">Exhibitionism: </span>Exhibitionism means
+                to seek attention and show off on the road through speeding,
+                reckless maneuvers, or excessive honking. It can endanger
+                yourself and other road users, leading to accidents and creating
+                an unsafe road environment. To overcome exhibitionism, you
+                should focus on the purpose of driving, remind yourself that
+                responsible driving is a reflection of character and maturity,
+                channel your enthusiasm for driving into positive actions, and
+                seek professional help if necessary.
+              </p>
             </div>
             {/* course contents ends here */}
             <ToQuiz />

@@ -1,41 +1,6 @@
-import { useState, useEffect } from "react";
 import Bar from "../components/Bar";
-import { useAuth } from "../contexts/AuthContext";
 import "../styles/general.css";
 export default function Instruction() {
-  const { accessToken } = useAuth();
-  const [userProfile, setUserProfile] = useState([]);
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch(
-          "https://bakkers-driving-school.onrender.com/api/dashboard",
-          {
-            method: "GET",
-            headers: {
-              Authorization: accessToken,
-            },
-          }
-        );
-
-        if (response.ok) {
-          const data = await response.json();
-          setUserProfile(data.user);
-        } else {
-          console.error("Failed to fetch user details");
-          // Handle specific error cases if needed
-        }
-      } catch (error) {
-        console.error("Error fetching user details:", error);
-        console.error(accessToken, error);
-        // Handle other types of errors if needed
-      }
-    };
-
-    if (accessToken) {
-      fetchData();
-    }
-  }, [accessToken]);
   return (
     <>
       <div className="instruction-container">

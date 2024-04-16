@@ -19,8 +19,8 @@ export default function ChapterThree() {
   const ToQuiz = () => {
     return (
       <NavButtons classname={"nextButton toQuiz"} onclick={handleQuiz}>
-Unit Three Complete, Take the Quiz
-  </NavButtons>
+        Unit Three Complete, Take the Quiz
+      </NavButtons>
     );
   };
 
@@ -34,6 +34,7 @@ Unit Three Complete, Take the Quiz
       ) : (
         <div className="courseContentContainer">
           <div className="courseOutline">
+            <h4 className="sectionSubheading outlineName">Outline</h4>
             <ul className="sectionList">
               {Object.entries(sections).map(([key, value]) => (
                 <li key={key}>

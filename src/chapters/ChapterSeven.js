@@ -34,6 +34,7 @@ export default function ChapterSeven() {
       ) : (
         <div className="courseContentContainer">
           <div className="courseOutline">
+            <h4 className="sectionSubheading outlineName">Outline</h4>
             <ul className="sectionList">
               {Object.entries(sections).map(([key, value]) => (
                 <li key={key}>
@@ -1938,7 +1939,7 @@ export default function ChapterSeven() {
                 and engine overheating. Ensure your vehicle's cooling system is
                 in good working order.
               </p>
-              <h5 className="sectionSubheaading">
+              <h5 className="sectionSubheading">
                 Meeting or Approaching Other Vehicles on Open Roadway
               </h5>
               <p className="courseText">
@@ -2794,7 +2795,7 @@ export default function ChapterSeven() {
               <p className="courseText">
                 Grip the steering wheel firmly and keep your movements gradual
                 and controlled. If your vehicle starts to drift or hydroplane,
-                resist the urge to overcorrect. Instead, ease off the
+                resist the urge to over-correct. Instead, ease off the
                 accelerator and steer gently in the direction you want to go.{" "}
               </p>
               <p className="courseText">

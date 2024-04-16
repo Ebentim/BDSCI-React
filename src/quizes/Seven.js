@@ -15,7 +15,7 @@ const QuizAnswers = {
   seven: "Maintain a constant speed",
   eight: "Move into the right lane when it is safe",
   nine: "At or near the same speed as the traffic on the freeway.",
-  ten: "Under no circumstances. ",
+  ten: "Under no circumstances.",
 };
 export default function Seven() {
   const { accessToken, userId } = useAuth();

@@ -250,7 +250,7 @@ export default function Eleven() {
 
       <RadioButton
         classname="bold"
-        question="7. You should be concious of motorcycle especially in congested traffic because"
+        question="7. You should be conscious of motorcycle especially in congested traffic because"
         option1="Motorcycles can travel at higher speeds than cars"
         option2="Motorcycles are harder to see due to their smaller size and can fall into blind spots"
         option3="Motorcycles require less space on the road"

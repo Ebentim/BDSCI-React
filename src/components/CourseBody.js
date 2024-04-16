@@ -14,6 +14,7 @@ import ChapterThirteen from "../chapters/ChapterThirteen";
 import ChapterFourteen from "../chapters/ChapterFourteen";
 import ChapterFifteen from "../chapters/ChapterFifteen";
 import FinalQuiz from "../quizes/FinalQuiz";
+import { useTimer } from "../hooks/useTimer";
 import "../styles/general.css";
 import Timer from "../components/Timer";
 import { NavButtons } from "../Assets/next";
@@ -21,39 +22,36 @@ import { useReducer, useEffect, useState } from "react";
 import { useQuiz } from "../contexts/QuizContext";
 const reducer = (value, action) => {
   switch (action.type) {
-    case "plus":
+    case "next":
       return ++value;
-    case "minus":
+    case "prev":
       return --value;
     default:
       console.log(value);
   }
 };
 export default function CourseBod() {
+  const duration = useTimer(108000000);
   const { scoreFromDb } = useQuiz();
-  console.log(scoreFromDb, "from course body");
-  const startChapter = 1;
-  const [chapter, setChapter] = useReducer(reducer, startChapter);
+  const [chapter, dispatch] = useReducer(reducer, 1);
   const [disableNextButton, setDisableNextButton] = useState(false); // This is meant to disable the next chapter, if the student doesn't scale the current chapter's quiz by at least 80%
 
   const handleNext = () => {
-    if (
-      chapter < 15 ||
-      (chapter === 15 && localStorage.getItem("lastTime") === 0 && chapter < 17)
-    ) {
-      setChapter({ type: "plus" });
-      disableNextButton ? console.log("disabled") : console.log("enabled");
+    if (chapter < 15 || (chapter === 15 && duration <= 0 && chapter < 17)) {
+      dispatch({ type: "next" });
+    } else if (chapter === 15 && duration > 0) {
+      setDisableNextButton(true);
     }
   };
 
   const handPrev = () => {
     if (chapter > 1) {
-      setChapter({ type: "minus" });
+      dispatch({ type: "prev" });
     }
   };
+
   useEffect(() => {
-    // const styles = { display: disableNextButton ? "none" : "block" };
-    const handleDisbleButton = () => {
+    const handleDisableButton = () => {
       switch (chapter) {
         case 1:
           if (scoreFromDb.chapterone < 8) {
@@ -164,7 +162,7 @@ export default function CourseBod() {
           setDisableNextButton(false);
       }
     };
-    handleDisbleButton();
+    handleDisableButton();
   }, [
     chapter,
     disableNextButton,
@@ -267,51 +265,53 @@ export default function CourseBod() {
 
   return (
     <main>
-      <div className="TimerContainer">
-        <Timer />
+      <div id="courseBodyRender">
+        <div className="TimerContainer">
+          <Timer />
+        </div>
+        {chapter === 1 ? (
+          <div className="ToChapterTwo">
+            <NextChapter />
+          </div>
+        ) : (
+          <div className="nextButtonContainer">
+            <PreviousChapter /> <NextChapter />
+          </div>
+        )}
+        {chapter === 1 ? (
+          <ChapterOne />
+        ) : chapter === 2 ? (
+          <ChapterTwo />
+        ) : chapter === 3 ? (
+          <ChapterThree />
+        ) : chapter === 4 ? (
+          <ChapterFour />
+        ) : chapter === 5 ? (
+          <ChapterFive />
+        ) : chapter === 6 ? (
+          <ChapterSix />
+        ) : chapter === 7 ? (
+          <ChapterSeven />
+        ) : chapter === 8 ? (
+          <ChapterEight />
+        ) : chapter === 9 ? (
+          <ChapterNine />
+        ) : chapter === 10 ? (
+          <ChapterTen />
+        ) : chapter === 11 ? (
+          <ChapterEleven />
+        ) : chapter === 12 ? (
+          <ChapterTwelve />
+        ) : chapter === 13 ? (
+          <ChapterThirteen />
+        ) : chapter === 14 ? (
+          <ChapterFourteen />
+        ) : chapter === 15 ? (
+          <ChapterFifteen />
+        ) : (
+          <FinalQuiz />
+        )}
       </div>
-      {chapter === 1 ? (
-        <div className="ToChapterTwo">
-          <NextChapter />
-        </div>
-      ) : (
-        <div className="nextButtonContainer">
-          <PreviousChapter /> <NextChapter />
-        </div>
-      )}
-      {chapter === 1 ? (
-        <ChapterOne />
-      ) : chapter === 2 ? (
-        <ChapterTwo />
-      ) : chapter === 3 ? (
-        <ChapterThree />
-      ) : chapter === 4 ? (
-        <ChapterFour />
-      ) : chapter === 5 ? (
-        <ChapterFive />
-      ) : chapter === 6 ? (
-        <ChapterSix />
-      ) : chapter === 7 ? (
-        <ChapterSeven />
-      ) : chapter === 8 ? (
-        <ChapterEight />
-      ) : chapter === 9 ? (
-        <ChapterNine />
-      ) : chapter === 10 ? (
-        <ChapterTen />
-      ) : chapter === 11 ? (
-        <ChapterEleven />
-      ) : chapter === 12 ? (
-        <ChapterTwelve />
-      ) : chapter === 13 ? (
-        <ChapterThirteen />
-      ) : chapter === 14 ? (
-        <ChapterFourteen />
-      ) : chapter === 15 ? (
-        <ChapterFifteen />
-      ) : (
-        <FinalQuiz />
-      )}
     </main>
   );
 }

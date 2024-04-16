@@ -87,7 +87,14 @@ function Profile() {
             <div className="contact-details">
               <p className="contact">Address: {userProfile.address}</p>
               <p className="contact">Email: {userProfile.email}</p>
-              <p className="contact">Birthday: {userProfile.birthdate}</p>
+              <p className="contact">
+                Birthday:{" "}
+                {userProfile.birthdate.slice(8, 10) +
+                  " / " +
+                  userProfile.birthdate.slice(5, 7) +
+                  " / " +
+                  userProfile.birthdate.slice(0, 4)}
+              </p>
               <p className="contact">State: California</p>
             </div>
           </div>

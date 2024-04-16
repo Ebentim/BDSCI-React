@@ -1,7 +1,7 @@
 import "../App.css";
 import { useTimer } from "../hooks/useTimer";
 
-export default function TimerHandler(initialTime) {
+export default function TimerHandler() {
   const duration = useTimer(108000000);
 
   const hours = Math.floor(
