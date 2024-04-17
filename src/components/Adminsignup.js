@@ -4,8 +4,9 @@ import * as Yup from "yup";
 import { NavButtons } from "../Assets/next";
 import "../App.css";
 import "../styles/general.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 function Adminsignup() {
+  const navigate = useNavigate();
   const [submissionStatus, setSubmissionStatus] = useState(false);
   const SignupButton = () =>
     submissionStatus ? (
@@ -66,7 +67,7 @@ function Adminsignup() {
                   data.message.includes("registered successfully")
                 ) {
                   resetForm();
-                  window.location.replace("/adminsignin");
+                  navigate("/adminsignin");
                 }
               })
               .catch((error) => {

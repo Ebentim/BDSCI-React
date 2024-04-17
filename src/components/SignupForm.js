@@ -19,6 +19,8 @@ function SignupForm() {
         firstname: "",
         lastname: "",
         address: "",
+        pnumber: "",
+        ynumber: "",
         email: "",
         password: "",
         birthdate: "",
@@ -31,6 +33,10 @@ function SignupForm() {
           .min(2, "Must be at least 2 characters")
           .required("last name is required"),
         address: Yup.string().required("Home address is required"),
+        pnumber: Yup.number().required(
+          "Your parent or guardian phone number is required"
+        ),
+        ynumber: Yup.number().required("Your phone number is required"),
         email: Yup.string()
           .email("Enter a valid email address")
           .required("email is required required"),
@@ -42,11 +48,12 @@ function SignupForm() {
             new Date(Date.now() - 473385600000),
             "You must be at least 13 years old"
           )
-          .required("Your date of birth is equired"),
+          .required("Your date of birth is required"),
       })}
       onSubmit={(values, { setSubmitting, resetForm }) => {
         setSubmissionStatus(true);
-        fetch("https://bakkers-driving-school.onrender.com/api/signup", {
+        // fetch("https://bakkers-driving-school.onrender.com/api/signup", {
+        fetch("http://localhost:5000/api/signup", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -113,6 +120,24 @@ function SignupForm() {
         />
         <div className="errorMessage">
           <ErrorMessage name="address" />
+        </div>
+        <Field
+          className="form-input"
+          name="pnumber"
+          type="number"
+          placeholder="Parent phone number"
+        />
+        <div className="errorMessage">
+          <ErrorMessage name="pnumber" />
+        </div>
+        <Field
+          className="form-input"
+          name="ynumber"
+          type="number"
+          placeholder="your phone number"
+        />
+        <div className="errorMessage">
+          <ErrorMessage name="ynumber" />
         </div>
         <Field
           className="form-input"

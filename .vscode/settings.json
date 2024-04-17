@@ -34,6 +34,7 @@
     "navs",
     "overcorrecting",
     "Oversteering",
+    "pnumber",
     "quizes",
     "rearview",
     "showinfo",
@@ -46,6 +47,7 @@
     "underinsured",
     "Underinsuring",
     "understeering",
-    "userid"
+    "userid",
+    "ynumber"
   ]
 }
