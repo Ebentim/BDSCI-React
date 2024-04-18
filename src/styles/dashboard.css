@@ -1,11 +1,21 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
-
+:root {
+  --header-bg: #9ac8cd;
+  --header-text: #0e46a3;
+  --btn-bg: #1e0342;
+  --btn-text: #e1f7f5;
+  --texts: #333333;
+  --hero-texts: #ffffff;
+}
 .Profile-details {
   height: 90vh;
-  background-color: #dcf2f1;
-  grid-area: m;
+  /* background-color: var(--header-bg); */
+  flex-direction: column;
+  justify-content: start;
 }
 .timeLeft-Container {
+  margin-top: 20px;
+  font-size: 1.5rem;
   padding: 10px;
   text-align: center;
   color: #365486;
@@ -21,39 +31,57 @@
   padding: 15px;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 1px 1px 10px #ffffff;
+  /* box-shadow: 1px 1px 10px #ffffff; */
 }
 .profileImage {
   height: auto;
   width: auto;
-  border: 1px solid;
   text-align: center;
   font-size: 2rem;
   border-radius: 50%;
   padding: 10px;
-  background: #dcf2f1;
-  color: #365486;
+  background: var(--btn-bg);
+  color: var(--btn-text);
 }
 .userName {
   text-transform: uppercase;
   font-size: 2rem;
-  color: #365486;
+  color: var(--btn-bg);
 }
-.contact {
-  color: #365486;
+.dashboard-contact {
+  color: var(--btn-bg);
+  width: 100%;
   padding: 15px 4px;
-  border: 1px solid #365486;
-  margin: 5px 5px;
+  border: 1px solid var(--btn-bg);
+  margin: 5px auto;
   border-radius: 5px;
+  font-size: 1.5rem;
+}
+.contact-details {
+  width: 90%;
 }
 .proceed {
   text-transform: capitalize;
   font-size: 16px;
-  background: #365486;
+  background: var(--header-text);
   border-radius: 7px;
-  color: #dcf2f1;
+  color: var(--hero-texts);
   border: none;
   padding: 10px;
+}
+.details-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.names {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: auto;
+  width: 95%;
 }
 @media (min-width: 768px) and (max-width: 991px) {
 }
@@ -68,11 +96,8 @@
     display: none;
   }
   .names {
-    display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    height: auto;
   }
   .userName {
     margin-bottom: 50px;

@@ -265,7 +265,7 @@ export default function CourseBod() {
 
   return (
     <main>
-      <div id="courseBodyRender">
+      <div id="courseBody">
         <div className="TimerContainer">
           <Timer />
         </div>

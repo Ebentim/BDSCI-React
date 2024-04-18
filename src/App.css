@@ -1,12 +1,21 @@
-@import url("https://fonts.googleapis.com/css2?family=Kavoon&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Protest+Strike&display=swap");
+:root {
+  --header-bg: #9ac8cd;
+  --header-text: #0e46a3;
+  /* --btn-bg: #1e0342; */
+  --btn-bg: #0e46a3;
+  --btn-text: #e1f7f5;
+  --texts: #333333;
+  --hero-texts: #ffffff;
+}
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: roboto slab;
+  font-family: Arial, helvetica, sans-serif;
   text-decoration: none;
   scroll-behavior: smooth;
 }
@@ -15,12 +24,11 @@ body {
 }
 .App {
   display: grid;
-  gap: 5px;
-  width: 100vw;
+  gap: 0;
+  /* width: 100vw; */
   min-height: 100vh;
-  grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: 50px auto 50px;
-  grid-template-areas: "h h h h h h h h h h h h" "m m m m m m m m m m m m" "f f f f f f f f f f f f";
+  grid-template-rows: auto auto 50px;
+  grid-template-areas: "h" "m" "f";
 }
 .timer {
   font-family: "Protest Strike", sans-serif;
@@ -30,116 +38,289 @@ body {
 }
 .header {
   grid-area: h;
-  max-width: 100vw;
-  background: #365486;
+  width: 100%;
+  background-color: var(--btn-text);
   margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: fit-content;
+}
+
+.header-icons {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
+}
+.icon-container {
+  margin-right: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 40px;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.menu-icon {
+  position: relative;
+  width: 100%;
+  height: 70%;
+}
+
+.line {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 5px;
+  background-color: var(--header-text);
+}
+
+.menu-rotate {
+  animation: menu 0.5s linear forwards;
+}
+@keyframes menu {
+  100% {
+    transform: rotate(720deg);
+  }
+}
+
+.line-1 {
+  top: 0;
+}
+
+.line-2 {
+  top: 50%;
+  transform: translateY(-40%);
+}
+
+.line-3 {
+  bottom: 0;
+}
+.close {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 2rem;
+  font-weight: 200;
+  color: var(--header-text);
+  padding: 4px;
+  border-radius: 50%;
+}
+.none {
+  display: none;
+}
+.active {
+  display: block;
+}
+h1 {
+  font-weight: 900;
+  font-size: 3rem;
+  color: var(--header-text);
+}
+.navigation-list {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--btn-bg);
+  width: 100%;
   position: sticky;
   top: 0;
-  z-index: 5;
 }
-.sign-out {
-  text-transform: capitalize;
-  font-size: 16px;
-  background: #7fc7d9;
-  border-radius: 7px;
-  color: #fff;
-  border: none;
-  padding: 10px;
+.navigation-list li {
+  margin: 0 10px;
+  padding: 15px 10px;
+}
+.navigation-list li a {
+  font-size: 0.8rem;
+  color: var(--header-bg);
+}
+.navigation-list li a:hover {
+  color: var(--btn-text);
 }
 main {
   grid-area: m;
   height: auto;
-  margin: 0 auto;
-  min-height: calc(100vh - 110px);
+  min-height: calc(100vh);
   position: relative;
 }
-#courseBodyRender {
-  width: 97vw;
-  margin: 0 auto;
+section {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-/* BDS */
-h1 {
-  font-family: "Kavoon";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 40px;
-  color: #dcf2f1;
-  margin-left: 20px;
+#hero {
+  background: url("../src/Assets/images/bg.avif");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.hero {
+  width: 70vw;
+  min-height: calc(100vh - 140px);
+  border-radius: 7px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+}
+.texts {
+  display: flex;
+  flex-direction: column;
+}
+.texts h3 {
+  font-size: 3rem;
+  color: var(--hero-texts);
+  margin-bottom: 1rem;
+}
+.texts h4 {
+  font-size: 2.5rem;
+  color: var(--hero-texts);
+  margin-bottom: 1rem;
+}
+.texts img {
+  height: 12rem;
+  width: 12rem;
+}
+.hero-cta {
+  width: 40%;
+  font-size: 1.5rem;
+  background-color: var(--header-bg);
+  color: var(--btn-bg);
+  border: none;
+  border-radius: 8px;
+  padding: 15px 0;
+  margin: 8px 0;
+}
+.homepage-signin {
+  background-color: var(--btn-bg);
+  width: 300px;
+  padding: 20px;
+  border-radius: 8px;
+  color: var(--btn-text);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.signin-form label {
+  color: var(--btn-text);
+}
+.homepage-signin input,
+.signin-cta {
+  width: 100%;
+  padding: 10px 0;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  border: none;
+}
+.homepage-signin input:focus {
+  outline: 3px solid var(--header-bg);
+}
+.signin-cta {
+  margin-top: 10px;
+  background-color: var(--header-bg);
+}
+.homepage-signin,
+label {
+  width: 100%;
+  margin-top: 10px;
+}
+.homepage-signin .errorMessage,
+.signin-form .errorMessage,
+.signup-form .errorMessage {
+  color: red;
+  padding-top: 10px;
+  width: 100%;
+}
+#about,
+.contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 70vw;
+  margin: 20px auto;
+}
+#about .section-heading,
+.contact .section-heading {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+#about .about-texts {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, auto);
+  column-gap: 40px;
+}
+#contact {
+  background-color: var(--btn-text);
+}
+.subsection-card {
+  margin-top: 30px;
+  height: auto;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px 5px var(--btn-text);
+  width: 100%;
+}
+.subsection-card:nth-child(1) {
+  grid-column: 1/-1;
+  box-shadow: none;
+}
+.subsection-card:nth-child(2) {
+  grid-column: 1/2;
+}
+.subsection-card:nth-child(3) {
+  grid-template-columns: 2/3;
+}
+.subsection-card:nth-child(4) {
+  grid-template-columns: 3/-1;
+}
+i {
+  font-size: 1rem;
+  font-weight: 900;
+}
+br {
+  height: 5px;
+}
+.subsection-card h4 {
+  font-size: 1.7rem;
+}
+
+.section-subheading {
+  text-align: center;
+  font-weight: 600;
+  padding: 10px 0;
+}
+#about,
+.contact p,
+.contact h4,
+.contact a {
+  font-size: 1.5rem;
+}
+.contact a {
+  color: var(--header-text);
+  font-weight: 900;
 }
 .footer {
+  font-size: 1.2rem;
   width: 100%;
   grid-area: f;
   text-align: center;
-  font-family: "Kavoon";
-  font-size: 30px;
-  background: #365486;
-  color: #dcf2f1;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--btn-bg);
+  color: var(--header-bg);
   margin: 0;
 }
-.Homepage {
-  width: 95vw;
-  border: 1px solid #ff50001a;
-  border-radius: 7px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 15px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-.text-container {
-  grid-column: 1/2;
-  width: 95%;
-  margin: auto;
-}
-.form-container {
-  grid-column: 2/-1;
-  width: auto;
-  max-width: 95%;
-  height: fit-content;
-  padding: 25px;
-  background: #7fc7d9;
-  border-radius: 9px;
-}
 
-.form-input {
-  width: 90%;
-  margin: 7px auto;
-  background: #ffffff;
-  border-radius: 9px;
-  padding: 10px;
-  border: none;
-}
-.form-input:focus {
-  border: 2px solid #365486;
-}
-.errorMessage {
-  width: 90%;
-  color: red;
-  margin: 0 auto;
-  font-size: small;
-}
-.course-name {
-  font-family: "Kavoon";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 30px;
-  color: #365486;
-}
-
-.course-description {
-  font-family: "Roboto Slab";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 25px;
-  line-height: 42px;
-  color: #365486;
-}
 @keyframes skeletonMotion {
   from {
     background-position: -300px 0;
@@ -148,65 +329,54 @@ h1 {
     background-position: 300px 0;
   }
 }
-.signin-page-container {
-  grid-area: m;
-  justify-content: center;
-  align-items: center;
+.price {
+  margin-top: 25px;
+  margin-bottom: 25px;
+  font-size: 50px;
 }
-.Signin-page {
-  height: auto;
-  min-height: 85vh;
-  max-height: 100vh;
-  position: relative;
-}
+.signup-form,
 .signin-form {
-  background: #7fc7d9;
-  border-radius: 9px;
-  padding: 20px;
-  width: 300px;
   display: flex;
   flex-direction: column;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  width: 500px;
+  height: auto;
+  background-color: var(--btn-bg);
+  padding: 30px 20px;
+  border-radius: 8px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
+.signup-form h3,
+.signin-form h3 {
+  color: var(--btn-text) !important;
+  margin-bottom: 20px;
+}
+.signup-form input,
 .signin-form input {
   padding: 10px;
-  margin: 10px 0;
-  border-radius: 9px;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+.signup-form input:focus,
+.signin-form input:focus {
+  outline: 2px solid var(--header-bg);
+}
+input[type="number"]::-webkit-inner-spin-button {
+  display: none;
+}
+.signup-cta {
+  background-color: var(--header-bg);
+  padding: 10px 0;
+  border-radius: 8px;
   border: none;
+  margin-top: 10px;
 }
-#signin-form button {
-  padding: 5px;
-}
-.signup-form {
-  display: flex;
-  flex-direction: column;
-}
-#admin-signup {
-  background: #7fc7d9;
-  border-radius: 9px;
-  padding: 20px;
-  width: 300px;
-  display: flex;
-  flex-direction: column;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-.Signup {
-  width: 90%;
-  margin: 5px auto 5px auto;
-}
-
 .submitting {
   height: 40px;
   width: 40px;
-  background: #365486;
+  background: var(--header-bg);
   border-radius: 50%;
-  border: 1px solid #1d9af2;
+  border: 1px solid var(--btn-text);
   opacity: 1;
   animation: spinner4 800ms linear infinite;
   transform: scale(0);
@@ -219,75 +389,191 @@ h1 {
     opacity: 0;
   }
 }
-
+.menu-list {
+  display: none;
+}
 /* For large screens */
-@media (min-width: 992px) {
+@media (min-width: 992px) and (max-width: 1200px) {
+  .App {
+    grid-template-rows: auto auto 50px;
+  }
+  h1 {
+    font-size: 40px;
+  }
+  .texts h3 {
+    font-size: 2.5rem;
+  }
+  .texts h4 {
+    font-size: 2rem;
+  }
+  .hero {
+    margin-top: 30px;
+    width: 90%;
+    align-items: center;
+    min-height: 70vh;
+    gap: 50px;
+    padding-bottom: 40px;
+  }
   /* Styles for large screens */
 }
 
 /* For medium screens */
 @media (min-width: 768px) and (max-width: 991px) {
-  .Homepage {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    margin: 0 auto;
+  .App {
+    grid-template-rows: auto auto 50px;
+  }
+  h1 {
+    font-size: 28px;
+  }
+
+  .navigation-list {
+    min-height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 10000;
+  }
+  .navigation-list li:hover {
+    border-bottom: 3px solid var(--btn-text);
+  }
+  .navigation-list li {
+    width: 40%;
+    text-align: center;
+  }
+  .navigation-list li a {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .hero {
+    margin-top: 30px;
+    width: 90%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    gap: 50px;
+    padding-bottom: 40px;
+  }
+  .texts {
+    width: 100%;
+    margin: 0;
+  }
+  .texts h3 {
+    font-size: 2.5rem;
+  }
+  .texts h4 {
+    font-size: 2rem;
+  }
+  .homepage-signin {
+    width: 100%;
+  }
+  #about,
+  .contact {
+    width: 90%;
+  }
+  #about .about-texts {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .contact p,
+  .contact h4 {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+  .contact a {
+    font-size: 1rem;
+  }
+  .signin-form,
+  .signup-form {
+    width: 90%;
   }
 }
 
 /* For small screens */
 @media (max-width: 767px) {
+  .App {
+    grid-template-rows: auto auto 50px;
+  }
   h1 {
-    font-size: 14px;
+    font-size: 1.5rem;
+  }
+  .navigation-list {
+    min-height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 10000;
+  }
+  .navigation-list li:hover {
+    border-bottom: 3px solid var(--btn-text);
+  }
+  .navigation-list li {
+    width: 40%;
     text-align: center;
   }
-  .course-name {
-    font-size: 28px;
+  .navigation-list li a {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
   }
-  .Homepage {
-    background: #dcf2f1;
-    margin: 0;
-    width: 100vw;
-    border-radius: 7px;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(2, 1fr);
-    gap: 15px;
+  .hero {
+    margin-top: 30px;
+    width: 90%;
+    flex-direction: column;
     justify-content: center;
-    align-content: center;
-    position: static;
-    top: 0;
-    bottom: 0;
-    transform: translate(0, 0);
-  }
-  .text-container {
-    background-color: #ffffff;
-    width: 100%;
-    grid-column: 1/-1;
-    grid-row: 1/2;
-    margin: 0;
-    position: relative;
-    border-end-start-radius: 5%;
-    border-end-end-radius: 5%;
+    align-items: center;
+    min-height: 100vh;
+    gap: 50px;
   }
   .texts {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 90%;
-    margin: 0 auto;
+    width: 100%;
+    margin: 0;
   }
-
-  .form-container {
-    grid-column: 1/-1;
-    grid-row: 2/-1;
-    margin: 0 auto 25px auto;
-    align-self: center;
+  .texts h3 {
+    font-size: 1.5rem;
+  }
+  .texts h4 {
+    font-size: 1rem;
+  }
+  .homepage-signin {
     width: 100%;
   }
+  .texts img {
+    height: 6rem;
+    width: 6rem;
+  }
+  .hero-cta {
+    width: 60%;
+    padding: 10px;
+    font-size: 1.2rem;
+  }
+  #about,
+  .contact {
+    width: 90%;
+  }
+  #about .about-texts {
+    display: flex;
+    flex-direction: column;
+  }
+  .contact p,
+  .contact h4 {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+  .contact a {
+    font-size: 1rem;
+  }
+  .signup-form,
+  .signin-form {
+    width: 90%;
+  }
   .footer {
-    font-size: 20px;
+    font-size: 0.9rem;
   }
 }

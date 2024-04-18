@@ -88,7 +88,7 @@ export default function FinalQuiz() {
       }
 
       const data = await response.json();
-      setScore(data.scores.chaptertwo || 0);
+      setScore(data.scores.finalquiz || 0);
     } catch (error) {
       console.error(error);
     }
@@ -134,13 +134,14 @@ export default function FinalQuiz() {
     return (
       <div className="modal">
         <p className="modal-text">
-          you scored {(score / 10) * 100 + " %"}{" "}
-          {score >= 8
-            ? "you have now completed this unit, process to the next unit"
+          Impressive work! You've hit the mark with a{" "}
+          {(score / 40) * 100 + " %"}{" "}
+          {score >= 32
+            ? "score, signaling the completion of this unit. Ready to tackle the next challenge? Let's keep the momentum going!"
             : "please review the course content and try again in 2 hours time"}{" "}
         </p>
         <NavButtons
-          classname="nextButton"
+          classname="closeModal"
           onclick={handleModal}
           disable={false}
         >

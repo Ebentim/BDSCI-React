@@ -24,6 +24,7 @@ function Profile() {
 
         if (response.ok) {
           const data = await response.json();
+          console.log(data.user);
           setUserProfile(data.user);
         } else {
           console.error("Failed to fetch user details");
@@ -57,7 +58,7 @@ function Profile() {
   const seconds = Math.floor((userProfile.startingtime % (1000 * 60)) / 1000);
 
   return (
-    <div className="Profile-details">
+    <section className="Profile-details">
       {Object.keys(userProfile).length > 0 ? (
         <>
           <div className="timeLeft-Container">
@@ -85,9 +86,14 @@ function Profile() {
               <ProceedButton />
             </div>
             <div className="contact-details">
-              <p className="contact">Address: {userProfile.address}</p>
-              <p className="contact">Email: {userProfile.email}</p>
-              <p className="contact">
+              <p className="dashboard-contact">
+                Address: {userProfile.address}
+              </p>
+              <p className="dashboard-contact">Email: {userProfile.email}</p>
+              <p className="dashboard-contact">
+                Phone Number: {userProfile.ynumber}
+              </p>
+              <p className="dashboard-contact">
                 Birthday:{" "}
                 {userProfile.birthdate.slice(8, 10) +
                   " / " +
@@ -95,14 +101,24 @@ function Profile() {
                   " / " +
                   userProfile.birthdate.slice(0, 4)}
               </p>
-              <p className="contact">State: California</p>
+              <p className="dashboard-contact">
+                Parent's Name: {userProfile.pname}
+              </p>
+              <p className="dashboard-contact">
+                Parent's Email: {userProfile.pemail}
+              </p>
+              <p className="dashboard-contact">
+                Parent's Phone: {userProfile.pnumber}
+              </p>
+
+              <p className="dashboard-contact">State: California</p>
             </div>
           </div>
         </>
       ) : (
         <ProfileSkeleton />
       )}
-    </div>
+    </section>
   );
 }
 

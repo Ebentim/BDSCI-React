@@ -3,7 +3,6 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Homepage from "./components/Homepage";
-import Signin from "./components/Signin";
 import Signup from "./components/Signup";
 import Profile from "./components/Profile";
 import CourseBody from "./components/CourseBody";
@@ -16,6 +15,7 @@ import Dashboard from "./components/Dashboard";
 import { AuthProvider } from "./contexts/AuthContext";
 import { QuizScoreProvider } from "./contexts/QuizContext";
 import "./App.css";
+import Signinpage from "./components/Signinpage";
 
 function App() {
   return (
@@ -25,7 +25,7 @@ function App() {
           <Header />
           <Routes>
             <Route path="/" element={<Homepage />} />
-            <Route path="/signin" element={<Signin />} />
+            <Route path="/signin" element={<Signinpage />} />
             <Route path="/signup" element={<Signup />} />
 
             <Route

@@ -1,38 +1,32 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
-* {
-  text-decoration: none;
-  color: #000000;
-}
+
 .bold {
   font-weight: 700;
-  color: #365486;
 }
-.nextButton {
-  margin-top: 10px;
+a {
+  color: var(--texts);
+}
+#courseBody {
+  width: 95%;
+  margin: 10px auto;
 }
 .courseBody {
   margin: auto;
 }
 .toQuiz {
-  margin: 10px auto !important;
+  margin: 10px auto var(--btn-bg);
   border: 3px solid orange !important;
 }
-.nextButton,
-.Signup,
-.Signin {
+.nextButton {
   text-transform: capitalize;
   font-size: 16px;
-  background: #dcf2f1;
+  background: var(--header-bg);
+  color: var(--texts);
   border-radius: 7px;
-  color: #365486;
   border: none;
   padding: 10px;
 }
-.Signup,
-.Signup {
-  background: #365486;
-  color: #dcf2f1;
-}
+
 .unitHeading {
   display: block;
   text-align: center;
@@ -55,25 +49,23 @@
 }
 .sectionQuote {
   padding: 15px 20px;
-  background: #dcf2f1;
-  color: #365486;
+  background: var(--header-bg);
   margin: 10px auto;
 }
 .sectionHeading,
 .sectionSubheading {
   font-weight: 600px;
-  font-size: 16px;
-  color: #365486;
+  font-size: 1.9rem;
   margin: 10px 0;
 }
 .sectionHeading {
-  font-size: 20px;
+  font-size: 1.5rem;
 }
 .courseText {
   padding: 5px 0;
   margin: 5px 0;
   font-size: 20px;
-  font-family: "Roboto", sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-weight: 400;
   font-style: normal;
 }
@@ -105,7 +97,7 @@
   display: flex;
   justify-items: start;
   align-items: center;
-  border: 1px solid #365486;
+  border: 1px solid var(--header-text);
   border-radius: 5px;
   width: auto;
   max-width: 450px;
@@ -117,11 +109,11 @@ input[type="radio"] {
   margin: 10px;
 }
 input[type="radio"] :active {
-  background-color: #365486;
+  background-color: var(--header-text);
   color: #dcf2f1;
 }
 .option p {
-  font-size: 1.3rem;
+  font-size: 1.5rem;
 }
 .option label {
   width: 100%;
@@ -141,21 +133,22 @@ input[type="radio"] :active {
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: #dcf2f1e6;
+  backdrop-filter: blur(40px);
+  background-color: transparent;
   z-index: 10000;
 }
 .modal {
   border-radius: 9px;
-  height: auto;
+  height: 300px;
   width: auto;
-  max-width: 300px;
+  max-width: 400px;
   padding: 20px;
   margin: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #365486;
+  background-color: var(--header-text);
   position: fixed;
   top: 50%;
   left: 50%;
@@ -163,7 +156,23 @@ input[type="radio"] :active {
   z-index: 100000000;
 }
 .modal-text {
-  color: #dcf2f1;
+  color: var(--btn-text);
+  height: 75%;
+  width: 95%;
+  margin: auto;
+  font-size: 1.5rem;
+  text-align: justify;
+}
+.closeModal {
+  text-transform: capitalize;
+  font-size: 16px;
+  background: var(--btn-text);
+  border-radius: 7px;
+  color: var(--btn-bg) !important;
+  border: none;
+  padding: 10px;
+  width: 95%;
+  margin: auto;
 }
 #ul {
   list-style-type: disc;
@@ -203,16 +212,17 @@ input[type="radio"] :active {
     padding-left: 20px;
     border: none;
     border-radius: 9px;
-    background-color: #dcf2f1;
+    background-color: var(--header-bg);
+    font-weight: 700;
     margin-right: 0;
     padding-right: 0;
     height: auto;
   }
   .courseVideo {
     height: auto;
+    min-height: 300px;
     max-height: 500px;
-    width: auto;
-    max-width: 100%;
+    width: 100%;
     margin: 10px 0;
   }
   .courseImageContainer {
@@ -232,7 +242,7 @@ input[type="radio"] :active {
     padding: 10px;
     font-size: 25px;
     text-align: center;
-    background-color: #dcf2f1e6;
+    --background-color: #d5ffff;
     width: 100%;
     z-index: 1;
   }
@@ -247,7 +257,6 @@ input[type="radio"] :active {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #365486;
     position: fixed;
     top: 50%;
     left: 50%;
@@ -255,6 +264,6 @@ input[type="radio"] :active {
     z-index: 100000000;
   }
   .modal-text {
-    color: #dcf2f1;
+    color: var(--background-color);
   }
 }

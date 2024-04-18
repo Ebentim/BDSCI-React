@@ -87,13 +87,14 @@ export default function Six() {
     return (
       <div className="modal">
         <p className="modal-text">
-          you scored {(score / 10) * 100 + " %"}{" "}
+          Impressive work! You've hit the mark with a{" "}
+          {(score / 10) * 100 + " %"}{" "}
           {score >= 8
-            ? "you have now completed this unit, process to the next unit"
+            ? "score, signaling the completion of this unit. Ready to tackle the next challenge? Let's keep the momentum going!"
             : "please review the course content and try again in 2 hours time"}{" "}
         </p>
         <NavButtons
-          classname="nextButton"
+          classname="closeModal"
           onclick={handleModal}
           disable={false}
         >
