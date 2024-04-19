@@ -52,7 +52,7 @@ export default function ChapterOne() {
             </ul>
           </div>
           <div>
-            <div className="CourseContents">
+            <div className="courseContents">
               <h4 className="sectionHeading" id="sectionOne">
                 Section 1.1: License to Drive A Privilege
               </h4>

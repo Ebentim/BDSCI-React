@@ -115,7 +115,6 @@ export default function FinalQuiz() {
       await updateScore("chaptertwo", currentScore);
       setScore(currentScore);
     }
-    // Use the score variable directly in the updateScore function
 
     setShowDescription(true);
     setShowModal(true);
@@ -134,11 +133,10 @@ export default function FinalQuiz() {
     return (
       <div className="modal">
         <p className="modal-text">
-          Impressive work! You've hit the mark with a{" "}
-          {(score / 40) * 100 + " %"}{" "}
+          Impressive work! You've hit the mark with {(score / 40) * 100 + " %"}{" "}
           {score >= 32
             ? "score, signaling the completion of this unit. Ready to tackle the next challenge? Let's keep the momentum going!"
-            : "please review the course content and try again in 2 hours time"}{" "}
+            : ". Take a moment to review the course content, and with renewed focus. Success is within reach!"}
         </p>
         <NavButtons
           classname="closeModal"

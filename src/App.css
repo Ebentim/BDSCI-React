@@ -2,11 +2,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Protest+Strike&display=swap");
 :root {
-  --header-bg: #9ac8cd;
-  --header-text: #0e46a3;
-  /* --btn-bg: #1e0342; */
-  --btn-bg: #0e46a3;
-  --btn-text: #e1f7f5;
+  --header-bg: #365486;
+  --header-text: #dcf2f1;
+  --form-bg: #7fc7d9;
+  --btn-text: #dcf2f1;
   --texts: #333333;
   --hero-texts: #ffffff;
 }
@@ -39,7 +38,7 @@ body {
 .header {
   grid-area: h;
   width: 100%;
-  background-color: var(--btn-text);
+  background-color: var(--header-bg);
   margin: 0;
   display: flex;
   justify-content: center;
@@ -126,7 +125,7 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--btn-bg);
+  background-color: var(--form-bg);
   width: 100%;
   position: sticky;
   top: 0;
@@ -136,8 +135,9 @@ h1 {
   padding: 15px 10px;
 }
 .navigation-list li a {
-  font-size: 0.8rem;
-  color: var(--header-bg);
+  font-size: 1rem;
+  color: var(--texts);
+  font-weight: 900;
 }
 .navigation-list li a:hover {
   color: var(--btn-text);
@@ -145,7 +145,7 @@ h1 {
 main {
   grid-area: m;
   height: auto;
-  min-height: calc(100vh);
+  min-height: calc(100vh - 100px);
   position: relative;
 }
 section {
@@ -155,13 +155,12 @@ section {
   align-items: center;
 }
 #hero {
-  background: url("../src/Assets/images/bg.avif");
   background-size: cover;
   background-repeat: no-repeat;
 }
 .hero {
   width: 70vw;
-  min-height: calc(100vh - 140px);
+  min-height: calc(100vh - 150px);
   border-radius: 7px;
   margin: 0 auto;
   display: flex;
@@ -175,12 +174,12 @@ section {
 }
 .texts h3 {
   font-size: 3rem;
-  color: var(--hero-texts);
+  color: var(--texts);
   margin-bottom: 1rem;
 }
 .texts h4 {
   font-size: 2.5rem;
-  color: var(--hero-texts);
+  color: var(texts);
   margin-bottom: 1rem;
 }
 .texts img {
@@ -191,25 +190,26 @@ section {
   width: 40%;
   font-size: 1.5rem;
   background-color: var(--header-bg);
-  color: var(--btn-bg);
+  color: var(--form-bg);
   border: none;
   border-radius: 8px;
   padding: 15px 0;
   margin: 8px 0;
 }
 .homepage-signin {
-  background-color: var(--btn-bg);
+  background-color: var(--form-bg);
   width: 300px;
   padding: 20px;
   border-radius: 8px;
-  color: var(--btn-text);
+  color: var(--texts);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 .signin-form label {
-  color: var(--btn-text);
+  color: var(--texts);
+  font-weight: 600;
 }
 .homepage-signin input,
 .signin-cta {
@@ -225,11 +225,13 @@ section {
 .signin-cta {
   margin-top: 10px;
   background-color: var(--header-bg);
+  color: var(--form-bg);
+  font-size: 1.5rem;
 }
-.homepage-signin,
-label {
+.homepage-signin label {
   width: 100%;
   margin-top: 10px;
+  font-weight: 600;
 }
 .homepage-signin .errorMessage,
 .signin-form .errorMessage,
@@ -307,7 +309,7 @@ br {
   font-size: 1.5rem;
 }
 .contact a {
-  color: var(--header-text);
+  color: var(--header-bg);
   font-weight: 900;
 }
 .footer {
@@ -316,8 +318,8 @@ br {
   grid-area: f;
   text-align: center;
   font-family: Arial, Helvetica, sans-serif;
-  background-color: var(--btn-bg);
-  color: var(--header-bg);
+  background-color: var(--header-bg);
+  color: var(--form-bg);
   margin: 0;
 }
 
@@ -340,7 +342,7 @@ br {
   flex-direction: column;
   width: 500px;
   height: auto;
-  background-color: var(--btn-bg);
+  background-color: var(--form-bg);
   padding: 30px 20px;
   border-radius: 8px;
   margin-top: 20px;
@@ -348,14 +350,17 @@ br {
 }
 .signup-form h3,
 .signin-form h3 {
-  color: var(--btn-text) !important;
+  color: var(--header-bg) !important;
   margin-bottom: 20px;
+  font-weight: 900;
+  font-size: 1.5rem;
 }
 .signup-form input,
 .signin-form input {
-  padding: 10px;
+  padding: 15px;
   border-radius: 8px;
   margin-top: 10px;
+  font-size: 1.5rem;
 }
 .signup-form input:focus,
 .signin-form input:focus {
@@ -368,8 +373,10 @@ input[type="number"]::-webkit-inner-spin-button {
   background-color: var(--header-bg);
   padding: 10px 0;
   border-radius: 8px;
+  font-size: 1.5rem;
   border: none;
   margin-top: 10px;
+  color: var(--form-bg);
 }
 .submitting {
   height: 40px;
@@ -423,15 +430,20 @@ input[type="number"]::-webkit-inner-spin-button {
     grid-template-rows: auto auto 50px;
   }
   h1 {
-    font-size: 28px;
+    font-size: 2rem;
   }
-
+  .header {
+    position: sticky;
+    top: 0;
+    z-index: 10000;
+  }
   .navigation-list {
     min-height: 100vh;
+    top: 2.9rem;
+    position: fixed;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    position: fixed;
     z-index: 10000;
   }
   .navigation-list li:hover {
@@ -442,7 +454,7 @@ input[type="number"]::-webkit-inner-spin-button {
     text-align: center;
   }
   .navigation-list li a {
-    font-size: 1.5rem;
+    font-size: 2.5rem;
     text-align: center;
     margin-left: auto;
     margin-right: auto;
@@ -501,12 +513,18 @@ input[type="number"]::-webkit-inner-spin-button {
   h1 {
     font-size: 1.5rem;
   }
+  .header {
+    position: sticky;
+    top: 0;
+    z-index: 10000;
+  }
   .navigation-list {
     min-height: 100vh;
+    position: fixed;
+    top: 2.5rem;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    position: fixed;
     z-index: 10000;
   }
   .navigation-list li:hover {

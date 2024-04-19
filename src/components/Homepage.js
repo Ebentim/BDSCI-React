@@ -1,13 +1,18 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { NavButtons } from "../Assets/next";
 import dmvLogo from "../Assets/images/dmv.png";
 import Signin from "./Signin";
 function Homepage() {
+  const navigate = useNavigate();
+  const handleCta = (e) => {
+    e.preventDefault();
+    navigate("/signup");
+  };
   const SignInButton = () => {
     return (
-      <NavButtons classname="hero-cta">
-        <Link to="/signup">Register</Link>
+      <NavButtons onclick={handleCta} classname="hero-cta">
+        Register
       </NavButtons>
     );
   };

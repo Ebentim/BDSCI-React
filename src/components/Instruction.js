@@ -2,8 +2,8 @@ import Bar from "../components/Bar";
 import "../styles/general.css";
 export default function Instruction() {
   return (
-    <>
-      <div className="instruction-container">
+    <main>
+      <section className="instruction-container">
         <p className="courseText">
           This course is designed to equip you with the knowledge and skills you
           need to become a safe and responsible driver. To complete the course
@@ -64,7 +64,7 @@ export default function Instruction() {
         </p>
         <h4 className="sectionSubheading">Course Units</h4>
         <Bar />
-      </div>
-    </>
+      </section>
+    </main>
   );
 }

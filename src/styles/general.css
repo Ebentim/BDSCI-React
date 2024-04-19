@@ -7,7 +7,7 @@ a {
   color: var(--texts);
 }
 #courseBody {
-  width: 95%;
+  width: 95vw;
   margin: 10px auto;
 }
 .courseBody {
@@ -15,18 +15,21 @@ a {
 }
 .toQuiz {
   margin: 10px auto var(--btn-bg);
-  border: 3px solid orange !important;
+  border: 3px solid var(--form-bg) !important;
 }
 .nextButton {
   text-transform: capitalize;
-  font-size: 16px;
+  font-size: 1.5rem;
   background: var(--header-bg);
-  color: var(--texts);
+  color: var(--header-text);
   border-radius: 7px;
   border: none;
-  padding: 10px;
+  margin: 20px 0;
+  padding: 10px 20px;
 }
-
+.nextButton a {
+  color: var(--header-text);
+}
 .unitHeading {
   display: block;
   text-align: center;
@@ -43,14 +46,19 @@ a {
 .sectionList li {
   padding: 10px 0;
 }
-.courseContentContainer {
+/* .courseContents {
+  width: 100%;
+} */
+/* .courseContentContainer {
   display: grid;
   grid-template-columns: 1fr 3fr;
-}
+} */
 .sectionQuote {
   padding: 15px 20px;
-  background: var(--header-bg);
+  background: var(--form-bg);
   margin: 10px auto;
+  color: var(--texts);
+  font-weight: 700;
 }
 .sectionHeading,
 .sectionSubheading {
@@ -89,8 +97,12 @@ a {
 .orderedList {
   margin-left: 10px;
 }
-.instruction-container {
-  grid-area: m;
+section.instruction-container {
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  width: 95%;
+  margin: auto;
   margin-bottom: 16px;
 }
 .option {
@@ -138,16 +150,13 @@ input[type="radio"] :active {
   z-index: 10000;
 }
 .modal {
-  border-radius: 9px;
-  height: 300px;
+  border-radius: 8px;
+  height: fit-content;
   width: auto;
+  min-width: 300px;
   max-width: 400px;
-  padding: 20px;
+  padding: 30px 20px;
   margin: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   background-color: var(--header-text);
   position: fixed;
   top: 50%;
@@ -156,22 +165,20 @@ input[type="radio"] :active {
   z-index: 100000000;
 }
 .modal-text {
-  color: var(--btn-text);
-  height: 75%;
-  width: 95%;
-  margin: auto;
+  color: var(--texts);
+  margin: 0;
   font-size: 1.5rem;
-  text-align: justify;
+  margin-bottom: 20px;
 }
 .closeModal {
   text-transform: capitalize;
   font-size: 16px;
-  background: var(--btn-text);
+  background: var(--header-bg);
   border-radius: 7px;
-  color: var(--btn-bg) !important;
+  color: var(--hero-texts);
   border: none;
   padding: 10px;
-  width: 95%;
+  width: 100%;
   margin: auto;
 }
 #ul {
@@ -190,6 +197,9 @@ input[type="radio"] :active {
 @media (max-width: 767px) {
   .courseBody {
     margin: auto;
+  }
+  .nextButton {
+    font-size: 12px;
   }
   .courseContentContainer {
     display: flex;
@@ -212,7 +222,7 @@ input[type="radio"] :active {
     padding-left: 20px;
     border: none;
     border-radius: 9px;
-    background-color: var(--header-bg);
+    background-color: var(--header-text);
     font-weight: 700;
     margin-right: 0;
     padding-right: 0;
@@ -222,7 +232,7 @@ input[type="radio"] :active {
     height: auto;
     min-height: 300px;
     max-height: 500px;
-    width: 100%;
+    width: 100% !important;
     margin: 10px 0;
   }
   .courseImageContainer {
@@ -242,28 +252,12 @@ input[type="radio"] :active {
     padding: 10px;
     font-size: 25px;
     text-align: center;
-    --background-color: #d5ffff;
+    background: var(--form-bg);
     width: 100%;
     z-index: 1;
   }
   .modal {
-    border-radius: 9px;
-    height: 150px;
-    width: auto;
-    max-width: 400px;
+    width: 90vw !important;
     padding: 20px;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 100000000;
-  }
-  .modal-text {
-    color: var(--background-color);
   }
 }

@@ -190,7 +190,6 @@ export default function CourseBod() {
         classname="nextButton"
         disable={disableNextButton}
       >
-        To{" "}
         {chapter === 1
           ? "Unit Two"
           : chapter === 2
@@ -227,7 +226,8 @@ export default function CourseBod() {
   const PreviousChapter = () => {
     return (
       <NavButtons onclick={handPrev} classname="nextButton">
-        Go back to{" "}
+        Go back
+        {/*to{" "}
         {chapter === 16
           ? "Unit Fifteen"
           : chapter === 15
@@ -256,9 +256,7 @@ export default function CourseBod() {
           ? "Unit Three"
           : chapter === 3
           ? "Unit Two"
-          : chapter === 2
-          ? "Unit 1"
-          : "Hi"}
+          : chapter === 2 */}
       </NavButtons>
     );
   };
