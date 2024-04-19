@@ -190,7 +190,7 @@ section {
   width: 40%;
   font-size: 1.5rem;
   background-color: var(--header-bg);
-  color: var(--form-bg);
+  color: var(--hero-texts);
   border: none;
   border-radius: 8px;
   padding: 15px 0;
@@ -214,10 +214,11 @@ section {
 .homepage-signin input,
 .signin-cta {
   width: 100%;
-  padding: 10px 0;
+  padding: 10px;
   border-radius: 8px;
   margin-bottom: 10px;
   border: none;
+  font-size: 1.5rem;
 }
 .homepage-signin input:focus {
   outline: 3px solid var(--header-bg);
@@ -225,7 +226,7 @@ section {
 .signin-cta {
   margin-top: 10px;
   background-color: var(--header-bg);
-  color: var(--form-bg);
+  color: var(--hero-texts);
   font-size: 1.5rem;
 }
 .homepage-signin label {
@@ -376,7 +377,7 @@ input[type="number"]::-webkit-inner-spin-button {
   font-size: 1.5rem;
   border: none;
   margin-top: 10px;
-  color: var(--form-bg);
+  color: var(--hero-texts);
 }
 .submitting {
   height: 40px;
