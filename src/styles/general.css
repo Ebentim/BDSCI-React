@@ -36,9 +36,16 @@ a {
   margin: 10px auto;
   font-size: 2em;
 }
+.outlineName {
+  text-align: center;
+  /* padding-top: 20px; */
+}
 .courseOutline {
-  padding-right: 5px;
-  height: auto;
+  padding: 20px;
+  height: fit-content;
+  border-radius: 9px;
+  background-color: var(--header-text);
+  font-weight: 700;
 }
 .sectionList {
   list-style: none;
@@ -55,7 +62,7 @@ a {
 } */
 .sectionQuote {
   padding: 15px 20px;
-  background: var(--form-bg);
+  background: var(--header-text);
   margin: 10px auto;
   color: var(--texts);
   font-weight: 700;
@@ -219,13 +226,11 @@ input[type="radio"] :active {
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    padding-left: 20px;
-    border: none;
+    padding-left: 0 20px;
     border-radius: 9px;
     background-color: var(--header-text);
     font-weight: 700;
     margin-right: 0;
-    padding-right: 0;
     height: auto;
   }
   .courseVideo {
@@ -236,15 +241,12 @@ input[type="radio"] :active {
     margin: 10px 0;
   }
   .courseImageContainer {
-    height: auto;
-    width: auto;
-    max-width: 100%;
+    height: fit-content;
+    width: 100%;
     display: flex;
     flex-direction: column;
   }
   .courseImage {
-    height: 250px;
-    width: auto;
     max-width: 100%;
     margin: 10px 0;
   }
@@ -259,5 +261,19 @@ input[type="radio"] :active {
   .modal {
     width: 90vw !important;
     padding: 20px;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  #courseBody {
+    width: 95vw;
+    margin: 10px auto;
+  }
+  .courseImage {
+    max-width: 100%;
+    margin: 10px 0;
+  }
+  .courseImageContainer {
+    flex-direction: column;
+    height: fit-content;
   }
 }
