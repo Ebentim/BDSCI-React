@@ -1,8 +1,8 @@
 import SignupForm from "./SignupForm";
 export default function Signup() {
   return (
-    <div className="Signup">
-      <SignupForm />
+    <div id="signup-page" className="Signup">
+      <SignupForm classname={"signup-form"} />
     </div>
   );
 }

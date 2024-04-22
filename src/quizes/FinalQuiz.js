@@ -55,7 +55,7 @@ const QuizAnswers = {
   thirtySeven: "55 mph",
   thirtyEight: "a school zone",
   thirtyNine: "blue",
-  fourty: "The vehicle traveling uphill",
+  forty: "The vehicle traveling uphill",
 };
 const styles = {
   height: "auto",
@@ -112,7 +112,7 @@ export default function FinalQuiz() {
       }
     });
     if (currentScore >= 8) {
-      await updateScore("chaptertwo", currentScore);
+      await updateScore("finalquiz", currentScore);
       setScore(currentScore);
     }
 
@@ -299,7 +299,7 @@ export default function FinalQuiz() {
         onchange={handleOptionChange}
         description={
           showDescription
-            ? "If you brake hard at a high speed, the force of the brakes may exceed the tires' grip of the road. The wheels will lock and the vehicle will skid, no matter which way the steering wheel is turned. To recover from the skid, take your foot off the pedal to unlock the wheels. Then straighten the front wheels as the vehicle begins to straighten out. Slow the vehicle gradually until you are at a safe speed to continue driving. [Locked Wheel skids;  Handling Emmergencies California Driver Handbook]"
+            ? "If you brake hard at a high speed, the force of the brakes may exceed the tires' grip of the road. The wheels will lock and the vehicle will skid, no matter which way the steering wheel is turned. To recover from the skid, take your foot off the pedal to unlock the wheels. Then straighten the front wheels as the vehicle begins to straighten out. Slow the vehicle gradually until you are at a safe speed to continue driving. [Locked Wheel skids;  Handling Emergencies California Driver Handbook]"
             : null
         }
       />
@@ -376,7 +376,7 @@ export default function FinalQuiz() {
         onchange={handleOptionChange}
         description={
           showDescription
-            ? "This warning sign indicates a stop sign ahad. You should come to a complete stop near the stop sign before proceeding farther [Traffi Signs; Traffic Controls; California Driver Handbook]"
+            ? "This warning sign indicates a stop sign ahead. You should come to a complete stop near the stop sign before proceeding farther [Traffic Signs; Traffic Controls; California Driver Handbook]"
             : null
         }
       />
@@ -400,14 +400,14 @@ export default function FinalQuiz() {
         onchange={handleOptionChange}
         description={
           showDescription
-            ? "This sign means you cannot take a U-turn [Traffi Signs; Traffic Controls; California Driver Handbook]"
+            ? "This sign means you cannot take a U-turn [Traffic Signs; Traffic Controls; California Driver Handbook]"
             : null
         }
       />
       <RadioButton
         classname="bold"
         question="13. At an unmarked crosswalk, you must"
-        option1="stop and ask the pedestrians to cross quikly"
+        option1="stop and ask the pedestrians to cross quickly"
         option2="yield the right-of-way to pedestrians"
         option3="increase your speed and cross before the pedestrians"
         name="thirteen"
@@ -438,7 +438,7 @@ export default function FinalQuiz() {
         onchange={handleOptionChange}
         description={
           showDescription
-            ? "A diamond-shaped sign on a truck means that the truck’s load may be  dangerous (gas, explosives etc.). [Vehicles with Hazardous Loards; Sharing the Road; California Driver Handbook]"
+            ? "A diamond-shaped sign on a truck means that the truck’s load may be  dangerous (gas, explosives etc.). [Vehicles with Hazardous Loads; Sharing the Road; California Driver Handbook]"
             : null
         }
       />
@@ -476,7 +476,7 @@ export default function FinalQuiz() {
         onchange={handleOptionChange}
         description={
           showDescription
-            ? "Enter the freeway at or near the speed of the traffic. The speed limit is 65mph on most freeway, do not stop before merging into gfreeway traffic unless absolutely necessary. [Space to Merge; Merging in/out of traffic; California Driver Handbook]"
+            ? "Enter the freeway at or near the speed of the traffic. The speed limit is 65mph on most freeway, do not stop before merging into freeway traffic unless absolutely necessary. [Space to Merge; Merging in/out of traffic; California Driver Handbook]"
             : null
         }
       />
@@ -496,14 +496,14 @@ export default function FinalQuiz() {
         onchange={handleOptionChange}
         description={
           showDescription
-            ? "This sign indicates the endd of a divided highway. [Traffic Signs; Traffic controls; California Driver Handbook]"
+            ? "This sign indicates the end of a divided highway. [Traffic Signs; Traffic controls; California Driver Handbook]"
             : null
         }
       />
       <RadioButton
         classname="bold"
-        question="18. Any person who willfully fless or attempts to evade lae enforcement performing their duties is guilty of a misdemeanor punishable by"
-        option1="a maximun fine of upto $1000"
+        question="18. Any person who willfully flees or attempts to evade lae enforcement performing their duties is guilty of a misdemeanor punishable by"
+        option1="a maximum fine of upto $1000"
         option2="1 year of imprisonment in a county jail"
         option3="neither of the above"
         name="eighteen"
@@ -515,7 +515,7 @@ export default function FinalQuiz() {
         onchange={handleOptionChange}
         description={
           showDescription
-            ? "Any person while operatig a motor vehicle, who willfully flees or attempts to evade law enforcement performing their duties is guilty of a misdemeanor punishable by impprisonment in a county jail for not more than 1 year. [Evading Law Enforcement; Critical Roadway information; California Driver Handbook]"
+            ? "Any person while operating a motor vehicle, who willfully flees or attempts to evade law enforcement performing their duties is guilty of a misdemeanor punishable by imprisonment in a county jail for not more than 1 year. [Evading Law Enforcement; Critical Roadway information; California Driver Handbook]"
             : null
         }
       />
@@ -553,7 +553,7 @@ export default function FinalQuiz() {
         onchange={handleOptionChange}
         description={
           showDescription
-            ? "It is best not to drive in fog. However, if you must drive in fog, drively slowly and use your low-beam headlights. The light from high beans will tend to reflect back and cause a glare[Use your headlights; Safe Driving Practices; California Driver Handbook]"
+            ? "It is best not to drive in fog. However, if you must drive in fog, drive slowly and use your low-beam headlights. The light from high beans will tend to reflect back and cause a glare[Use your headlights; Safe Driving Practices; California Driver Handbook]"
             : null
         }
       />
@@ -573,7 +573,7 @@ export default function FinalQuiz() {
         onchange={handleOptionChange}
         description={
           showDescription
-            ? "Borken white lines indicate that passing is allowed but only when it can be done safely. [Line colors; Lane controls; California Driver Handbook]"
+            ? "Broken white lines indicate that passing is allowed but only when it can be done safely. [Line colors; Lane controls; California Driver Handbook]"
             : null
         }
       />
@@ -600,7 +600,7 @@ export default function FinalQuiz() {
 
       <RadioButton
         classname="bold"
-        question="23. If you are in an intersection when you hear the siren of an emmergency vehicle, you should"
+        question="23. If you are in an intersection when you hear the siren of an emergency vehicle, you should"
         option1="continue through the intersection, then move to the right and stop"
         option2="move to the right and stop in the intersection"
         option3="continue through the intersection, then move to the left and stop"
@@ -613,7 +613,7 @@ export default function FinalQuiz() {
         onchange={handleOptionChange}
         description={
           showDescription
-            ? "Never block an intersection even if an emmergency vehicle is approaching. If you are in an intersection when you see or hear an emmergency vehicle, continue through the intersection, them move to the right and stop[Use your headlights; Safe Driving Practices; California Driver Handbook]"
+            ? "Never block an intersection even if an emergency vehicle is approaching. If you are in an intersection when you see or hear an emergency vehicle, continue through the intersection, them move to the right and stop[Use your headlights; Safe Driving Practices; California Driver Handbook]"
             : null
         }
       />
@@ -633,7 +633,7 @@ export default function FinalQuiz() {
         onchange={handleOptionChange}
         description={
           showDescription
-            ? "Tailgating makes it harder for you to see the road ahead because the vehicle in front of you blocks your view. You will not have enough time to  react if the driver in front of you brakes suddenly. Use the three-second rule to ensure a safe following distance and avoid a collision [Tailgating (following too closely); Be Aware of Your Surrondings; California Driver Handbook]"
+            ? "Tailgating makes it harder for you to see the road ahead because the vehicle in front of you blocks your view. You will not have enough time to  react if the driver in front of you brakes suddenly. Use the three-second rule to ensure a safe following distance and avoid a collision [Tailgating (following too closely); Be Aware of Your Surroundings; California Driver Handbook]"
             : null
         }
       />
@@ -662,7 +662,7 @@ export default function FinalQuiz() {
         classname="bold"
         question="26. If you are having Vehicle trouble and you need to stop, what is the first thing you should do?"
         option1="Safely pull over to the right shoulder and stay away from the traffic"
-        option2="lift the hood to signal an emmergency"
+        option2="lift the hood to signal an emergency"
         option3="stop your vehicle over a hill or just around a curve for visibility"
         name="twentySix"
         optionDiv="option"
@@ -673,7 +673,7 @@ export default function FinalQuiz() {
         onchange={handleOptionChange}
         description={
           showDescription
-            ? " Safely pull over to the right shoulder. Exit on the right side so you are away from traffic if you must get out of the vehicle. [IF your Vehicle Becomes Disabled on the Freeway; Kown How to Handle Emmergency; California Driver Handbook]"
+            ? " Safely pull over to the right shoulder. Exit on the right side so you are away from traffic if you must get out of the vehicle. [IF your Vehicle Becomes Disabled on the Freeway; Know How to Handle emergency; California Driver Handbook]"
             : null
         }
       />
@@ -773,7 +773,7 @@ export default function FinalQuiz() {
         onchange={handleOptionChange}
         description={
           showDescription
-            ? "Turningg on your right turn signals lets the officer know that you recognize his or her presence. Do not stop on the center meridian [What a Driver Should Do During Enforcement Stop; Special Driving Situations; California Driver Handbook]"
+            ? "Turning on your right turn signals lets the officer know that you recognize his or her presence. Do not stop on the center meridian [What a Driver Should Do During Enforcement Stop; Special Driving Situations; California Driver Handbook]"
             : null
         }
       />
@@ -793,7 +793,7 @@ export default function FinalQuiz() {
         onchange={handleOptionChange}
         description={
           showDescription
-            ? "At 55mph, the average passenger can stop within 300 feet. A large vehicle traveling at the same speed can take up to 400 feet to stop. The heavier the vehicle and the faster it is moving, the longer it takes to safely stop, so a loaded truck will take longer to stop than an empty truck.[Garking; Sharing the Road; California Driver Handbook]"
+            ? "At 55mph, the average passenger can stop within 300 feet. A large vehicle traveling at the same speed can take up to 400 feet to stop. The heavier the vehicle and the faster it is moving, the longer it takes to safely stop, so a loaded truck will take longer to stop than an empty truck.[Parking; Sharing the Road; California Driver Handbook]"
             : null
         }
       />
@@ -900,7 +900,7 @@ export default function FinalQuiz() {
 
       <img
         src="https://www.dmv.ca.gov/portal/uploads/2020/02/schoolzone.png"
-        alt="schoolzone"
+        alt="school zone"
         style={styles}
       />
       <RadioButton
@@ -918,7 +918,7 @@ export default function FinalQuiz() {
         onchange={handleOptionChange}
         description={
           showDescription
-            ? "5-sided Sign represent you are near a school drive slowly and stop for children in the crosswalk. [Signs; Pedestran Signs or Signals; California Driver Handbook]"
+            ? "5-sided Sign represent you are near a school drive slowly and stop for children in the crosswalk. [Signs; Pedestrian Signs or Signals; California Driver Handbook]"
             : null
         }
       />
@@ -949,12 +949,12 @@ export default function FinalQuiz() {
         option1="The vehicle traveling uphill"
         option2="The vehicle traveling downhill"
         option3="both vehicles"
-        name="fourty"
+        name="forty"
         optionDiv="option"
-        ida="fourtyA"
-        idb="fourtyB"
-        idc="fourtyC"
-        check={selectedOptions.fourty}
+        ida="fortyA"
+        idb="fortyB"
+        idc="fortyC"
+        check={selectedOptions.forty}
         onchange={handleOptionChange}
         description={
           showDescription

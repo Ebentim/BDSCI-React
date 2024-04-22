@@ -1,18 +1,19 @@
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { NavButtons } from "../Assets/next";
 import dmvLogo from "../Assets/images/dmv.png";
-import Signin from "./Signin";
+// import Signin from "./Signin";
+import SignupForm from "./SignupForm";
 function Homepage() {
   const navigate = useNavigate();
   const handleCta = (e) => {
     e.preventDefault();
-    navigate("/signup");
+    navigate("/signin");
   };
   const SignInButton = () => {
     return (
       <NavButtons onclick={handleCta} classname="hero-cta">
-        Register
+        Login
       </NavButtons>
     );
   };
@@ -27,7 +28,8 @@ function Homepage() {
             <h4 className="course-description price">$39</h4>
             <SignInButton />
           </div>
-          <Signin classname="homepage-signin" />
+          <SignupForm classname={"homepage-signin"} />
+          {/* <Signin classname="homepage-signin" /> */}
         </div>
       </section>
       <section id="about">

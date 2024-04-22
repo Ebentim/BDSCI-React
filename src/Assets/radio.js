@@ -15,7 +15,7 @@ export const RadioButton = ({
 }) => {
   return (
     <>
-      <p className={classname}>{question}</p>
+      <p className={`quizQuestion ${classname}`}>{question}</p>
 
       <div className={optionDiv}>
         <input
@@ -50,7 +50,7 @@ export const RadioButton = ({
         />
         <label htmlFor={idc}>{option3}</label>
       </div>
-      <p className="sectionQuote">{description}</p>
+      <p className="sectionQuote description">{description}</p>
     </>
   );
 };

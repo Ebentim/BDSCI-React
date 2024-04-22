@@ -10,9 +10,9 @@ function Adminsignup() {
   const [submissionStatus, setSubmissionStatus] = useState(false);
   const SignupButton = () =>
     submissionStatus ? (
-      <NavButtons classname="Signup submitting"></NavButtons>
+      <NavButtons classname="signup-cta submitting"></NavButtons>
     ) : (
-      <NavButtons classname="Signup">Sign Up</NavButtons>
+      <NavButtons classname="signup-cta">Sign Up</NavButtons>
     );
 
   return (
@@ -79,7 +79,32 @@ function Adminsignup() {
               });
           }}
         >
-          <Form id="admin-signup" style={{ margin: "0 auto" }}>
+          <Form
+            id="admin-signup"
+            className="signup-form"
+            style={{ margin: "0 auto" }}
+          >
+            <p
+              style={{
+                marginBottom: "20px",
+                textAlign: "center",
+                fontSize: "1rem",
+              }}
+            >
+              Click Here to{" "}
+              <span>
+                <Link
+                  to={"/adminsignin"}
+                  style={{
+                    color: "#365486",
+                    padding: "10px",
+                    borderRadius: "8px",
+                  }}
+                >
+                  Sign in
+                </Link>
+              </span>
+            </p>
             <h3
               style={{
                 textAlign: "center",
@@ -130,22 +155,6 @@ function Adminsignup() {
           </Form>
         </Formik>
       </section>
-      <p style={{ marginTop: "20px", textAlign: "center" }}>
-        Click Here to{" "}
-        <span>
-          <Link
-            to={"/adminsignin"}
-            style={{
-              backgroundColor: "#365486",
-              color: "white",
-              padding: "10px",
-              borderRadius: "8px",
-            }}
-          >
-            Sign in
-          </Link>
-        </span>
-      </p>
     </main>
   );
 }

@@ -4,7 +4,7 @@ import * as Yup from "yup";
 import { NavButtons } from "../Assets/next";
 import "../App.css";
 import "../styles/general.css";
-function SignupForm() {
+function SignupForm({ classname }) {
   const [submissionStatus, setSubmissionStatus] = useState(false);
   const SignupButton = () =>
     submissionStatus ? (
@@ -14,7 +14,7 @@ function SignupForm() {
     );
 
   return (
-    <section id="signup-page">
+    <>
       <Formik
         initialValues={{
           firstname: "",
@@ -97,7 +97,7 @@ function SignupForm() {
             });
         }}
       >
-        <Form className="signup-form">
+        <Form className={classname}>
           <h3
             style={{
               textAlign: "center",
@@ -202,7 +202,7 @@ function SignupForm() {
           <SignupButton />
         </Form>
       </Formik>
-    </section>
+    </>
   );
 }
 

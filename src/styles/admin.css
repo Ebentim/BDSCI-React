@@ -1,14 +1,23 @@
+#admin-dashboard {
+  width: 95vw;
+  flex-direction: column;
+  margin: auto;
+  justify-content: start;
+}
 #maintable {
   display: grid;
   grid-template-rows: 40px auto;
-  width: 90%;
-  margin: auto;
+  width: 100%;
   border-top: 1px solid;
   border-bottom: 1px solid;
+  overflow: scroll;
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: var(--header-bg);
 }
 
 #maintable button {
-  background-color: #365486;
+  background-color: #365486 !important;
   color: white;
   padding: 5px 15px;
   width: fit-content;
@@ -19,13 +28,13 @@
 #table-head {
   display: flex;
   flex-wrap: nowrap;
-  background-color: yellowgreen;
 }
 .head {
   flex: 1 0 calc(100% / 8);
   padding: 10px;
   box-sizing: border-box;
   border-right: 2px solid;
+  background-color: yellowgreen;
 }
 .head:nth-child(1) {
   border-left: 2px solid;
@@ -48,10 +57,12 @@
 .email {
   overflow-x: hidden;
 }
-#table-body tr:nth-child(even) {
+#table-body tr:nth-child(even) * {
   background-color: #ededed;
 }
 .search {
+  height: fit-content;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -83,6 +94,7 @@
   border-radius: 8px;
 }
 .progress-container {
+  width: 100%;
   display: grid;
   gap: 3px;
   grid-template-columns: repeat(3, 30%);
