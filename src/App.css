@@ -269,6 +269,20 @@ section {
   width: 90vw;
   margin: 20px auto;
 }
+#about img {
+  height: 300px;
+  aspect-ratio: 16/8;
+}
+.main-desc {
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+  align-items: center;
+  flex-direction: row-reverse;
+}
+.main-desc .section-content {
+  width: 50%;
+}
 #about .section-heading,
 .contact .section-heading {
   text-align: center;
@@ -279,7 +293,7 @@ section {
 #about .about-texts {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, auto);
+  grid-template-rows: repeat(3, auto);
   column-gap: 40px;
 }
 #contact {
@@ -293,6 +307,12 @@ section {
   box-shadow: 0 0 10px 5px var(--btn-text);
   width: 100%;
 }
+.subsection-heading {
+  grid-row: 2/3;
+  grid-column: 1/-1;
+  place-self: center;
+  padding: 20px 0;
+}
 .subsection-card:nth-child(1) {
   grid-column: 1/-1;
   box-shadow: none;
@@ -305,6 +325,30 @@ section {
 }
 .subsection-card:nth-child(4) {
   grid-template-columns: 3/-1;
+}
+section#curriculum {
+  padding: 50px 0;
+  width: 90vw;
+  min-height: fit-content;
+  justify-content: space-between;
+  margin: auto;
+  gap: 50px;
+}
+#curriculum ul {
+  list-style: none;
+}
+#curriculum ul li {
+  padding: 10px 0;
+}
+figure {
+  font-size: 1rem;
+  font-style: italic;
+  font-weight: 700;
+}
+#curriculum figure img {
+  /* aspect-ratio: 1/1; */
+  /* width: 100%; */
+  background-color: green !important;
 }
 i {
   font-size: 1rem;
@@ -502,9 +546,27 @@ input[type="number"]::-webkit-inner-spin-button {
   .contact {
     width: 90%;
   }
+  #about .main-desc {
+    flex-direction: column;
+  }
+  .main-desc .section-content {
+    width: 100%;
+  }
   #about .about-texts {
     display: flex;
     flex-direction: column;
+  }
+  section#curriculum {
+    min-height: fit-content;
+    flex-direction: column;
+    gap: 50px;
+    align-items: start;
+    padding-bottom: 50px;
+  }
+  #curriculum figure img {
+    aspect-ratio: auto;
+    width: auto;
+    background-color: green !important;
   }
 
   .contact p,
@@ -592,9 +654,27 @@ input[type="number"]::-webkit-inner-spin-button {
   .contact {
     width: 90%;
   }
+  #about .main-desc {
+    flex-direction: column;
+  }
+  .main-desc .section-content {
+    width: 100%;
+  }
   #about .about-texts {
     display: flex;
     flex-direction: column;
+  }
+  section#curriculum {
+    min-height: fit-content;
+    flex-direction: column;
+    gap: 50px;
+    align-items: start;
+    padding-bottom: 50px;
+  }
+  #curriculum figure img {
+    aspect-ratio: auto;
+    width: auto;
+    background-color: green !important;
   }
   .contact p,
   .contact h4 {

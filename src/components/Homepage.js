@@ -1,7 +1,9 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { NavButtons } from "../Assets/next";
+import cover from "../Assets/images/aboutCover.jpg";
 import dmvLogo from "../Assets/images/dmv.png";
+import certificate from "../Assets/images/certificate.jpg";
 // import Signin from "./Signin";
 import SignupForm from "./SignupForm";
 function Homepage() {
@@ -13,7 +15,7 @@ function Homepage() {
   const SignInButton = () => {
     return (
       <NavButtons onclick={handleCta} classname="hero-cta">
-        Login
+        Login for Continuing Students
       </NavButtons>
     );
   };
@@ -35,7 +37,11 @@ function Homepage() {
       <section id="about">
         <h3 className="section-heading">About Us</h3>
         <div className="about-texts">
-          <div className="subsection-card">
+          <div className="subsection-card main-desc">
+            <img
+              src={cover}
+              alt="Happy Student's holding their driving permits"
+            />
             <p className="section-content">
               Bakkers Driving School provides a convenient and accessible online
               platform for learning the rules of the road and preparing for your
@@ -44,6 +50,8 @@ function Homepage() {
               home.
             </p>
           </div>
+          <h3 className="subsection-heading">Why Choose Us</h3>
+
           <div className="subsection-card">
             <h4 className="section-subheading">Flexible Learning</h4>
             <p className="subsection-content">
@@ -72,6 +80,41 @@ function Homepage() {
               tablets, and smartphones.
             </p>
           </div>
+        </div>
+      </section>
+      <section id="curriculum">
+        <div className="curriculum-texts">
+          <div class="curriculum">
+            <h2 className="section-heading">Our Curriculum</h2>
+            <ul>
+              <li>Unit One: Driving is your Responsibility</li>
+              <li>Unit two: The Driver</li>
+              <li>Unit Three: Natural Forces Affecting the Driver</li>
+              <li>Unit Four: Signs, Signals, and Highway Markings</li>
+              <li>Unit five : California Vehicle Code and Rules of the Road</li>
+              <li>Unit Six : Causes and Costs of Accidents</li>
+              <li>Unit Seven : Differences in Urban and Rural Driving</li>
+              <li>Unit Eight : Chritical Vehicle Systems and Subsystems</li>
+              <li>Unit Nine : Pedestrian Safety</li>
+              <li>Unit ten : Effects of Alcohol and Drugs</li>
+              <li>Unit Eleven : Motorcycle Safety</li>
+              <li>
+                Unit Twelve : Risk Taking and Risk Perception of Teenagers
+              </li>
+              <li>Unit Thirteen : Substance Abuse</li>
+              <li>Unit Fourteen : Driving Inexperience</li>
+              <li>Unit Fifteen : Road Rage</li>
+            </ul>
+          </div>
+        </div>
+        <div className="completion">
+          <figure>
+            <img src={certificate} alt="certificate copy" />
+            <figcaption>
+              A sample copy of the certificate that will be issued upon
+              completion of the course
+            </figcaption>
+          </figure>
         </div>
       </section>
       <section id="contact">
