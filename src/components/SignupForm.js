@@ -10,7 +10,7 @@ function SignupForm({ classname }) {
     submissionStatus ? (
       <NavButtons classname="signup-cta submitting"></NavButtons>
     ) : (
-      <NavButtons classname="signup-cta">Register</NavButtons>
+      <NavButtons classname="signup-cta">Registration</NavButtons>
     );
 
   return (
