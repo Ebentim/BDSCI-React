@@ -11,7 +11,7 @@ function SignupForm({ classname }) {
       <NavButtons classname="signup-cta submitting"></NavButtons>
     ) : (
       <NavButtons classname="signup-cta">
-        Registration for new students
+        Registration For New Students
       </NavButtons>
     );
 

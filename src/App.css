@@ -280,6 +280,10 @@ section {
   align-items: center;
   flex-direction: row-reverse;
 }
+.main-desc div {
+  display: flex;
+  gap: 5px;
+}
 .main-desc .section-content {
   width: 50%;
 }
@@ -674,6 +678,13 @@ input[type="number"]::-webkit-inner-spin-button {
   }
   .main-desc .section-content {
     width: 100%;
+  }
+  .main-desc div {
+    flex-direction: column;
+  }
+  .main-desc div img {
+    height: auto;
+    width: 100% !important;
   }
   #about .about-texts {
     display: flex;

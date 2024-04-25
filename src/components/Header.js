@@ -1,7 +1,7 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "../styles/general.css";
 import "../App.css";
-import { useState } from "react";
+// import { useState } from "react";
 // const nav = {
 //   home: {
 //     title: "Home",
@@ -26,10 +26,10 @@ import { useState } from "react";
 // };
 function Header() {
   // const location = useLocation();
-  const [active, setActive] = useState(false);
-  const handleMenu = () => {
-    setActive(!active);
-  };
+  // const [active, setActive] = useState(false);
+  // const handleMenu = () => {
+  //   setActive(!active);
+  // };
   return (
     <div className="header">
       <div className="header-icons">

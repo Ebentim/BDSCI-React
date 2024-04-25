@@ -2,6 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { NavButtons } from "../Assets/next";
 import cover from "../Assets/images/aboutCover.jpg";
+import cover2 from "../Assets/images/cover2.jpeg";
 import dmvLogo from "../Assets/images/dmv.png";
 import certificate from "../Assets/images/certificate.jpg";
 // import Signin from "./Signin";
@@ -38,10 +39,16 @@ function Homepage() {
         <h3 className="section-heading">About Us</h3>
         <div className="about-texts">
           <div className="subsection-card main-desc">
-            <img
-              src={cover}
-              alt="Happy Student's holding their driving permits"
-            />
+            <div>
+              <img
+                src={cover}
+                alt="Happy Student's holding their driving permits"
+              />
+              <img
+                src={cover2}
+                alt="Happy Student's holding their driving permits"
+              />
+            </div>
             <p className="section-content">
               Bakkers Driving School provides a convenient and accessible online
               platform for learning the rules of the road and preparing for your
