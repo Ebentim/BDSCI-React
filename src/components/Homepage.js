@@ -122,6 +122,8 @@ function Homepage() {
           <h3 className="section-heading">Contact Us</h3>
           <p>Have a question or want to get in touch? Reach out to us at:</p>
           <br />
+          <a href="tel:+18584845832">+1 858-484-5832</a>
+          <br />
           <a href="mailto:care@bakkersdrivingschool.com">
             care@bakkersdrivingschool.com
           </a>
