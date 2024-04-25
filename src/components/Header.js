@@ -2,30 +2,30 @@ import { Link, useLocation } from "react-router-dom";
 import "../styles/general.css";
 import "../App.css";
 import { useState } from "react";
-const nav = {
-  home: {
-    title: "Home",
-    links: "/",
-  },
-  about: {
-    title: "About",
-    links: "/#about",
-  },
-  contact: {
-    title: "Contact Us",
-    links: "#contact",
-  },
-  register: {
-    title: "Register",
-    links: "signup",
-  },
-  login: {
-    title: "login",
-    links: "/signin",
-  },
-};
+// const nav = {
+//   home: {
+//     title: "Home",
+//     links: "/",
+//   },
+//   about: {
+//     title: "About",
+//     links: "/#about",
+//   },
+//   contact: {
+//     title: "Contact Us",
+//     links: "#contact",
+//   },
+//   register: {
+//     title: "Register",
+//     links: "signup",
+//   },
+//   login: {
+//     title: "login",
+//     links: "/signin",
+//   },
+// };
 function Header() {
-  const location = useLocation();
+  // const location = useLocation();
   const [active, setActive] = useState(false);
   const handleMenu = () => {
     setActive(!active);
@@ -36,7 +36,7 @@ function Header() {
         <Link to="/">
           <h1>Bakkers Driving School</h1>
         </Link>
-        <div onClick={handleMenu} className="icon-container">
+        {/* <div onClick={handleMenu} className="icon-container">
           <div className={`close ${active ? "menu-rotate active" : "none"}`}>
             &#x0058;
           </div>
@@ -45,9 +45,9 @@ function Header() {
             <span className="line line-2"></span>
             <span className="line line-3"></span>
           </div>
-        </div>
+        </div> */}
       </div>
-      <ul
+      {/* <ul
         className={`navigation-list ${!active ? "menu-list" : null}`}
         onClick={handleMenu}
       >
@@ -58,7 +58,7 @@ function Header() {
             </li>
           );
         })}
-      </ul>
+      </ul> */}
     </div>
   );
 }

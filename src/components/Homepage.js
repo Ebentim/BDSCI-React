@@ -64,9 +64,11 @@ function Homepage() {
           <div className="subsection-card">
             <h4 className="section-subheading">Engaging Learning Experience</h4>
             <p className="subsection-content">
-              Our interactive platform features engaging content, quizzes, and
-              practice tests to make learning fun and effective. Stay motivated
-              and retain information more efficiently.
+              Embark on an immersive learning journey with our interactive
+              course. Dive into educating content, engaging quizzes, and a
+              seamless flow that guides you through the material. Experience a
+              learning approach designed to keep you motivated and retain
+              information effortlessly.
             </p>
           </div>
           <div className="subsection-card">
