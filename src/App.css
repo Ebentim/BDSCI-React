@@ -156,18 +156,18 @@ main {
   position: relative;
 }
 section {
-  min-height: 100vh;
+  min-height: fit-content;
+  padding-top: 50px;
+  padding-bottom: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 #hero {
-  background-size: cover;
-  background-repeat: no-repeat;
+  padding-top: 50px;
 }
 .hero {
   width: 90vw;
-  min-height: calc(100vh - 150px);
   border-radius: 7px;
   margin: 0 auto;
   /* display: flex;
@@ -271,7 +271,6 @@ section {
   margin: 20px auto;
 }
 #about img {
-  aspect-ratio: 16/8;
   height: 300px;
 }
 .main-desc {
