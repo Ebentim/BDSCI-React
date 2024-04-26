@@ -163,6 +163,9 @@ section {
   justify-content: center;
   align-items: center;
 }
+section#signin-page {
+  min-height: 100vh;
+}
 #hero {
   padding-top: 50px;
 }
