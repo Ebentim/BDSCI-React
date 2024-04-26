@@ -602,6 +602,10 @@ input[type="number"]::-webkit-inner-spin-button {
   .signup-form {
     width: 90%;
   }
+  .homepage-signin input,
+  .signin-cta {
+    padding: 10px 5px;
+  }
 }
 
 /* For small screens */
@@ -719,6 +723,10 @@ input[type="number"]::-webkit-inner-spin-button {
   .signup-form,
   .signin-form {
     width: 90%;
+  }
+  .homepage-signin input,
+  .signin-cta {
+    padding: 10px 5px;
   }
   .footer {
     font-size: 0.9rem;
