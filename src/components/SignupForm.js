@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { NavButtons } from "../Assets/next";
+import { Link } from "react-router-dom";
 import "../App.css";
 import "../styles/general.css";
 function SignupForm({ classname }) {
@@ -200,6 +201,32 @@ function SignupForm({ classname }) {
           <div className="errorMessage">
             <ErrorMessage name="pemail" />
           </div>
+          <p>
+            By clicking "Register for New Students", you agree to our{" "}
+            <Link
+              to="/terms-of-service"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Terms of Service
+            </Link>
+            ,{" "}
+            <Link
+              to="/terms-of-service"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Conditions
+            </Link>{" "}
+            and{" "}
+            <Link
+              to="/terms-of-service"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Privacy Policy
+            </Link>
+          </p>
           <SignupButton />
         </Form>
       </Formik>

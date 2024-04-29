@@ -494,6 +494,9 @@ input[type="number"]::-webkit-inner-spin-button {
   }
   /* Styles for large screens */
 }
+.homepage-signin a {
+  text-decoration: underline;
+}
 @media (min-width: 1300px) {
   .homepage-signin {
     width: 70% !important;

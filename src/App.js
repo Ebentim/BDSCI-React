@@ -16,6 +16,7 @@ import { AuthProvider } from "./contexts/AuthContext";
 import { QuizScoreProvider } from "./contexts/QuizContext";
 import "./App.css";
 import Signinpage from "./components/Signinpage";
+import TermsAndPolicies from "./components/TermsAndPolicies";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
             <Route path="/" element={<Homepage />} />
             <Route path="/signin" element={<Signinpage />} />
             <Route path="/signup" element={<Signup />} />
+            <Route path="/terms-of-service" element={<TermsAndPolicies />} />
 
             <Route
               path="/dashboard"
