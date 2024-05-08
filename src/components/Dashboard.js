@@ -69,7 +69,8 @@ const Dashboard = () => {
               }
               body {
                 font-family: Arial, sans-serif;
-                margin: 20px;
+                font-size: 16.87px;
+                margin: 20px 0 20px 70px;
               }
               .container {
                 margin-top: 50px;
@@ -103,8 +104,7 @@ const Dashboard = () => {
           </style>
         </head>
         <body onload="window.print()">
-          <div class="container mt-5">
-            <br />
+          <div class=" h5 container mt-5">
             <br />
             <br />
             <br />
@@ -114,9 +114,9 @@ const Dashboard = () => {
             <br />
             <div>
               <table>
-                <tr class="row">
-                  <td class="col-8">${firstname} ${lastname}</td>
-                  <td class="col-4">${(function () {
+                <tr class=" h5 row" style= "margin-top: 12px">
+                  <td class=" h5 col-8">${firstname} ${lastname}</td>
+                  <td class=" h5 col-4">${(function () {
                     const dob = birthdate.substring(0, 10);
                     const year = dob.substring(0, 4);
                     const month = dob.substring(5, 7);
@@ -124,8 +124,8 @@ const Dashboard = () => {
                     return `${month}/${day}/${year}`;
                   })()}</td>
                 </tr>
-                <tr class="row">
-                  <td class="col-12">${(function () {
+                <tr class=" h5 row">
+                  <td class=" h5 col-12">${(function () {
                     const now = new Date(Date.now());
                     const date = now.getDate();
                     const month = now.getMonth() + 1;
@@ -133,30 +133,30 @@ const Dashboard = () => {
                     return `${month}/${date}/${year}`;
                   })()}</td>
                 </tr>
-                <tr class="row">
-                  <td class="col-8">Bakkers Driving School</td>
-                  <td class="col-4">E3246</td>
+                <br/>
+                <tr class=" h5 row" style="margin-top:20px;">
+                  <td class=" h5 col-8">Bakkers Driving School</td>
+                  <td class=" h5 col-4">E3246</td>
                 </tr>
-                <tr class="row">
-                  <td class="col-8">11315 Rancho Bernado Road, ST \n San Diego, CA 92127</td>
-                  <td class="col-4">(858) 484-5832</td>
+                <tr class=" h5 row" style="margin-top:20px">
+                  <td class=" h5 col-8">11315 Rancho Bernardo Road,#132,  \nSan Diego, CA 92127</td>
+                  <td class=" h5 col-4">(858) 484-5832</td>
                 </tr>
-                <tr class="row">
-                  <td class="col-8">Roderick Stansbery</td>
-                  <td class="col-4">13246-127</td>
+                <tr class=" h5 row"style="margin-top:12px">
+                  <td class=" h5 col-8">Roderick Stansbery</td>
+                  <td class=" h5 col-4">13246-127</td>
                 </tr>
               </table>
               <table>
+                <br/>
+                <br/>
                 <br />
                 <br />
                 <br />
                 <br />
-                <br />
-                <br />
-                <br />
-                <tr class="row">
-                  <td class="col-8">X</td>
-                  <td class="col-4">${(function () {
+                <tr class=" h5 row">
+                  <td class=" h5 col-8"></td>
+                  <td class=" h5 col-4">${(function () {
                     const now = new Date(Date.now());
                     const date = now.getDate();
                     const month = now.getMonth() + 1;
@@ -311,7 +311,7 @@ const Dashboard = () => {
                           .every((score) => score >= 8)
                       }
                     >
-                      Print
+                      Print Certificate
                     </button>
                   </td>
                 </tr>
