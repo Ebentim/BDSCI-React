@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "../App.css";
 import "../styles/admin.css";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 const Dashboard = () => {
   const [data, setData] = useState([]);
@@ -185,6 +185,16 @@ const Dashboard = () => {
       item.email.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
+  const styles = {
+    display: "flex",
+    justifyContent: "left",
+    alignItems: "left",
+  };
+  const buttonStyles = {
+    width: "120px",
+    padding: "5px",
+  };
+
   return (
     <main
       className={
@@ -193,164 +203,184 @@ const Dashboard = () => {
           : null
       }
     >
-      <section id="admin-dashboard">
-        <h2
+      <h2
+        style={{
+          margin: "10px",
+          textAlign: "center",
+          fontSize: "24px",
+          color: "green",
+        }}
+      >
+        Bakkers Driving School Course Instruction
+      </h2>
+      <div id="adminDashboard-container" style={styles}>
+        <div
           style={{
-            margin: "10px",
-            textAlign: "center",
-            fontSize: "24px",
-            color: "green",
+            width: "155px",
+            display: "flex",
+            flexDirection: "column",
+            gap: "12px",
           }}
         >
-          Bakkers Driving School Course Instruction
-        </h2>
-        <div className="search">
-          <div id="search-div">
-            <input
-              type="text"
-              placeholder="Search by name or email"
-              value={searchTerm}
-              onChange={handleSearch}
-              className="search-input"
-            />
-            <button className="search-button" onClick={handleSearch}>
-              Search
-            </button>
-          </div>
-          <h3 className="bold">
-            {showProgressTable ? "Progress Table" : "Details Table"}
-          </h3>
           <button
-            onClick={() =>
-              showProgressTable
-                ? setShowProgressTable(false)
-                : setShowProgressTable(true)
-            }
+            onClick={() => setShowProgressTable(false)}
             className="view-progress-button"
+            style={buttonStyles}
+            disabled={!showProgressTable}
           >
-            {showProgressTable ? "View Details" : "View Progress"}
+            View Details
+          </button>
+          <button
+            onClick={() => setShowProgressTable(true)}
+            className="view-progress-button"
+            style={buttonStyles}
+            disabled={showProgressTable}
+          >
+            View Progress
           </button>
         </div>
+        <section id="admin-dashboard">
+          <div className="search">
+            <div id="search-div">
+              <input
+                type="text"
+                placeholder="Search by name or email"
+                value={searchTerm}
+                onChange={handleSearch}
+                className="search-input"
+              />
+              <button className="search-button" onClick={handleSearch}>
+                Search
+              </button>
+            </div>
+            <h3 className="bold">
+              {showProgressTable
+                ? "Student's Course Progress Information"
+                : "Students Personal and Parental Information"}
+            </h3>
+          </div>
 
-        {!showProgressTable && (
-          <table id="maintable">
-            <thead>
-              <tr id="table-head">
-                <th className="head">First Name</th>
-                <th className="head">Last Name</th>
-                <th className="head">Date of Birth</th>
-                <th className="head">Email</th>
-                <th className="head">Phone</th>
-                <th className="head">Duration</th>
-                <th className="head">Last Login</th>
-                <th className="head">Parent name</th>
-                <th className="head">Parent Email</th>
-                <th className="head">Parent phone</th>
-                <th className="head">Actions</th>
-              </tr>
-            </thead>
-            <tbody id="table-body">
-              {filteredData.map((item) => (
-                <tr key={item._id}>
-                  <td className="body">{item.firstname}</td>
-                  <td className="body">{item.lastname}</td>
-                  <td className="body">{item.birthdate.substring(0, 10)}</td>
-                  <td className="body email">{item.email}</td>
-                  <td className="body">{item.ynumber}</td>
-                  <td className="body">
-                    {(function duration() {
-                      const duration = 108000000 - item.startingtime;
-                      const hours = Math.floor(
-                        (duration % (1000 * 60 * 60 * 60)) / (1000 * 60 * 60)
-                      );
-                      const minutes = Math.floor(
-                        (duration % (1000 * 60 * 60)) / (1000 * 60)
-                      );
-                      const seconds = Math.floor(
-                        (duration % (1000 * 60)) / 1000
-                      );
-                      return ` ${hours < 10 ? "0" + hours : hours}:${" "}
+          {!showProgressTable && (
+            <table id="maintable">
+              <thead>
+                <tr id="table-head">
+                  <th className="head">First Name</th>
+                  <th className="head">Last Name</th>
+                  <th className="head">Date of Birth</th>
+                  <th className="head">Email</th>
+                  <th className="head">Phone</th>
+                  <th className="head">Duration</th>
+                  <th className="head">Last Login</th>
+                  <th className="head">Parent name</th>
+                  <th className="head">Parent Email</th>
+                  <th className="head">Parent phone</th>
+                  <th className="head">Actions</th>
+                </tr>
+              </thead>
+              <tbody id="table-body">
+                {filteredData.map((item) => (
+                  <tr key={item._id}>
+                    <td className="body">{item.firstname}</td>
+                    <td className="body">{item.lastname}</td>
+                    <td className="body">{item.birthdate.substring(0, 10)}</td>
+                    <td className="body email">{item.email}</td>
+                    <td className="body">{item.ynumber}</td>
+                    <td className="body">
+                      {(function duration() {
+                        const duration = 108000000 - item.startingtime;
+                        const hours = Math.floor(
+                          (duration % (1000 * 60 * 60 * 60)) / (1000 * 60 * 60)
+                        );
+                        const minutes = Math.floor(
+                          (duration % (1000 * 60 * 60)) / (1000 * 60)
+                        );
+                        const seconds = Math.floor(
+                          (duration % (1000 * 60)) / 1000
+                        );
+                        return ` ${hours < 10 ? "0" + hours : hours}:${" "}
                   ${minutes < 10 ? "0" + minutes : minutes}:${" "}
                   ${seconds < 10 ? "0" + seconds : seconds}`;
-                    })()}
-                  </td>
-                  <td className="body">
-                    {(function () {
-                      const time = item.time;
-                      const pastTime = new Date(time);
-                      const currentTime = new Date();
-                      const difference =
-                        currentTime.getTime() - pastTime.getTime();
-                      const seconds = Math.floor(difference / 1000) % 60;
-                      const minutes = Math.floor(difference / (1000 * 60)) % 60;
-                      const hours =
-                        Math.floor(difference / (1000 * 60 * 60)) % 24;
-                      const days = Math.floor(
-                        difference / (1000 * 60 * 60 * 24)
-                      );
-                      const months = Math.floor(
-                        difference / (1000 * 60 * 60 * 24 * 30)
-                      );
-                      return `${months ? months + "m" : ""} ${
-                        days ? days + "d" : ""
-                      } ${hours ? hours + "h" : ""} ${
-                        minutes ? minutes + "m" : ""
-                      } ${seconds ? seconds + "s" : ""}`;
-                    })()}
-                  </td>
-                  <td className="body">{item.pname}</td>
-                  <td className="body email">{item.pemail}</td>
-                  <td className="body">{item.pnumber}</td>
+                      })()}
+                    </td>
+                    <td className="body">
+                      {(function () {
+                        const time = item.time;
+                        const pastTime = new Date(time);
+                        const currentTime = new Date();
+                        const difference =
+                          currentTime.getTime() - pastTime.getTime();
+                        const seconds = Math.floor(difference / 1000) % 60;
+                        const minutes =
+                          Math.floor(difference / (1000 * 60)) % 60;
+                        const hours =
+                          Math.floor(difference / (1000 * 60 * 60)) % 24;
+                        const days = Math.floor(
+                          difference / (1000 * 60 * 60 * 24)
+                        );
+                        const months = Math.floor(
+                          difference / (1000 * 60 * 60 * 24 * 30)
+                        );
+                        return `${months ? months + "m" : ""} ${
+                          days ? days + "d" : ""
+                        } ${hours ? hours + "h" : ""} ${
+                          minutes ? minutes + "m" : ""
+                        } ${seconds ? seconds + "s" : ""}`;
+                      })()}
+                    </td>
+                    <td className="body">{item.pname}</td>
+                    <td className="body email">{item.pemail}</td>
+                    <td className="body">{item.pnumber}</td>
 
-                  <td className="body">
-                    <button
-                      onClick={() => handlePrint(item)}
-                      disabled={
-                        !Object.values(item.progress)
-                          .slice(2, 17)
-                          .every((score) => score >= 8)
-                      }
-                    >
-                      Print Certificate
-                    </button>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        )}
-
-        {showProgressTable && (
-          <div className="progress-container">
-            {filteredData.map((item) => (
-              <table className="progress-table" key={item._id}>
-                <thead className="headname">
-                  <h4>
-                    {item.firstname} {item.lastname}
-                  </h4>
-                </thead>
-
-                <thead>
-                  <tr className="head-details">
-                    <th>Chapter</th>
-                    <th>Score</th>
+                    <td className="body">
+                      <button
+                        onClick={() => handlePrint(item)}
+                        disabled={
+                          !Object.values(item.progress)
+                            .slice(2, 17)
+                            .every((score) => score >= 8)
+                        }
+                      >
+                        Print Certificate
+                      </button>
+                    </td>
                   </tr>
-                </thead>
-                <tbody className="body-details">
-                  {Object.keys(item.progress)
-                    .slice(2, 18)
-                    .map((key) => (
-                      <tr key={key} className="body-rows">
-                        <td>{key}</td>
-                        <td>{(item.progress[key] / 10) * 100}</td>
-                      </tr>
-                    ))}
-                </tbody>
-              </table>
-            ))}
-          </div>
-        )}
-      </section>
+                ))}
+              </tbody>
+            </table>
+          )}
+
+          {showProgressTable && (
+            <div className="progress-container">
+              {filteredData.map((item) => (
+                <table className="progress-table" key={item._id}>
+                  <thead className="headname">
+                    <h4>
+                      {item.firstname} {item.lastname}
+                    </h4>
+                  </thead>
+
+                  <thead>
+                    <tr className="head-details">
+                      <th>Chapter</th>
+                      <th>Score</th>
+                    </tr>
+                  </thead>
+                  <tbody className="body-details">
+                    {Object.keys(item.progress)
+                      .slice(2, 18)
+                      .map((key) => (
+                        <tr key={key} className="body-rows">
+                          <td>{key}</td>
+                          <td>{(item.progress[key] / 10) * 100}</td>
+                        </tr>
+                      ))}
+                  </tbody>
+                </table>
+              ))}
+            </div>
+          )}
+        </section>
+      </div>
     </main>
   );
 };
