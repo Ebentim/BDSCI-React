@@ -18,14 +18,17 @@
 }
 
 #maintable button {
-  background-color: #365486 !important;
+  background-color: #365486;
   color: white;
   padding: 5px 15px;
   width: fit-content;
   border: none;
   border-radius: 8px;
 }
-
+#maintable button:disabled {
+  background: rgb(205, 195, 50) !important;
+  color: white;
+}
 #table-head {
   display: flex;
   flex-wrap: nowrap;

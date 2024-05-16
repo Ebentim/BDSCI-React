@@ -3,17 +3,24 @@ import axios from "axios";
 import "../App.css";
 import "../styles/admin.css";
 import { useLocation } from "react-router-dom";
-
+const buttons = [
+  "Student Details",
+  "Parent Details",
+  "Contact Details",
+  "Certificate Status",
+  "Test Scores",
+  "Print Status",
+];
 const Dashboard = () => {
   const [data, setData] = useState([]);
-  const [showProgressTable, setShowProgressTable] = useState(false);
+  const [active, setActive] = useState(buttons[0]);
   const [searchTerm, setSearchTerm] = useState("");
   const location = useLocation();
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const [source1, source2, source3] = await Promise.all([
+        const [source1, source2, source3, source4] = await Promise.all([
           axios.get(
             "https://bakkers-driving-school.onrender.com/api/profilesforadmindashboard"
           ),
@@ -22,6 +29,9 @@ const Dashboard = () => {
           ),
           axios.get(
             "https://bakkers-driving-school.onrender.com/api/get-tokens"
+          ),
+          axios.get(
+            "https://bakkers-driving-school.onrender.com/api/print-status"
           ),
         ]);
 
@@ -34,16 +44,19 @@ const Dashboard = () => {
           const token = source3.data.tokens.find(
             (t) => t.userId === profile._id
           );
-
-          if (score && token) {
+          const printStatus = source4.data.printStatus.find(
+            (s) => s.userId === profile._id
+          );
+          console.log(printStatus);
+          if (score && token && printStatus) {
             merged.push({
               ...profile,
               progress: score,
               time: token.updatedAt,
+              printStatus: printStatus,
             });
           }
         });
-        console.log(source2.data.scores);
         setData(merged);
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -195,6 +208,8 @@ const Dashboard = () => {
     padding: "5px",
   };
 
+  console.log(data);
+
   return (
     <main
       className={
@@ -222,22 +237,17 @@ const Dashboard = () => {
             gap: "12px",
           }}
         >
-          <button
-            onClick={() => setShowProgressTable(false)}
-            className="view-progress-button"
-            style={buttonStyles}
-            disabled={!showProgressTable}
-          >
-            View Details
-          </button>
-          <button
-            onClick={() => setShowProgressTable(true)}
-            className="view-progress-button"
-            style={buttonStyles}
-            disabled={showProgressTable}
-          >
-            View Progress
-          </button>
+          {buttons.map((button, index) => (
+            <button
+              key={index}
+              className="view-progress-button"
+              style={buttonStyles}
+              onClick={() => setActive(button)}
+              disabled={active === button ? true : false}
+            >
+              {button}
+            </button>
+          ))}
         </div>
         <section id="admin-dashboard">
           <div className="search">
@@ -249,18 +259,18 @@ const Dashboard = () => {
                 onChange={handleSearch}
                 className="search-input"
               />
-              <button className="search-button" onClick={handleSearch}>
+              <button
+                type="button"
+                className="search-button"
+                onClick={handleSearch}
+              >
                 Search
               </button>
             </div>
-            <h3 className="bold">
-              {showProgressTable
-                ? "Student's Course Progress Information"
-                : "Students Personal and Parental Information"}
-            </h3>
+            <h3 className="bold">{active}</h3>
           </div>
 
-          {!showProgressTable && (
+          {active === buttons[0] && (
             <table id="maintable">
               <thead>
                 <tr id="table-head">
@@ -348,8 +358,102 @@ const Dashboard = () => {
               </tbody>
             </table>
           )}
-
-          {showProgressTable && (
+          {/* Parents Details here */}
+          {active === buttons[1] && (
+            <table id="maintable">
+              <thead>
+                <tr id="table-head">
+                  <th className="head">First Name</th>
+                  <th className="head">Last Name</th>
+                  <th className="head">Parent name</th>
+                  <th className="head">Parent Email</th>
+                  <th className="head">Parent phone</th>
+                </tr>
+              </thead>
+              <tbody id="table-body">
+                {filteredData.map((item) => (
+                  <tr key={item._id}>
+                    <td className="body">{item.firstname}</td>
+                    <td className="body">{item.lastname}</td>
+                    <td className="body">{item.pname}</td>
+                    <td className="body email">{item.pemail}</td>
+                    <td className="body">{item.pnumber}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          )}
+          {/* Contact Details */}
+          {active === buttons[2] && (
+            <table id="maintable">
+              <thead>
+                <tr id="table-head">
+                  <th className="head">First Name</th>
+                  <th className="head">Last Name</th>
+                  <th className="head">Email</th>
+                  <th className="head">Phone</th>
+                  <th className="head">Mailing Address</th>
+                  <th className="head">Parent Email</th>
+                  <th className="head">Parent phone</th>
+                </tr>
+              </thead>
+              <tbody id="table-body">
+                {filteredData.map((item) => (
+                  <tr key={item._id}>
+                    <td className="body">{item.firstname}</td>
+                    <td className="body">{item.lastname}</td>
+                    <td className="body email">{item.email}</td>
+                    <td className="body">{item.ynumber}</td>
+                    <td className="body">{item.address}</td>
+                    <td className="body email">{item.pemail}</td>
+                    <td className="body">{item.pnumber}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          )}
+          {/* Certificate Status */}
+          {active === buttons[3] && (
+            <table id="maintable">
+              <thead>
+                <tr id="table-head">
+                  <th className="head">First Name</th>
+                  <th className="head">Last Name</th>
+                  <th className="head">Certificate Status</th>
+                  <th className="head">Action</th>
+                </tr>
+              </thead>
+              <tbody id="table-body">
+                {filteredData.map((item) => (
+                  <tr key={item._id}>
+                    <td className="body">{item.firstname}</td>
+                    <td className="body">{item.lastname}</td>
+                    <td className="body">
+                      {Object.keys(item.progress).some(
+                        (key) => (item.progress[key].finalquiz / 40) * 100 >= 80
+                      )
+                        ? "Ready for Printing"
+                        : "Not Ready for Printing"}
+                    </td>
+                    <td className="body">
+                      <button
+                        onClick={() => handlePrint(item)}
+                        disabled={
+                          !Object.values(item.progress)
+                            .slice(2, 17)
+                            .every((score) => score >= 8)
+                        }
+                      >
+                        Print Certificate
+                      </button>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          )}
+          {/* Test Scores */}
+          {active === buttons[4] && (
             <div className="progress-container">
               {filteredData.map((item) => (
                 <table className="progress-table" key={item._id}>
@@ -370,8 +474,18 @@ const Dashboard = () => {
                       .slice(2, 18)
                       .map((key) => (
                         <tr key={key} className="body-rows">
-                          <td>{key}</td>
-                          <td>{(item.progress[key] / 10) * 100}</td>
+                          <td>
+                            {key.includes("chapter")
+                              ? key.replace("chapter", "Chapter ")
+                              : key.includes("final")
+                              ? key.replace("final", "Final ")
+                              : ""}
+                          </td>
+                          <td>
+                            {key.includes("final")
+                              ? (item.progress[key] / 40) * 100
+                              : (item.progress[key] / 10) * 100}
+                          </td>
                         </tr>
                       ))}
                   </tbody>
