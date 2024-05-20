@@ -17,6 +17,21 @@ const Dashboard = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const location = useLocation();
 
+  const printStatus = async (userId, print) => {
+    try {
+      const response = await axios.put(
+        "https://bakkers-driving-school.onrender.com/api/print-status",
+        {
+          userId,
+          print,
+        }
+      );
+      console.log(response.data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -65,7 +80,8 @@ const Dashboard = () => {
 
     fetchData();
   }, []);
-  const handlePrint = (item) => {
+  const handlePrint = (item, userId, print) => {
+    printStatus(userId, print);
     const { firstname, lastname, birthdate } = item;
     const printWindow = window.open("", "", "height=800,width=600");
 
@@ -197,12 +213,7 @@ const Dashboard = () => {
       item.lastname.toLowerCase().includes(searchTerm.toLowerCase()) ||
       item.email.toLowerCase().includes(searchTerm.toLowerCase())
   );
-
-  const styles = {
-    display: "flex",
-    justifyContent: "left",
-    alignItems: "left",
-  };
+  console.log(filteredData, "filtered");
   const buttonStyles = {
     width: "120px",
     padding: "5px",
@@ -218,23 +229,42 @@ const Dashboard = () => {
           : null
       }
     >
-      <h2
-        style={{
-          margin: "10px",
-          textAlign: "center",
-          fontSize: "24px",
-          color: "green",
-        }}
-      >
-        Bakkers Driving School Course Instruction
-      </h2>
-      <div id="adminDashboard-container" style={styles}>
+      <div className="search">
+        <h2
+          style={{
+            textAlign: "center",
+            fontSize: "24px",
+            color: "green",
+          }}
+        >
+          Online Drivers Education
+        </h2>
+        <h3 className="bold">{active}</h3>
+
+        <div id="search-div">
+          <input
+            type="text"
+            placeholder="Search by name or email"
+            value={searchTerm}
+            onChange={handleSearch}
+            className="search-input"
+          />
+          <button
+            type="button"
+            className="search-button"
+            onClick={handleSearch}
+          >
+            Search
+          </button>
+        </div>
+      </div>
+      <div id="admin-content-container">
         <div
           style={{
-            width: "155px",
+            width: "125px",
             display: "flex",
             flexDirection: "column",
-            gap: "12px",
+            gap: "3px",
           }}
         >
           {buttons.map((button, index) => (
@@ -250,48 +280,24 @@ const Dashboard = () => {
           ))}
         </div>
         <section id="admin-dashboard">
-          <div className="search">
-            <div id="search-div">
-              <input
-                type="text"
-                placeholder="Search by name or email"
-                value={searchTerm}
-                onChange={handleSearch}
-                className="search-input"
-              />
-              <button
-                type="button"
-                className="search-button"
-                onClick={handleSearch}
-              >
-                Search
-              </button>
-            </div>
-            <h3 className="bold">{active}</h3>
-          </div>
-
           {active === buttons[0] && (
             <table id="maintable">
               <thead>
                 <tr id="table-head">
-                  <th className="head">First Name</th>
-                  <th className="head">Last Name</th>
+                  <th className="head">Student Name</th>
                   <th className="head">Date of Birth</th>
                   <th className="head">Email</th>
                   <th className="head">Phone</th>
                   <th className="head">Duration</th>
                   <th className="head">Last Login</th>
-                  <th className="head">Parent name</th>
-                  <th className="head">Parent Email</th>
-                  <th className="head">Parent phone</th>
-                  <th className="head">Actions</th>
                 </tr>
               </thead>
               <tbody id="table-body">
                 {filteredData.map((item) => (
                   <tr key={item._id}>
-                    <td className="body">{item.firstname}</td>
-                    <td className="body">{item.lastname}</td>
+                    <td className="body">
+                      {item.firstname} {item.lastname}
+                    </td>
                     <td className="body">{item.birthdate.substring(0, 10)}</td>
                     <td className="body email">{item.email}</td>
                     <td className="body">{item.ynumber}</td>
@@ -330,28 +336,22 @@ const Dashboard = () => {
                         const months = Math.floor(
                           difference / (1000 * 60 * 60 * 24 * 30)
                         );
-                        return `${months ? months + "m" : ""} ${
-                          days ? days + "d" : ""
-                        } ${hours ? hours + "h" : ""} ${
-                          minutes ? minutes + "m" : ""
-                        } ${seconds ? seconds + "s" : ""}`;
-                      })()}
-                    </td>
-                    <td className="body">{item.pname}</td>
-                    <td className="body email">{item.pemail}</td>
-                    <td className="body">{item.pnumber}</td>
-
-                    <td className="body">
-                      <button
-                        onClick={() => handlePrint(item)}
-                        disabled={
-                          !Object.values(item.progress)
-                            .slice(2, 17)
-                            .every((score) => score >= 8)
+                        if (months && months > 0) {
+                          return months + " months ago";
+                        } else if (days && days > 0) {
+                          return days > 0
+                            ? days + " days ago"
+                            : days + "day ago";
+                        } else if (hours && hours > 0) {
+                          return hours + " hours ago";
+                        } else if (minutes && minutes > 0) {
+                          return minutes + " minutes ago";
+                        } else if (seconds && seconds > 0) {
+                          return seconds + " seconds ago";
+                        } else {
+                          return "just now";
                         }
-                      >
-                        Print Certificate
-                      </button>
+                      })()}
                     </td>
                   </tr>
                 ))}
@@ -363,8 +363,7 @@ const Dashboard = () => {
             <table id="maintable">
               <thead>
                 <tr id="table-head">
-                  <th className="head">First Name</th>
-                  <th className="head">Last Name</th>
+                  <th className="head">Student Name</th>
                   <th className="head">Parent name</th>
                   <th className="head">Parent Email</th>
                   <th className="head">Parent phone</th>
@@ -373,8 +372,9 @@ const Dashboard = () => {
               <tbody id="table-body">
                 {filteredData.map((item) => (
                   <tr key={item._id}>
-                    <td className="body">{item.firstname}</td>
-                    <td className="body">{item.lastname}</td>
+                    <td className="body">
+                      {item.firstname} {item.lastname}
+                    </td>
                     <td className="body">{item.pname}</td>
                     <td className="body email">{item.pemail}</td>
                     <td className="body">{item.pnumber}</td>
@@ -388,10 +388,7 @@ const Dashboard = () => {
             <table id="maintable">
               <thead>
                 <tr id="table-head">
-                  <th className="head">First Name</th>
-                  <th className="head">Last Name</th>
-                  <th className="head">Email</th>
-                  <th className="head">Phone</th>
+                  <th className="head">Student Name</th>
                   <th className="head">Mailing Address</th>
                   <th className="head">Parent Email</th>
                   <th className="head">Parent phone</th>
@@ -400,10 +397,9 @@ const Dashboard = () => {
               <tbody id="table-body">
                 {filteredData.map((item) => (
                   <tr key={item._id}>
-                    <td className="body">{item.firstname}</td>
-                    <td className="body">{item.lastname}</td>
-                    <td className="body email">{item.email}</td>
-                    <td className="body">{item.ynumber}</td>
+                    <td className="body">
+                      {item.firstname} {item.lastname}
+                    </td>
                     <td className="body">{item.address}</td>
                     <td className="body email">{item.pemail}</td>
                     <td className="body">{item.pnumber}</td>
@@ -417,8 +413,7 @@ const Dashboard = () => {
             <table id="maintable">
               <thead>
                 <tr id="table-head">
-                  <th className="head">First Name</th>
-                  <th className="head">Last Name</th>
+                  <th className="head">Student Name</th>
                   <th className="head">Certificate Status</th>
                   <th className="head">Action</th>
                 </tr>
@@ -426,18 +421,25 @@ const Dashboard = () => {
               <tbody id="table-body">
                 {filteredData.map((item) => (
                   <tr key={item._id}>
-                    <td className="body">{item.firstname}</td>
-                    <td className="body">{item.lastname}</td>
                     <td className="body">
-                      {Object.keys(item.progress).some(
-                        (key) => (item.progress[key].finalquiz / 40) * 100 >= 80
-                      )
+                      {item.firstname} {item.lastname}
+                    </td>
+                    <td className="body">
+                      {Object.keys(item.progress)
+                        .slice(2, 18)
+                        .every((key) => item.progress[key] >= 8)
                         ? "Ready for Printing"
                         : "Not Ready for Printing"}
                     </td>
                     <td className="body">
                       <button
-                        onClick={() => handlePrint(item)}
+                        onClick={() =>
+                          handlePrint(
+                            item,
+                            { userId: item._id },
+                            { printStatus: true }
+                          )
+                        }
                         disabled={
                           !Object.values(item.progress)
                             .slice(2, 17)
@@ -458,9 +460,7 @@ const Dashboard = () => {
               {filteredData.map((item) => (
                 <table className="progress-table" key={item._id}>
                   <thead className="headname">
-                    <h4>
-                      {item.firstname} {item.lastname}
-                    </h4>
+                    {item.firstname} {item.lastname}
                   </thead>
 
                   <thead>
@@ -493,6 +493,42 @@ const Dashboard = () => {
               ))}
             </div>
           )}
+          {/* print status */}
+          {active === buttons[5] && (
+            <table id="maintable">
+              <thead>
+                <tr id="table-head">
+                  <th className="head">Student Name</th>
+                  <th className="head">Certificate Print Status</th>
+                  <th className="head">Action</th>
+                </tr>
+              </thead>
+              <tbody id="table-body">
+                {filteredData.map((item) => (
+                  <tr key={item._id}>
+                    <td className="body">
+                      {item.firstname} {item.lastname}
+                    </td>
+                    <td className="body">
+                      {item.printStatus.printStatus ? "Printed" : "Not Printed"}
+                    </td>
+                    <td className="body">
+                      <button
+                        onClick={() => handlePrint(item)}
+                        disabled={
+                          !Object.values(item.progress)
+                            .slice(2, 17)
+                            .every((score) => score >= 8)
+                        }
+                      >
+                        Print Certificate
+                      </button>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          )}
         </section>
       </div>
     </main>
@@ -500,3 +536,103 @@ const Dashboard = () => {
 };
 
 export default Dashboard;
+
+/**
+ * 
+ * {active === buttons[0] && (
+            <table id="maintable">
+              <thead>
+                <tr id="table-head">
+                  <th className="head">Student Name</th>
+                  <th className="head">Date of Birth</th>
+                  <th className="head">Email</th>
+                  <th className="head">Phone</th>
+                  <th className="head">Duration</th>
+                  <th className="head">Last Login</th>
+                  <th className="head">Parent name</th>
+                  <th className="head">Parent Email</th>
+                  <th className="head">Parent phone</th>
+                  <th className="head">Actions</th>
+                </tr>
+              </thead>
+              <tbody id="table-body">
+                {filteredData.map((item) => (
+                  <tr key={item._id}>
+                    <td className="body">{item.firstname} {item.lastname}</td>
+                    <td className="body">{item.birthdate.substring(0, 10)}</td>
+                    <td className="body email">{item.email}</td>
+                    <td className="body">{item.ynumber}</td>
+                    <td className="body">
+                      {(function duration() {
+                        const duration = 108000000 - item.startingtime;
+                        const hours = Math.floor(
+                          (duration % (1000 * 60 * 60 * 60)) / (1000 * 60 * 60)
+                        );
+                        const minutes = Math.floor(
+                          (duration % (1000 * 60 * 60)) / (1000 * 60)
+                        );
+                        const seconds = Math.floor(
+                          (duration % (1000 * 60)) / 1000
+                        );
+                        return ` ${hours < 10 ? "0" + hours : hours}:${" "}
+                  ${minutes < 10 ? "0" + minutes : minutes}:${" "}
+                  ${seconds < 10 ? "0" + seconds : seconds}`;
+                      })()}
+                    </td>
+                    <td className="body">
+                      {(function () {
+                        const time = item.time;
+                        const pastTime = new Date(time);
+                        const currentTime = new Date();
+                        const difference =
+                          currentTime.getTime() - pastTime.getTime();
+                        const seconds = Math.floor(difference / 1000) % 60;
+                        const minutes =
+                          Math.floor(difference / (1000 * 60)) % 60;
+                        const hours =
+                          Math.floor(difference / (1000 * 60 * 60)) % 24;
+                        const days = Math.floor(
+                          difference / (1000 * 60 * 60 * 24)
+                        );
+                        const months = Math.floor(
+                          difference / (1000 * 60 * 60 * 24 * 30)
+                        );
+                        if (months && months > 0) {
+                          return months + " months ago";
+                        } else if (days && days > 0) {
+                          return days > 0
+                            ? days + " days ago"
+                            : days + "day ago";
+                        } else if (hours && hours > 0) {
+                          return hours + " hours ago";
+                        } else if (minutes && minutes > 0) {
+                          return minutes + " minutes ago";
+                        } else if (seconds && seconds > 0) {
+                          return seconds + " seconds ago";
+                        } else {
+                          return "just now";
+                        }
+                      })()}
+                    </td>
+                    <td className="body">{item.pname}</td>
+                    <td className="body email">{item.pemail}</td>
+                    <td className="body">{item.pnumber}</td>
+
+                    <td className="body">
+                      <button
+                        onClick={() => handlePrint(item)}
+                        disabled={
+                          !Object.values(item.progress)
+                            .slice(2, 17)
+                            .every((score) => score >= 8)
+                        }
+                      >
+                        Print Certificate
+                      </button>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          )}
+ */
