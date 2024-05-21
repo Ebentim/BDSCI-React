@@ -100,7 +100,7 @@ const Dashboard = () => {
               body {
                 font-family: Arial, sans-serif;
                 font-size: 16.87px;
-                margin: 20px 0 20px 70px;
+                margin: 20px 0 0 60px;
               }
               .container {
                 margin-top: 50px;
@@ -143,8 +143,8 @@ const Dashboard = () => {
             <br />
             <br />
             <div>
-              <table>
-                <tr class=" h5 row" style= "margin-top: 12px">
+              <table style= "margin-top: 30px">
+                <tr class=" h5 row">
                   <td class=" h5 col-8">${firstname} ${lastname}</td>
                   <td class=" h5 col-4">${(function () {
                     const dob = birthdate.substring(0, 10);
@@ -168,11 +168,11 @@ const Dashboard = () => {
                   <td class=" h5 col-8">Bakkers Driving School</td>
                   <td class=" h5 col-4">E3246</td>
                 </tr>
-                <tr class=" h5 row" style="margin-top:20px">
-                  <td class=" h5 col-8">11315 Rancho Bernardo Road,#132,  \nSan Diego, CA 92127</td>
+                <tr class=" h5 row" style="margin-top:5px">
+                  <td class=" h5 col-8">11315 Rancho Bernardo Rd, Suite132,  \nSan Diego, CA 92127</td>
                   <td class=" h5 col-4">(858) 484-5832</td>
                 </tr>
-                <tr class=" h5 row"style="margin-top:12px">
+                <tr class=" h5 row"style="margin-top:6px">
                   <td class=" h5 col-8">Roderick Stansbery</td>
                   <td class=" h5 col-4">13246-127</td>
                 </tr>
