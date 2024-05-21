@@ -24,7 +24,8 @@ const Dashboard = () => {
         {
           userId,
           print,
-        }
+        },
+        { headers: { "Content-Type": "Application/json" } }
       );
       console.log(response.data);
     } catch (error) {
@@ -514,7 +515,13 @@ const Dashboard = () => {
                     </td>
                     <td className="body">
                       <button
-                        onClick={() => handlePrint(item)}
+                        onClick={() =>
+                          handlePrint(
+                            item,
+                            { userId: item._id },
+                            { printStatus: true }
+                          )
+                        }
                         disabled={
                           !Object.values(item.progress)
                             .slice(2, 17)
