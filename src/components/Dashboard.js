@@ -109,10 +109,8 @@ const Dashboard = () => {
               table {
                 width: 100%;
                 border-collapse: collapse;
-                margin-bottom: 20px;
               }
               td:nth-child(2) {
-                padding: 8px;
                 text-align: left;
               }
               .row:after {
@@ -127,9 +125,6 @@ const Dashboard = () => {
               .rows {
                 padding: 8px;
               }
-              tr{
-                margin-bottom: 10px;
-              }
             }
           </style>
         </head>
@@ -141,9 +136,8 @@ const Dashboard = () => {
             <br />
             <br />
             <br />
-            <br />
             <div>
-              <table style= "margin-top: 30px">
+              <table style= "margin-top: 40px">
                 <tr class=" h5 row">
                   <td class=" h5 col-8">${firstname} ${lastname}</td>
                   <td class=" h5 col-4">${(function () {
@@ -164,15 +158,15 @@ const Dashboard = () => {
                   })()}</td>
                 </tr>
                 <br/>
-                <tr class=" h5 row" style="margin-top:20px;">
+                <tr class=" h5 row" style="margin-top:10px;">
                   <td class=" h5 col-8">Bakkers Driving School</td>
                   <td class=" h5 col-4">E3246</td>
                 </tr>
-                <tr class=" h5 row" style="margin-top:5px">
-                  <td class=" h5 col-8">11315 Rancho Bernardo Rd, Suite132,  \nSan Diego, CA 92127</td>
-                  <td class=" h5 col-4">(858) 484-5832</td>
+                <tr class=" h5 row" style="margin-top:10px">
+                  <td class=" h5 col-7">11315 Rancho Bernardo Rd SD CA 92127</td>
+                  <td class=" h5 col-5" style="padding-left:30px;">858 484-5832</td>
                 </tr>
-                <tr class=" h5 row"style="margin-top:6px">
+                <tr class=" h5 row" style="margin-top:10px">
                   <td class=" h5 col-8">Roderick Stansbery</td>
                   <td class=" h5 col-4">13246-127</td>
                 </tr>
@@ -184,7 +178,7 @@ const Dashboard = () => {
                 <br />
                 <br />
                 <br />
-                <tr class=" h5 row">
+                <tr class=" h5 row" style="margin-top:15px">
                   <td class=" h5 col-8"></td>
                   <td class=" h5 col-4">${(function () {
                     const now = new Date(Date.now());
